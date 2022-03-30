@@ -26,7 +26,7 @@ Variables globales:
 
 
 
-MOBILE
+MOBILE ancho: 360px
 
 --------Header--------
 
