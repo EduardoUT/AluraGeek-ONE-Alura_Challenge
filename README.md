@@ -1,7 +1,8 @@
 Challenge Cuatro de Seis | Formación Front-End | AluraGeek E-Commerce
 
 # Portaforlio_Web-Oracle-ONE-Challenge
-![Challenge Alura Latam + Oracle](https://raw.githubusercontent.com/EduardoUT/Portafolio_Web-Oracle-ONE-Challenge/master/assets/img/readme/challengeImage.jpg)
+![Challenge Alura Latam + Oracle](https://raw.githubusercontent.com/EduardoUT/AluraGeek-ONE-Alura_Challenge/master/assets/img/readme/challengeImage.jpg)
+
 
 **Página Web:** 
 
