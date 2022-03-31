@@ -5,9 +5,23 @@
     background: var(--color-blanco);
     display: flex;
     font-size: 0.875rem;
-    justify-content: space-between;
     height: 4.5rem;
+    justify-content: space-between;
+    position: fixed;
+    transition: transform 0.4s;
     width: 100%;
+}
+
+/*El menú subirá con un porcentaje de -100%, en el
+eje Y*/
+.scroll-down .cabecera {
+    transform: translate3d(0, -100%, 0);
+}
+
+/*El menú se mantendrá en su posición
+original*/
+.scroll-up .cabecera {
+    transform: none;
 }
 
 .cabecera__menu {
