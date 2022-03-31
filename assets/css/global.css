@@ -16,6 +16,11 @@
     --font-medium: 500;
     --font-semi-bold: 600;
     --font-bold: 700;
+    --font-size-titulo: 22px;
+    /**--font-size-subitulo:;**/
+    --font-size-primario-movil:1rem;
+    --font-size-secundario-movil: 14px;
+    --font-size-terciario-movil: 12px;
 }
 
 body {
