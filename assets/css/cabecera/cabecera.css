@@ -1,0 +1,28 @@
+.cabecera {
+    align-items: center;
+    background: lightblue;
+    display: flex;
+    font-size: 0.875rem;
+    justify-content: space-between;
+    height: 4.5rem;
+    width: 100%;
+}
+
+.cabecera__menu {
+    align-items: inherit;
+    display: inherit;
+    justify-content: inherit;
+    width: inherit;
+}
+
+.cabecera__logo {
+    height: 1.75rem;
+    width: 6.25rem;
+}
+
+/*.menu__buscador {}*/
+
+.cabecera__buscar {
+    height: 1.1rem;
+    width: 1.094rem;
+}
