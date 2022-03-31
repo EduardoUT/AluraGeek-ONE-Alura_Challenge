@@ -1,6 +1,8 @@
+@import url("../global.css");
+
 .cabecera {
     align-items: center;
-    background: lightblue;
+    background: var(--color-blanco);
     display: flex;
     font-size: 0.875rem;
     justify-content: space-between;
