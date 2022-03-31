@@ -215,16 +215,16 @@
             </ul>
         </div>
         <form class="formulario-container" action="">
-            <legend class="formulario-container__legend"></legend>
+            <legend class="formulario-container__legend">Hable con nosotros.</legend>
             <div class="formulario-container__componentes">
-                <label class="formulario-container__label" for="" tabindex="0"></label>
-                <input class="formulario-container__input formulario-container__style" type="text" tabindex="0" data-contacto="nombre">
-                <span class="formulario-container__span--error" tabindex="0"></span>
+                <label class="formulario-container__label" for="nombre" tabindex="0">Nombre:</label>
+                <input class="formulario-container__input formulario-container__style" id="nombre" type="text" placeholder="Nombre(s) Apellido(s)" tabindex="0" data-contacto="nombre">
+                <span class="formulario-container__span--error" tabindex="0">Error</span>
             </div>
             <div class="formulario-container__componentes">
-                <label class="formulario-container__label" for="" tabindex="0"></label>
-                <textarea class="formulario-container__textarea formulario-container__style" tabindex="0" data-contacto="mensaje"></textarea>
-                <span class="formulario-container__span--error" tabindex="0"></span>
+                <label class="formulario-container__label" for="mensaje" tabindex="0">Mensaje</label>
+                <textarea class="formulario-container__textarea formulario-container__style" id="mensaje" placeholder="Escribe tu mensaje" tabindex="0" data-contacto="mensaje"></textarea>
+                <span class="formulario-container__span--error" tabindex="0">Error</span>
             </div>
             <button class="btn btn--azul" id="btn-enviar" type="submit" tabindex="0">Enviar mensaje</button>
         </form>
