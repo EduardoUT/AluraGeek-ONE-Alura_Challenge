@@ -6,7 +6,7 @@
         url("../../img/banner/champinoncito.jpg") center / cover;
     display: flex;
     flex-direction: column;
-    height: 12rem;
+    height: calc(12rem + 4.5rem);
     justify-content: flex-end;
     width: 100%;
 }
