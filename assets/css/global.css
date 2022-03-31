@@ -38,6 +38,7 @@ body {
     background: var(--color-azul-fuerte);
     border: none;
     color: var(--color-blanco);
+    width: 118px;
 }
 
 .container {
