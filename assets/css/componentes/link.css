@@ -1,0 +1,5 @@
+.link--azulFuerte {
+    color: var(--color-azul-fuerte);
+    font-weight: var(--font-bold);
+    text-decoration: none;
+}
