@@ -1,6 +1,7 @@
 @import url("../global.css");
 @import url("../componentes/logo.css");
 @import url("../componentes/boton.css");
+/*@import url("../componentes/campoBuscar.css");*/
 
 .cabecera {
     align-items: center;
