@@ -32,6 +32,10 @@
     width: inherit;
 }
 
+.productos__producto:nth-child(5), .productos__producto:nth-child(6) {
+    display: none;
+}
+
 .productos__imagen {
     height: 174px;
     width: inherit;
