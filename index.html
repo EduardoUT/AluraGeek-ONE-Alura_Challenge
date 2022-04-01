@@ -22,20 +22,21 @@
 <!--
     <link rel="stylesheet" href="./assets/css/componentes/campoBuscar.css">
     -->
+
 <body>
     <header class="cabecera container">
-            <nav class="cabecera__menu">
-                <a class="cabecera__logo" href="index.html" title="Ir a la página principal" tabindex="0">
-                    <img class="cabecera__logo" src="./assets/img/iconos/logo-alura-geek.svg" alt="Logo de AluraGeek">
+        <nav class="cabecera__menu">
+            <a class="cabecera__logo" href="index.html" title="Ir a la página principal" tabindex="0">
+                <img class="cabecera__logo" src="./assets/img/iconos/logo-alura-geek.svg" alt="Logo de AluraGeek">
+            </a>
+            <a class="cabecera__boton boton--blanco" href="#" title="Inicia sesión" tabindex="0">Login</a>
+            <div class="cabecera__buscador" href="#">
+                <!--<input class="cabecera__campo" type="text" tabindex="0">-->
+                <a class="cabecera__buscar" href="#" title="Buscar productos" tabindex="0">
+                    <img class="cabecera__buscar" src="./assets/img/iconos/lupa.svg" alt="Icono de Lupa">
                 </a>
-                <a class="cabecera__boton boton--blanco" href="#" title="Inicia sesión" tabindex="0">Login</a>
-                <div class="cabecera__buscador" href="#">
-                    <!--<input class="cabecera__campo" type="text" tabindex="0">-->
-                    <a class="cabecera__buscar" href="#" title="Buscar productos" tabindex="0">
-                        <img class="cabecera__buscar" src="./assets/img/iconos/lupa.svg" alt="Icono de Lupa">
-                    </a>
-                </div>
-            </nav>
+            </div>
+        </nav>
     </header>
     <main class="principal">
         <section class="banner container">
@@ -46,150 +47,184 @@
         <section class="productos container">
             <header class="productos__categoria">
                 <h2 class="titulo">Star Wars</h2>
-                <a class="productos__link link--azulFuerte link--categoria" href="#" title="Ver todos los productos de Star Wars" tabindex="0">
+                <a class="productos__link link--azulFuerte link--categoria" href="#"
+                    title="Ver todos los productos de Star Wars" tabindex="0">
                     Ver todo
                     <div class="productos__link--flecha"></div>
                 </a>
             </header>
             <div class="productos__detalles">
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/star_wars/taza-stormtrooper.png" alt="Taza Stormtrooper" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/star_wars/taza-stormtrooper.png"
+                        alt="Taza Stormtrooper" tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-darth-vader.png" alt="Figura Darth Vader" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-darth-vader.png"
+                        alt="Figura Darth Vader" tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-yoda.png" alt="Figura Yoda" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-yoda.png"
+                        alt="Figura Yoda" tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-stormtrooper.png" alt="Figura Stormtrooper" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-stormtrooper.png"
+                        alt="Figura Stormtrooper" tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
-                </div>
-                <!--
-                <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-grogu.png" alt="" tabindex="0">
-                    <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
-                    <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-kylo-ren.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-grogu.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
-                -->
+                <div class="productos__producto">
+                    <img class="productos__imagen" src="./assets/img/productos/star_wars/figura-kylo-ren.png" alt=""
+                        tabindex="0">
+                    <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
+                    <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
+                </div>
             </div>
         </section>
 
-        <section class="productos">
+        <section class="productos container">
             <header class="productos__categoria">
                 <h2 class="titulo">Consolas</h2>
-                <a class="productos__link link--azulFuerte link--categoria" href="#" title="Ver todas las consolas" tabindex="0">
+                <a class="productos__link link--azulFuerte link--categoria" href="#" title="Ver todas las consolas"
+                    tabindex="0">
                     Ver todo
                     <div class="productos__link--flecha"></div>
                 </a>
             </header>
             <div class="productos__detalles">
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/consolas/control-xbox.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/consolas/control-xbox.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Control XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/consolas/playstation-5.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/consolas/playstation-5.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Control y consola XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/consolas/nintendo-nes.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/consolas/nintendo-nes.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Consola XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img src="./assets/img/productos/consolas/control-nintendo-switch.png" alt="" class="productos__imagen" tabindex="0">
+                    <img src="./assets/img/productos/consolas/control-nintendo-switch.png" alt=""
+                        class="productos__imagen" tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Control XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
-                </div>
-                <!--
-                    <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/consolas/xbox-series-x.png" alt="" tabindex="0">
-                    <p class="productos__nombre parrafo" tabindex="0">Consola XYZ</p>
-                    <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/consolas/gameboy-color.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/consolas/xbox-series-x.png" alt=""
+                        tabindex="0">
+                    <p class="productos__nombre parrafo" tabindex="0">Consola XYZ</p>
+                    <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
+                </div>
+                <div class="productos__producto">
+                    <img class="productos__imagen" src="./assets/img/productos/consolas/gameboy-color.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Game Boy Color</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
-                -->
+
             </div>
         </section>
 
-        <section class="productos">
+        <section class="productos container">
             <header class="productos__categoria">
                 <h2 class="titulo">Diversos</h2>
-                <a class="productos__link link--azulFuerte link--categoria" href="#" title="Ver todos los productos diversos" tabindex="0">
+                <a class="productos__link link--azulFuerte link--categoria" href="#"
+                    title="Ver todos los productos diversos" tabindex="0">
                     Ver todo
                     <div class="productos__link--flecha"></div>
                 </a>
             </header>
             <div class="productos__detalles">
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/diversos/playera-atari.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/diversos/playera-atari.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Camisa Atari</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/diversos/playera-snes.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/diversos/playera-snes.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Camisa SNES</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/diversos/figura-sonic.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/diversos/figura-sonic.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Control y consola XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
                     <img class="productos__imagen" src="./assets/img/productos/diversos/reloj.png" alt="" tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Control y consola XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
-                </div>
-                <!--
-                    <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/diversos/oculus-vr.png" alt="" tabindex="0">
-                    <p class="productos__nombre parrafo" tabindex="0">Control y consola XYZ</p>
-                    <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
                 <div class="productos__producto">
-                    <img class="productos__imagen" src="./assets/img/productos/diversos/peluche-pikachu.png" alt="" tabindex="0">
+                    <img class="productos__imagen" src="./assets/img/productos/diversos/oculus-vr.png" alt=""
+                        tabindex="0">
+                    <p class="productos__nombre parrafo" tabindex="0">Control y consola XYZ</p>
+                    <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
+                </div>
+                <div class="productos__producto">
+                    <img class="productos__imagen" src="./assets/img/productos/diversos/peluche-pikachu.png" alt=""
+                        tabindex="0">
                     <p class="productos__nombre parrafo" tabindex="0">Producto XYZ</p>
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
-                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver Producto</a>
+                    <a class="productos__link link--azulFuerte" href="#" title="Ver más detalles" tabindex="0">Ver
+                        Producto</a>
                 </div>
-                -->
+
             </div>
         </section>
 
@@ -206,16 +241,20 @@
                     <a class="informaciones__link" href="#" title="Ir a quienes somos" tabindex="0">Quienes somos</a>
                 </li>
                 <li class="informaciones__item">
-                    <a class="informaciones__link" href="#" title="Ir a las políticas de provacidad" tabindex="0">Política de privacidad</a>
+                    <a class="informaciones__link" href="#" title="Ir a las políticas de provacidad"
+                        tabindex="0">Política de privacidad</a>
                 </li>
                 <li class="informaciones__item">
-                    <a class="informaciones__link" href="#" title="Ir al programa de fidelidad" tabindex="0">Programa de fidelidad</a>
+                    <a class="informaciones__link" href="#" title="Ir al programa de fidelidad" tabindex="0">Programa de
+                        fidelidad</a>
                 </li>
                 <li class="informaciones__item">
-                    <a class="informaciones__link" href="#" title="Ver nuestras tiendas" tabindex="0">Nuestras tiendas</a>
+                    <a class="informaciones__link" href="#" title="Ver nuestras tiendas" tabindex="0">Nuestras
+                        tiendas</a>
                 </li>
                 <li class="informaciones__item">
-                    <a class="informaciones__link" href="#" title="Consultar información de franquiciado" tabindex="0">Quiero ser franquiciado</a>
+                    <a class="informaciones__link" href="#" title="Consultar información de franquiciado"
+                        tabindex="0">Quiero ser franquiciado</a>
                 </li>
                 <li class="informaciones__item">
                     <a class="informaciones__link" href="#" title="Ir a anuncios" tabindex="0">Anúncie aquí</a>
@@ -226,12 +265,14 @@
             <legend class="formulario-container__legend">Hable con nosotros.</legend>
             <div class="formulario-container__componentes">
                 <label class="formulario-container__label" for="nombre" tabindex="0">Nombre:</label>
-                <input class="formulario-container__input formulario-container__style" id="nombre" type="text" placeholder="Nombre(s) Apellido(s)" tabindex="0" data-contacto="nombre">
+                <input class="formulario-container__input formulario-container__style" id="nombre" type="text"
+                    placeholder="Nombre(s) Apellido(s)" tabindex="0" data-contacto="nombre">
                 <span class="formulario-container__span--error" tabindex="0">Error</span>
             </div>
             <div class="formulario-container__componentes">
                 <label class="formulario-container__label" for="mensaje" tabindex="0">Mensaje</label>
-                <textarea class="formulario-container__textarea formulario-container__style" id="mensaje" placeholder="Escribe tu mensaje" tabindex="0" data-contacto="mensaje"></textarea>
+                <textarea class="formulario-container__textarea formulario-container__style" id="mensaje"
+                    placeholder="Escribe tu mensaje" tabindex="0" data-contacto="mensaje"></textarea>
                 <span class="formulario-container__span--error" tabindex="0">Error</span>
             </div>
             <button class="btn btn--azul" id="btn-enviar" type="submit" tabindex="0">Enviar mensaje</button>
