@@ -19,13 +19,22 @@
     height: .662rem;
 }
 
+.productos__detalles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.75em, 1fr));
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem 1rem;
+}
+
 .productos__producto {
-    
+    display: flex;
+    flex-direction: column;
+    width: inherit;
 }
 
 .productos__imagen {
     height: 174px;
-    width: 156px;
+    width: inherit;
     margin: 0 0 .5rem 0;
 }
 
