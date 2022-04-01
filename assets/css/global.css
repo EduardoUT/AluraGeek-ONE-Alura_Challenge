@@ -32,6 +32,11 @@ body {
     padding: 1rem;
 }
 
+.titulo {
+    font-size: var(--font-size-titulo);
+    margin: 0;
+}
+
 .titulo-style {
     font-size: var(--font-size-titulo);
     margin: 0 0 1rem 0;
