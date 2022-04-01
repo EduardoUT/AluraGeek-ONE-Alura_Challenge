@@ -1,3 +1,20 @@
 .productos {
+    display: flex;
+    flex-direction: column;
+}
+
+.productos__categoria {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 1rem 0;
+}
+
+/**.productos__link {
     
+}**/
+
+.productos__link--flecha {
+    background: url("../../img/iconos/flecha.svg") center / cover no-repeat;
+    width: .662rem;
+    height: .662rem;
 }
