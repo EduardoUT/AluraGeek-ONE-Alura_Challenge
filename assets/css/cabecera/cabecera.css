@@ -29,11 +29,6 @@ original*/
     width: inherit;
 }
 
-.cabecera__logo {
-    height: 1.75rem;
-    width: 6.25rem;
-}
-
 .cabecera__campo {
     height: 40px;
     width: 272;
