@@ -1,5 +1,14 @@
 .link--azulFuerte {
     color: var(--color-azul-fuerte);
     font-weight: var(--font-bold);
+    font-size: var(--font-size-secundario-movil);
     text-decoration: none;
+}
+
+.link--categoria {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 4.812rem;
+    height: fit-content;
 }
