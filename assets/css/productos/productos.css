@@ -18,3 +18,25 @@
     width: .662rem;
     height: .662rem;
 }
+
+.productos__producto {
+    
+}
+
+.productos__imagen {
+    height: 174px;
+    width: 156px;
+    margin: 0 0 .5rem 0;
+}
+
+.productos__nombre {
+    margin: 0 0 .5rem 0;
+}
+
+.productos__precio {
+    margin: 0 0 .5rem 0;
+}
+
+.productos__link {
+
+}
