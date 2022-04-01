@@ -9,15 +9,13 @@
     width: 100%;
 }
 
-.banner__titulo {
+.banner__titulo, .banner__parrafo {
     color: var(--color-blanco);
     margin: 0 0 0.5rem 0;
 }
 
 .banner__parrafo {
-    color: var(--color-blanco);
     font-size: var(--font-size-secundario-movil);
-    margin: 0 0 0.5rem 0;
 }
 
 .banner__boton {
