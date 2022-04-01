@@ -1,4 +1,6 @@
 @import url("../global.css");
+@import url("../componentes/logo.css");
+@import url("../componentes/boton.css");
 
 .cabecera {
     align-items: center;
@@ -34,6 +36,17 @@ original*/
 .cabecera__logo {
     height: 1.75rem;
     width: 6.25rem;
+}
+
+.cabecera__campo {
+    height: 40px;
+    width: 272;
+}
+
+.cabecera__boton {
+    font-size: var(--font-size-secundario-movil);
+    height: 2.5rem;
+    width: 8.312rem;
 }
 
 /*.menu__buscador {}*/
