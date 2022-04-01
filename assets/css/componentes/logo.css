@@ -1,3 +1,8 @@
+.logo--pequeño {
+    height: 1.75rem;
+    width: 6.25rem;
+}
+
 .logo--grande {
     height: 50px;
     width: 176px;
