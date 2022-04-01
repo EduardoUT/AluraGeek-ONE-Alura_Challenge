@@ -9,6 +9,8 @@
     background: var(--color-blanco);
     border: solid 1px var(--color-azul-fuerte);
     color: var(--color-azul-fuerte);
+    height: 2.5rem;
+    width: 8.312rem;
 }
 
 .boton--blanco, .boton--azul {
@@ -21,5 +23,6 @@
     background: var(--color-azul-fuerte);
     border: none;
     color: var(--color-blanco);
-    width: 118px;
+    height: 2.5rem;
+    width: 7.375rem;
 }
