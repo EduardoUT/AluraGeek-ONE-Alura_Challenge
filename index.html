@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./assets/css/banner/banner.css">
     <link rel="stylesheet" href="./assets/css/productos/productos.css">
     <link rel="stylesheet" href="./assets/css/informaciones/informaciones.css">
-    <link rel="stylesheet" href="./assets/css/informaciones/informacionesFormulario.css">
+    <link rel="stylesheet" href="./assets/css/formulario/formulario.css">
     <link rel="icon" href="favicon.svg">
     <title>AluraGeek</title>
 </head>
@@ -277,21 +277,21 @@
                     </li>
                 </ul>
             </div>
-            <form class="informaciones__formulario container" action="">
-                <legend class="informaciones__legend">Hable con nosotros.</legend>
-                <div class="informaciones__componentes">
-                    <label class="informaciones__label" for="nombre" tabindex="0">Nombre:</label>
-                    <input class="informaciones__campo informaciones__campoEstilo" id="nombre" type="text"
+            <form class="formulario container" action="">
+                <legend class="formulario__legend">Hable con nosotros.</legend>
+                <div class="formulario__componentes">
+                    <label class="formulario__label" for="nombre" tabindex="0">Nombre:</label>
+                    <input class="formulario__campo formulario__campoEstilo" id="nombre" type="text"
                         placeholder="Nombre(s) Apellido(s)" tabindex="0" data-contacto="nombre">
-                    <span class="informaciones__span--error" tabindex="0">Error</span>
+                    <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
-                <div class="informaciones__componentes">
-                    <label class="informaciones__label" for="mensaje" tabindex="0">Mensaje</label>
-                    <textarea class="informaciones__textarea informaciones__campoEstilo" id="mensaje"
+                <div class="formulario__componentes">
+                    <label class="formulario__label" for="mensaje" tabindex="0">Mensaje</label>
+                    <textarea class="formulario__textarea formulario__campoEstilo" id="mensaje"
                         placeholder="Escribe tu mensaje" rows="3" tabindex="0" data-contacto="mensaje"></textarea>
-                    <span class="informaciones__span--error" tabindex="0">Error</span>
+                    <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
-                <button class="informaciones__boton boton--azul" id="btn-enviar" type="submit" tabindex="0">Enviar
+                <button class="formulario__boton boton--azul" id="btn-enviar" type="submit" tabindex="0">Enviar
                     mensaje</button>
             </form>
         </div>
