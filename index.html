@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="./assets/css/banner/banner.css">
     <link rel="stylesheet" href="./assets/css/productos/productos.css">
     <link rel="stylesheet" href="./assets/css/informaciones/informaciones.css">
+    <link rel="stylesheet" href="./assets/css/informaciones/informacionesFormulario.css">
     <link rel="icon" href="favicon.svg">
     <title>AluraGeek</title>
 </head>
@@ -48,8 +49,8 @@
         <section class="productos container">
             <header class="productos__categoria">
                 <h2 class="titulo">Star Wars</h2>
-                <a class="productos__link link link--categoria" href="#"
-                    title="Ver todos los productos de Star Wars" tabindex="0">
+                <a class="productos__link link link--categoria" href="#" title="Ver todos los productos de Star Wars"
+                    tabindex="0">
                     Ver todo
                     <div class="productos__link--flecha"></div>
                 </a>
@@ -109,8 +110,7 @@
         <section class="productos container">
             <header class="productos__categoria">
                 <h2 class="titulo">Consolas</h2>
-                <a class="productos__link link link--categoria" href="#" title="Ver todas las consolas"
-                    tabindex="0">
+                <a class="productos__link link link--categoria" href="#" title="Ver todas las consolas" tabindex="0">
                     Ver todo
                     <div class="productos__link--flecha"></div>
                 </a>
@@ -171,8 +171,8 @@
         <section class="productos container">
             <header class="productos__categoria">
                 <h2 class="titulo">Diversos</h2>
-                <a class="productos__link link link--categoria" href="#"
-                    title="Ver todos los productos diversos" tabindex="0">
+                <a class="productos__link link link--categoria" href="#" title="Ver todos los productos diversos"
+                    tabindex="0">
                     Ver todo
                     <div class="productos__link--flecha"></div>
                 </a>
@@ -240,33 +240,38 @@
                 </div>
                 <ul class="informaciones__links">
                     <li class="informaciones__item">
-                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ir a quienes somos" tabindex="0">
+                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ir a quienes somos"
+                            tabindex="0">
                             Quienes somos
                         </a>
                     </li>
                     <li class="informaciones__item">
-                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ir a las políticas de provacidad" tabindex="0">
+                        <a class="informaciones__link link link--grisFuerte" href="#"
+                            title="Ir a las políticas de provacidad" tabindex="0">
                             Política de privacidad
                         </a>
                     </li>
                     <li class="informaciones__item">
-                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ir al programa de fidelidad" tabindex="0">
+                        <a class="informaciones__link link link--grisFuerte" href="#"
+                            title="Ir al programa de fidelidad" tabindex="0">
                             Programa de fidelidad
                         </a>
                     </li>
                     <li class="informaciones__item">
-                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ver nuestras tiendas" tabindex="0">
+                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ver nuestras tiendas"
+                            tabindex="0">
                             Nuestras tiendas
                         </a>
                     </li>
                     <li class="informaciones__item">
-                        <a class="informaciones__link link link--grisFuerte" href="#" title="Consultar información de franquiciado"
-                            tabindex="0">
+                        <a class="informaciones__link link link--grisFuerte" href="#"
+                            title="Consultar información de franquiciado" tabindex="0">
                             Quiero ser franquiciado
                         </a>
                     </li>
                     <li class="informaciones__item">
-                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ir a anuncios" tabindex="0">
+                        <a class="informaciones__link link link--grisFuerte" href="#" title="Ir a anuncios"
+                            tabindex="0">
                             Anúncie aquí
                         </a>
                     </li>
@@ -283,16 +288,15 @@
                 <div class="informaciones__componentes">
                     <label class="informaciones__label" for="mensaje" tabindex="0">Mensaje</label>
                     <textarea class="informaciones__textarea informaciones__campoEstilo" id="mensaje"
-                        placeholder="Escribe tu mensaje" tabindex="0" data-contacto="mensaje"></textarea>
+                        placeholder="Escribe tu mensaje" rows="3" tabindex="0" data-contacto="mensaje"></textarea>
                     <span class="informaciones__span--error" tabindex="0">Error</span>
                 </div>
-                <button class="boton--azul" id="btn-enviar" type="submit" tabindex="0">Enviar mensaje</button>
+                <button class="informaciones__boton boton--azul" id="btn-enviar" type="submit" tabindex="0">Enviar
+                    mensaje</button>
             </form>
         </div>
         <div class="informaciones__copyright">
-            <div class="informaciones__datos">
-                <p class="parrafo" tabindex="0">Desarrollado por Eduardo Reyes Hernández &#169; 2022</p>
-            </div>
+            <p class="informaciones__autor parrafo" tabindex="0">Desarrollado por Eduardo Reyes Hernández &#169; 2022</p>
         </div>
     </footer>
     <script src="./assets/js/main.js" type="module"></script>
