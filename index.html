@@ -28,16 +28,22 @@
 <body>
     <header class="cabecera container">
         <nav class="cabecera__menu">
-            <a class="logo--pequeño" href="index.html" title="Ir a la página principal" tabindex="0">
-                <img class="logo--pequeño" src="./assets/img/iconos/logo-alura-geek.svg" alt="Logo de AluraGeek">
-            </a>
-            <a class="cabecera__boton boton--blanco" href="#" title="Inicia sesión" tabindex="0">Login</a>
-            <div class="cabecera__buscador" href="#">
-                <!--<input class="cabecera__campo" type="text" tabindex="0">-->
-                <a class="cabecera__buscar" href="#" title="Buscar productos" tabindex="0">
-                    <img class="cabecera__buscar" src="./assets/img/iconos/lupa.svg" alt="Icono de Lupa">
+            <div class="cabecera__logoBuscador">
+                <div class="cabecera__buscador">
+                    <input class="cabecera__campo campo--busqueda" type="text" placeholder="¿Qué deseas buscar?">
+                    <a class="cabecera__linkBuscar" href="#" title="Buscar productos" tabindex="0">
+                        <img class="cabecera__icono" src="./assets/img/iconos/lupa.svg" alt="Icono de Lupa">
+                    </a>
+                </div>
+                <a class="cabecera__logo" href="index.html" title="Ir a la página principal" tabindex="0">
+                    <img class="cabecera__logo" src="./assets/img/iconos/logo-alura-geek.svg" alt="Logo de AluraGeek">
                 </a>
             </div>
+            <a class="cabecera__boton boton--blanco" href="#" title="Inicia sesión" tabindex="0">Login</a>
+            
+            <a class="cabecera__linkBuscarMovil" href="#" title="Buscar productos" tabindex="0">
+                <img class="cabecera__iconoMovil" src="./assets/img/iconos/icono-lupa-movil.svg" alt="Icono de Lupa">
+            </a>
         </nav>
     </header>
     <main class="principal">
