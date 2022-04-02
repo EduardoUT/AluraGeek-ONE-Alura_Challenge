@@ -1,8 +1,12 @@
-.link--azulFuerte {
+.link {
     color: var(--color-azul-fuerte);
     font-weight: var(--font-bold);
     font-size: var(--font-size-secundario-movil);
     text-decoration: none;
+}
+
+.link--grisFuerte {
+    color: var(--color-gris-fuerte);
 }
 
 .link--categoria {
