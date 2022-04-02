@@ -19,8 +19,8 @@
     --font-size-titulo: 1.375rem;
     /**--font-size-subitulo:;**/
     --font-size-primario-movil:1rem;
-    --font-size-secundario-movil: 14px;
-    --font-size-terciario-movil: 12px;
+    --font-size-secundario-movil: .875rem;
+    --font-size-terciario-movil: .75rem;
 }
 
 body {
