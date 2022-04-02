@@ -37,6 +37,7 @@ de 12px*/
 .informaciones__label {
     color: var(--color-gris-regular);
     font-size: var(--font-size-terciario-movil);
+    font-weight: var(--font-regular);
 }
 
 /*Configurando altura*/
@@ -55,7 +56,7 @@ pueden agregarse numéricos*/
     border: none;
     color: var(--font-color);
     display: block;
-    font-weight: 400;
+    font-weight: var(--font-regular);
     margin: .25rem 0 0 0;
     width: 100%;
 }
