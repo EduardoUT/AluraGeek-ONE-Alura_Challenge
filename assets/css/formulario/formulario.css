@@ -1,0 +1,147 @@
+/*Desplazando elementos en flex column con
+ancho de 100%*/
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*Aplicando peso de fuente bold y margen inferior
+de 8px*/
+.formulario__legend {
+    font-weight: var(--font-bold);
+    margin: 0 0 .5rem 0;
+}
+
+/*Contenedor de label, campo y span de color
+blanco, borde de 1px en la parte inferior,
+radio de 4px y margen inferior de 16px*/
+.formulario__componentes {
+    background: #ffffff;
+    border-bottom: solid .1rem #C8C8C8;
+    border-radius: .25rem;
+    display: block;
+    margin: 0 0 1rem 0;
+    padding: 0.5em .75rem;
+    position: static;
+}
+
+/*Aplicando margen inferior al último campo
+de 8px*/
+.formulario__componentes:last-of-type {
+    margin: 0 0 .5rem 0;
+}
+
+/*Aplicando color de fuente gris suave y tamaño
+de 12px*/
+.formulario__label {
+    color: var(--color-gris-regular);
+    font-size: var(--font-size-terciario-movil);
+    font-weight: var(--font-regular);
+}
+
+/*Configurando altura*/
+.formulario__campo[type="text"] {
+    height: 1.25rem;
+}
+
+/*Aplicando expansión solo vértical*/
+.formulario__textarea {
+    resize: vertical;
+}
+
+/*Configurando selectores de clase de tipo texto y textarea,
+pueden agregarse numéricos*/
+.formulario__campo[type="text"], .informaciones__textarea {
+    border: none;
+    color: var(--font-color);
+    display: block;
+    font-weight: var(--font-regular);
+    margin: .25rem 0 0 0;
+    width: 100%;
+}
+
+/*Configurando selectores de clase sin borde al activar el focus*/
+.formulario__campo[type="text"]:focus, textarea:focus {
+    outline: 0 none;
+}
+
+/*Se ocultará inicialmente el mensaje*/
+.formulario__span--error {
+    display: none;
+}
+
+/*Selector de cambio para mensajes de error de los elementos span usados en validaciones.js,
+desplegados en flexbox, con color de fondo validado en el  estándar de accesibilidad WCAG 2.0 acorde 
+a la tipografía en color blanco*/
+.formulario__componentes--incorrecto .formulario__span--error {
+    align-items: center;
+    background: #b40000;/*Color generado en https://contrastchecker.com/?utm_source=pocket_mylist*/
+    border-radius: .25rem;
+    color: white;
+    display: flex;
+    font-size: 0.8em;
+    font-weight: 400;
+    justify-content: flex-start;
+    margin: 0.5em 0 0 0;
+    padding: 0.5em;
+    width: auto;
+}
+
+.formulario__boton {
+    font-size: var(--font-size-secundario-movil);
+}
+
+/*Uso de @keyframes
+Sintáxis:
+.animation-block {
+    animation-name: animation;
+    animation-duration: 3s;
+    animation-fill-mode: forwards; <-- Establece una animación
+    en su mismo estado al llegar al 100%, en hover
+}
+@keyframes animation {
+    0% {
+        background: blue;
+    }
+    50% {
+        background: red;
+    }
+    100% {
+        background: green;
+    }
+}
+
+@keyframes efecto-cortina {
+    0% {
+        height: 0.8px;
+        padding: 0;
+    }
+    20% {
+        height: 5.8px;
+        padding: 0.1em;
+    }
+    40% {
+        height: 10.8px;
+        padding: 0.2em;
+    }
+    60% {
+        height: 15.8px;
+        padding: 0.3em;
+    }
+    80% {
+        height: 20.8px;
+        padding: 0.4em;
+    }
+
+    90% {
+        height: 25.8px;
+    }
+
+    100% {
+        height: auto;
+        padding: 0.5em;
+    }
+}
+
+*/
