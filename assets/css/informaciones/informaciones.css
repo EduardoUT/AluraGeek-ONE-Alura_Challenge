@@ -1,0 +1,33 @@
+.informaciones__alurageek {
+    display: flex;
+    flex-direction: column;
+}
+
+.informaciones__cabecera {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+
+.informaciones__links {
+    background: lightblue;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.informaciones__item {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+
+.informaciones__item:last-of-type {
+    margin: 0;
+}
+
+.informaciones__link {
+    width: fit-content;
+}
