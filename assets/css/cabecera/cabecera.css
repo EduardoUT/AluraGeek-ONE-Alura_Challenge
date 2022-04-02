@@ -3,6 +3,7 @@
     background: var(--color-blanco);
     display: flex;
     font-size: 0.875rem;
+    font-weight: var(--font-regular);
     height: 4.5rem;
     justify-content: space-between;
     position: fixed;
@@ -79,7 +80,6 @@ original*/
         border: none;
         border-radius: 1.25rem 0 0 1.25rem;
         box-sizing: border-box;
-        font-weight: var(--font-regular);
         height: inherit;
         max-width: inherit;
         padding: .5rem 1rem;
