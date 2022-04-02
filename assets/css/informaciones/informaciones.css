@@ -1,4 +1,5 @@
 .informaciones__alurageek {
+    background: var(--color-azul-suave);
     display: flex;
     flex-direction: column;
 }
@@ -11,7 +12,6 @@
 }
 
 .informaciones__links {
-    background: lightblue;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -30,4 +30,17 @@
 
 .informaciones__link {
     width: fit-content;
+}
+
+.informaciones__copyright {
+    align-items: center;
+    display: flex;
+    height: 6.375rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.informaciones__autor {
+    margin: 0;
+    text-align: center;
 }
