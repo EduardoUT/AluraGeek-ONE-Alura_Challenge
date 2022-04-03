@@ -1,7 +1,7 @@
 .banner {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         linear-gradient(180deg, rgba(0, 0, 0, 0) 41.15%, rgba(0, 0, 0, 0.8) 100%),
-        url("../../img/banner/champinoncito.jpg") center / cover;
+        url("../../img/banner/champinon.jpg") center / cover;
     display: flex;
     flex-direction: column;
     height: calc(12rem + 4.5rem);
