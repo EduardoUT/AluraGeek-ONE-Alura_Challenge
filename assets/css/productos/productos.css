@@ -61,7 +61,7 @@
     width: 4.812rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 704px) {
 
     .productos__linkCategoria {
         width: 6.062rem;
@@ -75,5 +75,34 @@
     .productos__detalles {
         grid-template-columns: repeat(auto-fill, minmax(10.25rem, 1fr));
         grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+
+    .productos {
+        margin: 0 auto;
+        max-width: 71rem;
+        padding: 2rem 0;
+        width: 100%;
+    }
+
+    .productos:last-of-type {
+        padding: 2rem 0 4rem 0;
+    }
+
+    .productos__categoria {
+        margin-top: 2rem;
+    }
+
+    .productos__detalles {
+        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    }
+
+    .productos__producto:nth-child(5),
+    .productos__producto:nth-child(6) {
+        display: inherit;
+        flex-direction: inherit;
+        width: inherit;
     }
 }
