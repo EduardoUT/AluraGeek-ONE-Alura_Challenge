@@ -1,0 +1,12 @@
+.copyright {
+    align-items: center;
+    display: flex;
+    height: 6.375rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.copyright__autor {
+    margin: 0;
+    text-align: center;
+}
