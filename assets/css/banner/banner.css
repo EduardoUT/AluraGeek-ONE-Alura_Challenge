@@ -9,6 +9,12 @@
     width: 100%;
 }
 
+.banner__texto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .banner__titulo, .banner__parrafo {
     color: var(--color-blanco);
     margin: 0 0 0.5rem 0;
@@ -34,5 +40,35 @@
 
     .banner__parrafo {
         font-size: 1.375rem;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .banner {
+        align-items: center;
+        justify-content: flex-end;
+        height: calc(7.187rem + 22rem);/*22rem */
+    }
+
+    .banner__texto {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: 2rem;
+        max-width: 71rem;
+        width: 100%;
+    }
+
+    .banner__titulo, .banner__parrafo {
+        margin: 0 0 1rem 0;
+    }
+
+    .banner__boton {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: var(--font-regular);
+        height: 3.187rem;
+        width: 8.062rem;
     }
 }
