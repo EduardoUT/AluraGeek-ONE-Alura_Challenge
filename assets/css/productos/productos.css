@@ -32,7 +32,8 @@
     width: inherit;
 }
 
-.productos__producto:nth-child(5), .productos__producto:nth-child(6) {
+.productos__producto:nth-child(5),
+.productos__producto:nth-child(6) {
     display: none;
 }
 
@@ -50,7 +51,9 @@
     font-weight: var(--font-bold);
 }
 
-.productos__imagen, .productos__nombre, .productos__precio {
+.productos__imagen,
+.productos__nombre,
+.productos__precio {
     margin: 0 0 .5rem 0;
 }
 
@@ -59,10 +62,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-    
+
     .productos__linkCategoria {
         width: 6.062rem;
     }
+
     .productos__link--flecha {
         height: 1rem;
         width: 1rem;
