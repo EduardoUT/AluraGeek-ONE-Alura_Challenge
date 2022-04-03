@@ -110,3 +110,34 @@ original*/
         width: 10.375rem;
     }
 }
+
+@media only screen and (min-width: 1366px) {
+    .cabecera {
+        height: 7.187rem;
+        padding: 0;
+    }
+
+    .cabecera__menu {
+        height: inherit;
+        margin: 0 auto;
+        max-width: 71rem; /*1136px*/
+    }
+
+    .cabecera__logoBuscador {
+        max-width: 37.562rem;/*601px*/
+    }
+
+    .cabecera__logo {
+        height: 3.125rem;
+        width: 11rem;
+    }
+
+    .cabecera__buscador {
+        max-width: 23.75rem;/*380px*/
+    }
+
+    .cabecera__boton {
+        font-weight: var(--font-regular);
+        width: 11.375rem;
+    }
+}
