@@ -121,6 +121,7 @@ original*/
         height: inherit;
         margin: 0 auto;
         max-width: 71rem; /*1136px*/
+        padding: 1rem 0;
     }
 
     .cabecera__logoBuscador {
