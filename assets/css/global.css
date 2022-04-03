@@ -52,7 +52,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1366px) {
     .container {
         padding: 0;
     }
