@@ -29,6 +29,7 @@
 }
 
 .informaciones__link {
+    font-weight: var(--font-medium);
     width: fit-content;
 }
 
