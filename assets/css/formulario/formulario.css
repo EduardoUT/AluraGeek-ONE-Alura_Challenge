@@ -52,7 +52,7 @@ de 12px*/
 
 /*Configurando selectores de clase de tipo texto y textarea,
 pueden agregarse numéricos*/
-.formulario__campo[type="text"], .informaciones__textarea {
+.formulario__campo[type="text"], .formulario__textarea {
     border: none;
     color: var(--font-color);
     display: block;
@@ -90,6 +90,12 @@ a la tipografía en color blanco*/
 
 .formulario__boton {
     font-size: var(--font-size-secundario-movil);
+}
+
+@media only screen and (min-width: 768px) {
+    .formulario {
+        width: 64%;
+    }
 }
 
 /*Uso de @keyframes
