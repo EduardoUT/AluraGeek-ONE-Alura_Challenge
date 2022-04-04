@@ -22,8 +22,7 @@
 }
 
 .boton--blanco:active {
-    background: var(--color-gris-suave);
-    opacity: 0.6;
+    opacity: 0.2;
 }
 
 .boton--azul {
