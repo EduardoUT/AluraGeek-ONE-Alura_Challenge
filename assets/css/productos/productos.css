@@ -9,14 +9,10 @@
     margin: 0 0 1rem 0;
 }
 
-/**.productos__link {
-    
-}**/
-
 .productos__link--flecha {
     background: url("../../img/iconos/flecha.svg") center / cover no-repeat;
-    width: .662rem;
     height: .662rem;
+    width: .662rem;
 }
 
 .productos__detalles {
@@ -48,6 +44,7 @@
 }
 
 .productos__precio {
+    font-size: 1rem;
     font-weight: var(--font-bold);
 }
 
