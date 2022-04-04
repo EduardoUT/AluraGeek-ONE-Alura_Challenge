@@ -17,6 +17,13 @@
     background: var(--color-blanco);
     border: solid 1px var(--color-azul-fuerte);
     color: var(--color-azul-fuerte);
+    opacity: 1;
+    transition: 0.3s ease-out;
+}
+
+.boton--blanco:active {
+    background: var(--color-gris-suave);
+    opacity: 0.6;
 }
 
 .boton--azul {
