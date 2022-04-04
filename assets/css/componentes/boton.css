@@ -1,15 +1,16 @@
-/*
-.btn--grande {
-    width: 182px;
-    height: 51px;   
-}
-*/
-
-.boton--blanco, .boton--azul {
+.boton--blanco,
+.boton--azul {
+    align-items: center;
     cursor: pointer;
-    height: 2.5rem;
-    width: 8.312rem;
+    display: flex;
     font-weight: var(--font-semi-bold);
+    font-size: .875rem;
+    height: 2.5rem;
+    justify-content: center;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    width: 8.312rem;
 }
 
 .boton--blanco {
@@ -18,14 +19,20 @@
     color: var(--color-azul-fuerte);
 }
 
-.boton--blanco, .boton--azul {
-    padding: 0.75rem 1rem;
-    text-align: center;
-    text-decoration: none;
-}
-
 .boton--azul {
     background: var(--color-azul-fuerte);
     border: none;
     color: var(--color-blanco);
+}
+
+@media only screen and (min-width: 1366px) {
+
+    .boton--blanco,
+    .boton--azul {
+        font-size: 1rem;
+        height: 3.187rem;
+        padding: 1rem;
+        text-align: center;
+        text-decoration: none;
+    }
 }
