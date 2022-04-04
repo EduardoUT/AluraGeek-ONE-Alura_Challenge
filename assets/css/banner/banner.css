@@ -26,7 +26,7 @@
 }
 
 .banner__boton {
-    font-size: var(--font-size-secundario-movil);
+    font-size: 0.875rem;
     width: 7.375rem;
 }
 
