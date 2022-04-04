@@ -9,6 +9,7 @@ ancho de 100%*/
 /*Aplicando peso de fuente bold y margen inferior
 de 8px*/
 .formulario__legend {
+    font-size: 1rem;
     font-weight: var(--font-bold);
     margin: 0 0 .5rem 0;
 }
@@ -36,7 +37,7 @@ de 8px*/
 de 12px*/
 .formulario__label {
     color: var(--color-gris-regular);
-    font-size: var(--font-size-terciario-movil);
+    font-size: .75rem;
     font-weight: var(--font-regular);
 }
 
@@ -52,17 +53,20 @@ de 12px*/
 
 /*Configurando selectores de clase de tipo texto y textarea,
 pueden agregarse numéricos*/
-.formulario__campo[type="text"], .formulario__textarea {
+.formulario__campo[type="text"],
+.formulario__textarea {
     border: none;
     color: var(--font-color);
     display: block;
+    font-size: 1rem;
     font-weight: var(--font-regular);
     margin: .25rem 0 0 0;
     width: 100%;
 }
 
 /*Configurando selectores de clase sin borde al activar el focus*/
-.formulario__campo[type="text"]:focus, textarea:focus {
+.formulario__campo[type="text"]:focus,
+textarea:focus {
     outline: 0 none;
 }
 
@@ -76,7 +80,8 @@ desplegados en flexbox, con color de fondo validado en el  estándar de accesibi
 a la tipografía en color blanco*/
 .formulario__componentes--incorrecto .formulario__span--error {
     align-items: center;
-    background: #b40000;/*Color generado en https://contrastchecker.com/?utm_source=pocket_mylist*/
+    background: #b40000;
+    /*Color generado en https://contrastchecker.com/?utm_source=pocket_mylist*/
     border-radius: .25rem;
     color: white;
     display: flex;
@@ -89,12 +94,24 @@ a la tipografía en color blanco*/
 }
 
 .formulario__boton {
-    font-size: var(--font-size-secundario-movil);
+    font-size: .875rem;
 }
 
 @media only screen and (min-width: 768px) {
     .formulario {
         width: 64%;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .formulario {
+        width: 50%;
+    }
+
+    .formulario__boton {
+        font-size: 1rem;
+        font-weight: var(--font-regular);
+        width: 10rem;
     }
 }
 
