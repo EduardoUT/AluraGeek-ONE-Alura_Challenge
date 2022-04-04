@@ -142,4 +142,4 @@ Enviar mensaje 14px Grosor: 600 color: blanco
 Desarrollado por Eduardo Reyes Hernández © 2022 1rem Grosor: 500 color: gris fuerte
 
 
-
+@media only screen and (min-width: 1366px) {}
