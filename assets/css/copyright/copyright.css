@@ -1,12 +1,14 @@
 .copyright {
     align-items: center;
     display: flex;
+    flex-direction: column;
     height: 6.375rem;
     justify-content: center;
     width: 100%;
 }
 
 .copyright__autor {
+    font-size: 1rem;
     margin: 0;
     text-align: center;
 }
