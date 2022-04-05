@@ -54,13 +54,13 @@
         align-items: center;
         height: calc(7.187rem + 22rem);
         justify-content: flex-end;
+        padding: 2rem 0;
     }
 
     .banner__texto {
         display: flex;
         flex-direction: column;
         height: auto;
-        margin: 2rem;
         max-width: 71rem;
         width: 100%;
     }
