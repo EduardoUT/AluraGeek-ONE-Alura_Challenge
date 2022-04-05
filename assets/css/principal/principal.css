@@ -1,4 +1,9 @@
 .principal {
     background: var(--color-gris-suave);
-    padding: 4rem 0;
+}
+
+@media only screen and (min-width: 1366px) {
+    .principal {
+        padding: 4rem 0;
+    }
 }
