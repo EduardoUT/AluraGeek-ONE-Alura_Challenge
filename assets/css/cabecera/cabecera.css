@@ -36,7 +36,7 @@ original*/
     width: 6.25rem;
 }
 
-.cabecera__buscador,
+.cabecera__formulario,
 .cabecera__campo[type="text"] {
     display: none;
 }
@@ -45,6 +45,10 @@ original*/
 .cabecera__iconoMovil {
     height: 1.1rem;
     width: 1.094rem;
+}
+
+.ocultar {
+    display: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -57,18 +61,15 @@ original*/
     .cabecera__logoBuscador {
         align-items: center;
         display: flex;
-        justify-content: space-between;
-        max-width: 26.25rem;
-        width: 59%;
+        width: 57.4%;
     }
 
-    .cabecera__buscador {
+    .cabecera__formulario {
         display: flex;
         height: 40px;
-        max-width: 18.75rem;
+        margin: 0 0 0 2rem;
         order: 1;
         width: 100%;
-        /*272px*/
     }
 
     .cabecera__campo[type="text"] {
@@ -78,10 +79,9 @@ original*/
         box-sizing: border-box;
         display: block;
         height: inherit;
-        max-width: inherit;
         padding: .5rem 1rem;
         position: static;
-        width: inherit;
+        width: 100%;
         /*240px*/
     }
 
@@ -89,11 +89,13 @@ original*/
         outline: none;
     }
 
-    .cabecera__linkBuscar {
+    .cabecera__botonBuscar {
         align-items: center;
         background: #f5f5f5;
+        border: none;
         border-radius: 0 1.25rem 1.25rem 0;
         box-sizing: border-box;
+        cursor: pointer;
         display: flex;
         height: inherit;
         justify-content: center;
@@ -122,18 +124,12 @@ original*/
     }
 
     .cabecera__logoBuscador {
-        max-width: 37.562rem;
-        /*601px*/
+        width: 50%;
     }
 
     .cabecera__logo {
         height: 3.125rem;
         width: 11rem;
-    }
-
-    .cabecera__buscador {
-        max-width: 23.75rem;
-        /*380px*/
     }
 
     .cabecera__boton {
