@@ -32,12 +32,13 @@
                 <a class="cabecera__logo" href="index.html" title="Ir a la página principal" tabindex="0">
                     <img class="cabecera__logo" src="./assets/img/iconos/logo-alura-geek.svg" alt="Logo de AluraGeek">
                 </a>
-                <div class="cabecera__buscador">
-                    <input class="cabecera__campo campo--busqueda" type="text" placeholder="¿Qué deseas buscar?">
-                    <a class="cabecera__linkBuscar" href="#" title="Buscar productos" tabindex="0">
+                <form action="" class="cabecera__formulario">
+                    <input class="cabecera__campo campo--busqueda" type="text" placeholder="¿Qué deseas buscar?"
+                        data-form-buscador>
+                    <button class="cabecera__botonBuscar" type="submit" href="#" title="Buscar productos" tabindex="0">
                         <img class="cabecera__icono" src="./assets/img/iconos/lupa.svg" alt="Icono de Lupa">
-                    </a>
-                </div>
+                    </button>
+                </form>
             </div>
             <a class="cabecera__boton boton--primario" href="#" title="Inicia sesión" tabindex="0">Login</a>
             <a class="cabecera__linkBuscarMovil" href="#" title="Buscar productos" tabindex="0">
@@ -50,7 +51,8 @@
             <div class="banner__texto">
                 <h1 class="banner__titulo titulo-style">Febrero Promocional</h1>
                 <p class="banner__parrafo">Productos selecionados con 33% de descuento</p>
-                <a class="banner__boton boton--secundario" href="#" title="Ver más consolas" tabindex="0">Ver consolas</a>
+                <a class="banner__boton boton--secundario" href="#" title="Ver más consolas" tabindex="0">Ver
+                    consolas</a>
             </div>
         </section>
         <section class="productos container">
