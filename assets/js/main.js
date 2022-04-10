@@ -3,18 +3,16 @@ import mostrarOcultarBuscador from "./componentes/buscadorMovil.js";
 
 /**Función IIFE */
 (() => {
-    const mediaQuery = window.matchMedia("(max-width: 767px)");
-    const botonBuscarMovil = document.querySelector(".cabecera__botonBuscarMovil");
+    const logoBuscadorContainer = document.querySelector(".cabecera__logoBuscador");
     const logoCabecera = document.querySelector(".cabecera__logo");
-    const botonLogin = document.querySelector(".cabecera__boton");
     const formularioBusqueda = document.querySelector(".cabecera__formulario");
     const campoBuscar = document.querySelector(".cabecera__campo");
-    const containerLogoBuscador = document.querySelector(".cabecera__logoBuscador");
+    const botonLogin = document.querySelector(".cabecera__boton");
+    const botonBuscarMovil = document.querySelector(".cabecera__botonBuscarMovil");
     mostrarOcultarMenu();
-    mostrarOcultarBuscador(mediaQuery, botonBuscarMovil, logoCabecera,
-        botonLogin, formularioBusqueda, campoBuscar, containerLogoBuscador);
+    mostrarOcultarBuscador(logoBuscadorContainer, logoCabecera,
+        formularioBusqueda, campoBuscar, botonBuscarMovil, botonLogin);
+    window.addEventListener("load", (event) => {
+        event.preventDefault();
+    });
 })();
-
-window.addEventListener("load", (event) => {
-    event.preventDefault();
-});
