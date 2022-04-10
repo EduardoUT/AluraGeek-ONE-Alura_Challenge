@@ -1,36 +1,56 @@
-const mostrarOcultarBuscador = (mediaQuery, botonBuscarMovil, logoCabecera, 
-    botonLogin, formularioBusqueda, campoBuscar, containerLogoBuscador) => {
+const mostrarOcultarBuscador = (logoBuscadorContainer, logoCabecera,
+    formularioBusqueda, campoBuscar, botonBuscarMovil, botonLogin) => {
     //Especificando comportamiento solo para dispositivos menores que 767px
-        if (mediaQuery.matches) {
+    //Capturando ancho de pantalla.
+    const anchoVentana = window.innerWidth;
+    //Evaluando si corresponde al tamaño para celulares
+    const rangoAncho = (anchoVentana >= 0 && anchoVentana <= 767);
+    if (rangoAncho) {
         //Ocultando elementos del header al hacer click en la lupa.
         botonBuscarMovil.addEventListener("click", () => {
-            //Ocultando elementos del menú original.
-            containerLogoBuscador.classList.remove("cabecera__logoBuscador");
+            //Ocultando elementos (logotipo, botón login y lupa) del menú original.
             logoCabecera.classList.add("cabecera__ocultarElemento");
-            formularioBusqueda.classList.remove("cabecera__formulario");
-            campoBuscar.classList.remove("cabecera__campo");
             botonLogin.classList.add("cabecera__ocultarElemento");
             botonBuscarMovil.classList.add("cabecera__ocultarElemento");
-            //Mostrando buscador.
-            containerLogoBuscador.classList.add("cabecera__logoBuscador--movil");
-            formularioBusqueda.classList.add("cabecera__formulario--movil");
-            campoBuscar.classList.add("cabecera__campo--movil");
+
+            //Mostrando elementos (form, campo de búsqueda y ancho).
+            logoBuscadorContainer.classList.add("cabecera__logoBuscador--ancho");
+            formularioBusqueda.classList.remove("cabecera__ocultarElemento");
+            /**En CSS la propiedad padron asignada para dispositivos
+             * móviles es display: none; la cambio a flex para que
+             * pueda mostrarse.
+             */
+            formularioBusqueda.style.display = "flex";
+            campoBuscar.classList.remove("cabecera__ocultarElemento");
+            /**En CSS la propiedad padron asignada para dispositivos
+             * móviles es display: none; la cambio a block para que
+             * pueda mostrarse.
+             */
+            campoBuscar.style.display = "block";
+            formularioBusqueda.classList.add("cabecera__formulario");
+            campoBuscar.classList.add("cabecera__campo");
             campoBuscar.focus();
         });
 
-        //Mostrando menú original cuando el campo pierde el foco.
-        campoBuscar.addEventListener("focusout", () => {
+        //Mostrando elementos (logotipo, botón login y lupa) cuando el campo pierde el foco.
+        campoBuscar.addEventListener("blur", () => {
             //Mostrando elementos del menú original.
-            containerLogoBuscador.classList.remove("cabecera__logoBuscador--movil");
+            logoBuscadorContainer.classList.remove("cabecera__logoBuscador--ancho");
             logoCabecera.classList.remove("cabecera__ocultarElemento");
-            formularioBusqueda.classList.remove("cabecera__formulario--movil");
-            campoBuscar.classList.remove("cabecera__campo--movil");
             botonLogin.classList.remove("cabecera__ocultarElemento");
             botonBuscarMovil.classList.remove("cabecera__ocultarElemento");
+
             //Ocultando buscador.
-            containerLogoBuscador.classList.add("cabecera__logoBuscador");
-            formularioBusqueda.classList.add("cabecera__formulario");
-            campoBuscar.classList.add("cabecera__campo");
+            formularioBusqueda.classList.add("cabecera__ocultarElemento");
+            /**Cuando el campo pierde el foco, removemos el estilo
+             * asignado en el evento click de arriba.
+             */
+            formularioBusqueda.removeAttribute("style");
+            campoBuscar.classList.add("cabecera__ocultarElemento");
+            /**Cuando el campo pierde el foco, removemos el estilo
+             * asignado en el evento click de arriba.
+             */
+            campoBuscar.removeAttribute("style");
         });
     }
 }
