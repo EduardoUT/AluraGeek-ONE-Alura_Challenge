@@ -68,7 +68,7 @@ original*/
 }
 
 /*Selectores con estilos para búscador en dispositivos móviles. 
-con flag --movil*/
+con flag --movil utilizados en mostrarOcultarMenu.js*/
 .cabecera__logoBuscador--movil {
     align-items: center;
     display: flex;
