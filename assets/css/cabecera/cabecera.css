@@ -41,20 +41,6 @@ original*/
     display: none; 
 } 
 
-.cabecera__botonBuscar {
-    align-items: center;
-    background: #f5f5f5;
-    border: none;
-    border-radius: 0 1.25rem 1.25rem 0;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: flex;
-    height: inherit;
-    justify-content: center;
-    padding: .5rem;
-    width: 3rem;
-}
-
 .cabecera__botonBuscarMovil {
     background: transparent;
     border: none;
@@ -67,27 +53,31 @@ original*/
     width: 1.094rem;
 }
 
-/*Selectores con estilos para búscador en dispositivos móviles. 
-con flag --movil utilizados en mostrarOcultarMenu.js*/
-.cabecera__logoBuscador--movil {
+.cabecera__logoBuscador {
     align-items: center;
     display: flex;
+    width: fit-content;
+}
+
+/*Altera el ancho del container del
+logo y el buscador a un ancho completo con
+JavaScript para dispositivos móviles en
+buscadorMovil.js en el evento click*/
+.cabecera__logoBuscador--ancho {
     width: 100%;
 }
 
-.cabecera__formulario--movil {
-    display: flex;
+.cabecera__formulario {
     height: 40px;
     margin: 0;
     width: 100%;
 }
 
-.cabecera__campo--movil[type="text"] {
+.cabecera__campo[type="text"] {
     background: #f5f5f5;
     border: none;
-    border-radius: 1.25rem 0 0 1.25rem;
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
     box-sizing: border-box;
-    display: block;
     height: inherit;
     padding: .5rem 1rem;
     position: static;
@@ -95,8 +85,13 @@ con flag --movil utilizados en mostrarOcultarMenu.js*/
     /*240px*/
 }
 
-.cabecera__campo--movil[type="text"]:focus {
+.cabecera__campo[type="text"]:focus {
     outline: none;
+}
+
+.cabecera__campo[type="text"]::placeholder {
+    background: url("../../img/iconos/lupa.svg") 93.5% center no-repeat;
+    background-size: 1.1rem 1.094rem;
 }
 
 /*Selector de clase usado en mostrarOcultarMenu.js en JavaScript para
@@ -110,7 +105,7 @@ ocultar logo, botón Login y botón de lupa*/
     .cabecera__botonBuscarMovil,
     .cabecera__iconoMovil {
         display: none;
-    }
+    } 
 
     .cabecera__logoBuscador {
         align-items: center;
@@ -120,41 +115,17 @@ ocultar logo, botón Login y botón de lupa*/
 
     .cabecera__formulario {
         display: flex;
-        height: 40px;
         margin: 0 0 0 2rem;
         order: 1;
-        width: 100%;
     }
 
     .cabecera__campo[type="text"] {
-        background: #f5f5f5;
-        border: none;
-        border-radius: 1.25rem 0 0 1.25rem;
-        box-sizing: border-box;
         display: block;
-        height: inherit;
-        padding: .5rem 1rem;
-        position: static;
-        width: 100%;
         /*240px*/
     }
 
     .cabecera__campo[type="text"]:focus {
         outline: none;
-    }
-
-    .cabecera__botonBuscar {
-        align-items: center;
-        background: #f5f5f5;
-        border: none;
-        border-radius: 0 1.25rem 1.25rem 0;
-        box-sizing: border-box;
-        cursor: pointer;
-        display: flex;
-        height: inherit;
-        justify-content: center;
-        padding: .5rem;
-        width: 3rem;
     }
 
     .cabecera__boton {
@@ -178,7 +149,7 @@ ocultar logo, botón Login y botón de lupa*/
     }
 
     .cabecera__logoBuscador {
-        width: 50%;
+        width: 53%;
     }
 
     .cabecera__logo {
