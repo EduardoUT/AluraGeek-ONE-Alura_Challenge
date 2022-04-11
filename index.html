@@ -284,7 +284,7 @@
                     </li>
                 </ul>
             </div>
-            <form class="formulario" action="">
+            <form class="formulario" action="" id="formulario-rodapie">
                 <legend class="formulario__legend">Hable con nosotros.</legend>
                 <p class="formulario__instruccion parrafo">Campos Obligatorios</p>
                 <div class="formulario__componentes">
@@ -300,11 +300,11 @@
                     <label class="formulario__label" for="mensaje" tabindex="0">Mensaje:</label>
                     <textarea class="formulario__textarea formulario__campoEstilo" id="mensaje" required
                         placeholder="Escribe tu mensaje" rows="3" tabindex="0"
+                        title="El campo nombre no puede estar en blanco o vacío, debe contener mínimo 20 carácteres máximo 120"
                         minlength="20" maxlength="120" data-contacto="mensaje"></textarea>
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
-                <button class="formulario__boton boton--secundario" id="btn-enviar" type="submit" tabindex="0">Enviar
-                    mensaje</button>
+                <input class="formulario__boton boton--secundario" id="btn-enviar" type="submit" value="Enviar Mensaje" tabindex="0">
             </form>
         </div>
     </footer>
