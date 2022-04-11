@@ -286,16 +286,21 @@
             </div>
             <form class="formulario" action="">
                 <legend class="formulario__legend">Hable con nosotros.</legend>
+                <p class="formulario__instruccion parrafo">Campos Obligatorios</p>
                 <div class="formulario__componentes">
                     <label class="formulario__label" for="nombre" tabindex="0">Nombre:</label>
-                    <input class="formulario__campo formulario__campoEstilo" id="nombre" type="text"
-                        placeholder="Nombre(s) Apellido(s)" tabindex="0" data-contacto="nombre">
+                    <input class="formulario__campo formulario__campoEstilo" id="nombre" type="text" required
+                        placeholder="Nombre(s) Apellido(s)" tabindex="0"
+                        title="La primer letra de cada nombre y apellido debe ser en mayúscula, no debe haber más de un espacio en blanco y no puede haber más de 50 carácteres."
+                        pattern="^(?=.{3,50}$)([A-ZÁÉÍÓÚ][a-záéíóúñ]+(?:[\s][A-ZÁÉÍÓÚ][a-záéíóúñ]+)+)$"
+                        minlength="3" maxlength="40" data-contacto="nombre">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
-                    <label class="formulario__label" for="mensaje" tabindex="0">Mensaje</label>
-                    <textarea class="formulario__textarea formulario__campoEstilo" id="mensaje"
-                        placeholder="Escribe tu mensaje" rows="3" tabindex="0" data-contacto="mensaje"></textarea>
+                    <label class="formulario__label" for="mensaje" tabindex="0">Mensaje:</label>
+                    <textarea class="formulario__textarea formulario__campoEstilo" id="mensaje" required
+                        placeholder="Escribe tu mensaje" rows="3" tabindex="0"
+                        minlength="20" maxlength="120" data-contacto="mensaje"></textarea>
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <button class="formulario__boton boton--secundario" id="btn-enviar" type="submit" tabindex="0">Enviar
