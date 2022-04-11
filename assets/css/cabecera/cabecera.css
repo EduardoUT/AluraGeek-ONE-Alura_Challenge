@@ -90,7 +90,7 @@ buscadorMovil.js en el evento click*/
 }
 
 .cabecera__campo[type="text"]::placeholder {
-    background: url("../../img/iconos/lupa.svg") 93.5% center no-repeat;
+    background: url("../../img/iconos/lupa.svg") calc(100% - 1rem) center no-repeat;
     background-size: 1.1rem 1.094rem;
 }
 
