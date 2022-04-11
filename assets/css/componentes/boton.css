@@ -10,6 +10,7 @@
     padding: .75rem 1rem;
     text-align: center;
     text-decoration: none;
+    transition: .3s;
     width: 8.312rem;
 }
 
@@ -29,6 +30,15 @@
     background: var(--color-azul-fuerte);
     border: none;
     color: var(--color-blanco);
+}
+
+/*Selector de cambio para deshabilitar el puntero, con fondo
+y borde gris acorde a la WCAG*/
+.boton--bloqueado[type="submit"] {
+    background: #4e4b4b;
+    border: solid 0.1em #4e4b4b;
+    pointer-events: none;
+    transition: 0.3s;
 }
 
 @media only screen and (min-width: 1366px) {
