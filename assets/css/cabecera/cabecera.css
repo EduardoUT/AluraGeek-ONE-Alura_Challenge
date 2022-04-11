@@ -129,7 +129,7 @@ ocultar logo, botón Login y botón de lupa*/
     }
 
     .cabecera__campo[type="text"]::placeholder {
-        background-position: calc(100% - .5rem) center;
+        background-position: calc(100% - 1rem) center;
     }
 
     .cabecera__boton {
