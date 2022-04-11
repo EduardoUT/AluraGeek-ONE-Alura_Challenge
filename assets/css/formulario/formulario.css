@@ -9,9 +9,18 @@ ancho de 100%*/
 /*Aplicando peso de fuente bold y margen inferior
 de 8px*/
 .formulario__legend {
-    font-size: 1rem;
     font-weight: var(--font-bold);
+}
+
+.formulario__legend, .formulario__instruccion {
+    font-size: 1rem;
     margin: 0 0 .5rem 0;
+}
+
+.formulario__instruccion::after {
+    color: #b40000;
+    content: "(⁕)";
+    margin: 0 0 0 .2rem;
 }
 
 /*Contenedor de label, campo y span de color
@@ -39,6 +48,14 @@ de 12px*/
     color: var(--color-gris-regular);
     font-size: .75rem;
     font-weight: var(--font-regular);
+}
+
+/*Símbolo de campo obligatorio 
+después de cada nombre de campo.*/
+.formulario__label::before {
+    color: #b40000;
+    content: "⁕";
+    margin: 0 .2rem 0 0;
 }
 
 /*Configurando altura*/
