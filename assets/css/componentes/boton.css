@@ -1,5 +1,5 @@
 .boton--primario,
-.boton--secundario  {
+.boton--secundario {
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -10,7 +10,7 @@
     padding: .75rem 1rem;
     text-align: center;
     text-decoration: none;
-    transition: .3s;
+    transition: .5s;
     width: 8.312rem;
 }
 
@@ -19,7 +19,7 @@
     border: solid 1px var(--color-azul-fuerte);
     color: var(--color-azul-fuerte);
     opacity: 1;
-    transition: 0.3s ease-out;
+    transition: .3s ease-out;
 }
 
 .boton--primario:active {
@@ -38,7 +38,6 @@ y borde gris acorde a la WCAG*/
     background: #4e4b4b;
     border: solid 0.1em #4e4b4b;
     pointer-events: none;
-    transition: 0.3s;
 }
 
 @media only screen and (min-width: 1366px) {
