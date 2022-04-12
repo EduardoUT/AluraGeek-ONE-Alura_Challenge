@@ -1,0 +1,25 @@
+.login-principal {
+    background: var(--color-gris-suave);
+    padding: 4.5rem 1rem 4.75rem 1rem;
+}
+
+.login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 6.0625rem 0 0 0;
+}
+
+.login__legend,
+.login__componentes {
+    margin: 0 0 1rem 0 !important;
+}
+
+.login__componentes {
+    width: 100%;
+}
+
+.login__boton {
+    width: 6.812rem;
+}
