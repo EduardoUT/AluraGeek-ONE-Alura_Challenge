@@ -90,7 +90,7 @@ buscadorMovil.js en el evento click*/
 }
 
 .cabecera__campo[type="text"]::placeholder {
-    background: url("../../img/iconos/lupa.svg") calc(100% - .5rem) center no-repeat;
+    background: url("../../img/iconos/lupa.svg") calc(100% - 1rem) center no-repeat;
     background-size: 1.1rem 1.094rem;
 }
 
@@ -126,10 +126,6 @@ ocultar logo, botón Login y botón de lupa*/
 
     .cabecera__campo[type="text"]:focus {
         outline: none;
-    }
-
-    .cabecera__campo[type="text"]::placeholder {
-        background-position: calc(100% - 1rem) center;
     }
 
     .cabecera__boton {
