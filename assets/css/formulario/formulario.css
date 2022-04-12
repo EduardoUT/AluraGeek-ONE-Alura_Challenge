@@ -59,6 +59,8 @@ después de cada nombre de campo.*/
 }
 
 /*Configurando altura*/
+.formulario__campo[type="email"],
+.formulario__campo[type="password"],
 .formulario__campo[type="text"] {
     height: 1.25rem;
 }
@@ -71,6 +73,8 @@ después de cada nombre de campo.*/
 /*Configurando selectores de clase de tipo texto y textarea,
 pueden agregarse numéricos*/
 .formulario__campo[type="text"],
+.formulario__campo[type="email"],
+.formulario__campo[type="password"],
 .formulario__textarea {
     border: none;
     color: var(--font-color);
@@ -83,6 +87,8 @@ pueden agregarse numéricos*/
 
 /*Configurando selectores de clase sin borde al activar el focus*/
 .formulario__campo[type="text"]:focus,
+.formulario__campo[type="email"]:focus,
+.formulario__campo[type="password"]:focus,
 textarea:focus {
     outline: 0 none;
 }
