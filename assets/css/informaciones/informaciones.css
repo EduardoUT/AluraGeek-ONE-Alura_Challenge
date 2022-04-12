@@ -22,6 +22,11 @@
     width: 100%;
 }
 
+.informaciones__logo {
+    height: 3.125rem;
+    width: 11rem;
+}
+
 .informaciones__links {
     list-style: none;
     margin: 0;
