@@ -98,7 +98,8 @@ Firefox 19+ */
 /* Posicionando icono de lupa en input de búsqueda para
 Chrome/Opera/Safari */
 .cabecera__campo[type="text"]::-webkit-input-placeholder {
-    background: url("../../img/iconos/lupa.svg") right center / 1rem no-repeat;
+    background: url("../../img/iconos/lupa.svg") right center / no-repeat;
+    background-size: 1rem;
 }
 
 /*Selector de clase usado en mostrarOcultarMenu.js en JavaScript para
