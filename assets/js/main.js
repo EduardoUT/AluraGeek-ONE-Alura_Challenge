@@ -1,7 +1,7 @@
 import mostrarOcultarMenu from "./componentes/mostrarOcultarMenu.js";
 import mostrarOcultarBuscador from "./componentes/buscadorMovil.js";
-import { valida } from "./formularios/validaciones.js";
-import habilitarBtnRodapie from "./componentes/habilitarBoton.js";
+import validarCampos from "./formularios/validarCampos.js";
+import { habilitarBtnRodapie } from "./formularios/habilitarBoton.js";
 
 /**Función IIFE */
 (() => {
@@ -9,26 +9,17 @@ import habilitarBtnRodapie from "./componentes/habilitarBoton.js";
     const logoCabecera = document.querySelector(".cabecera__logo");
     const formularioBusqueda = document.querySelector(".cabecera__formulario");
     const campoBuscar = document.querySelector(".cabecera__campo");
-    const botonLogin = document.querySelector(".cabecera__boton");
-    const botonBuscarMovil = document.querySelector(".cabecera__botonBuscarMovil");
-    const campos = document.querySelectorAll("[data-contacto]");
+    const btnLoginCabecera = document.querySelector(".cabecera__boton");
+    const btnBuscarMovil = document.querySelector(".cabecera__botonBuscarMovil");
     const btnEnviar = document.getElementById("btn-enviar");
     const formularioRodapie = document.getElementById("formulario-rodapie");
 
     mostrarOcultarMenu();
     mostrarOcultarBuscador(logoBuscadorContainer, logoCabecera,
-        formularioBusqueda, campoBuscar, botonBuscarMovil, botonLogin);
+        formularioBusqueda, campoBuscar, btnBuscarMovil, btnLoginCabecera);
     habilitarBtnRodapie(btnEnviar);
-
-    const validarCampos = (campos) => {
-        campos.forEach((campo) => {
-            campo.addEventListener("blur", (campo) => {
-                valida(campo.target);
-                habilitarBtnRodapie(btnEnviar);
-            });
-        });
-    }
-
+    validarCampos();
+    
     const validarBtnRodapie = (event) => {
         const element = event.target;
         if (element && element.tagName == 'INPUT') {
@@ -45,5 +36,4 @@ import habilitarBtnRodapie from "./componentes/habilitarBoton.js";
     window.addEventListener("load", evitarRecarga);
     btnEnviar.addEventListener("click", evitarRecarga);
     formularioRodapie.addEventListener("keyup", validarBtnRodapie);
-    validarCampos(campos);
 })();
