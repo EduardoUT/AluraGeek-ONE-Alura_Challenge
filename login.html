@@ -38,16 +38,22 @@
         </nav>
     </header>
     <main class="login-principal">
-        <form class="login" action="" id="formulario-login">
+        <form class="login" action="./index.html" id="formulario-login">
             <legend class="login__legend formulario__legend">Iniciar Sesión</legend>
             <div class="login__componentes formulario__componentes">
                 <label class="login__label formulario__label" for="correo" tabindex="0">Correo Electrónico:</label>
-                <input class="formulario__campo formulario__campoEstilo" id="correo" type="email" data-contacto="correo">
+                <input class="formulario__campo formulario__campoEstilo" id="correo" type="email"
+                    placeholder="Escriba su correo electrónico"
+                    title="No debe estar en blanco o vacío, debe estar en formato correo@dominio.com"
+                    pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+[.](?:[a-zA-Z0-9-]+)([.][a-z]{2,4})?$"
+                    required data-contacto="correo">
                 <span class="formulario__span--error" tabindex="0">Error</span>
             </div>
             <div class="login__componentes formulario__componentes">
                 <label class="login__label formulario__label" for="password">Contraseña:</label>
-                <input class="formulario__campo formulario__campoEstilo" id="password" type="password" data-contacto="password">
+                <input class="formulario__campo formulario__campoEstilo" id="password" type="password"
+                    placeholder="Escriba su contraseña" title="El campo contraseña no debe estar en blanco o vacío"
+                    required data-contacto="password">
                 <span class="formulario__span--error" tabindex="0">Error</span>
             </div>
             <input class="login__boton boton--secundario" id="btn-login" type="submit" value="Entrar" tabindex="0">
@@ -131,6 +137,7 @@
         <p class="copyright__autor parrafo">&#169; 2022</p>
     </div>
     <script src="./assets/js/main.js" type="module"></script>
+    <script src="./assets/js/login.js" type="module"></script>
 </body>
 
 </html>
