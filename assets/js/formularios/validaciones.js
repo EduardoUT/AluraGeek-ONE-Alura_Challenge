@@ -101,6 +101,11 @@ const mensajesDeError = {
         tooShort: "El valor mínimo requerido de carácteres es de 3.",
         tooLong: "El campo nombre sólo puede contener un máximo de 40 carácteres",
     },
+    mensaje: {
+        valueMissing: "El campo mensaje no puede estar en blanco o vacío.",
+        tooLong: "El mensaje sólo puede contener un máximo de 120 carácteres",
+        tooShort: "Debe contener mínimo 20 carácteres",
+    },
     correo: {
         valueMissing: "El campo correo no puede estar en blanco o vacío.",
         patternMismatch: "El formato admitido debe ser en formato correousuario@dominio.com",
@@ -108,10 +113,8 @@ const mensajesDeError = {
             "Deber estar en formato e-mail conteniendo el caracter especial @ " +
             "seguido de un dominio o proveedor seguido de un punto(.).",
     },
-    mensaje: {
-        valueMissing: "El campo mensaje no puede estar en blanco o vacío.",
-        tooLong: "El mensaje sólo puede contener un máximo de 120 carácteres",
-        tooShort: "Debe contener mínimo 20 carácteres",
+    password: {
+        valueMissing: "El campo contraseña no puede estar en blanco o vacío.",
     }
 };
 
