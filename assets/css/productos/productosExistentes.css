@@ -1,0 +1,23 @@
+.productos-existentes {
+    padding: 4.5rem 0 0 0;
+}
+
+.productos-existentes__producto {
+    display: flex !important; 
+    flex-direction: column !important;
+    width: 100% !important;
+}
+
+.productos-existentes__encabezado {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 1rem 0;
+}
+
+.productos-existentes__titulo {
+    margin: 0 0 1rem 0;
+}
+
+.productos-existentes__boton {
+    width: fit-content;
+}
