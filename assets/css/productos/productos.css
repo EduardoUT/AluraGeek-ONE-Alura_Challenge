@@ -38,6 +38,78 @@
     width: inherit;
 }
 
+.imagen--taza-stormtrooper {
+    background: url("../../img/productos/star_wars/taza-stormtrooper.png") center center / cover no-repeat;
+}
+
+.imagen--figura-darth-vader {
+    background: url("../../img/productos/star_wars/figura-darth-vader.png") center center / cover no-repeat;
+}
+
+.imagen--figura-yoda {
+    background: url("../../img/productos/star_wars/figura-yoda.png") center center / cover no-repeat;
+}
+
+.imagen--figura-stormtrooper {
+    background: url("../../img/productos/star_wars/figura-stormtrooper.png") center center / cover no-repeat;
+}
+
+.imagen--figura-grogu {
+    background: url("../../img/productos/star_wars/figura-grogu.png") center center / cover no-repeat;
+}
+
+.imagen--figura-kylo-ren {
+    background: url("../../img/productos/star_wars/figura-kylo-ren.png") center center / cover no-repeat;
+}
+
+.imagen--control-xbox {
+    background: url("../../img/productos/consolas/control-xbox.png") center center / cover no-repeat;
+}
+
+.imagen--consolas-playstation5 {
+    background: url("../../img/productos/consolas/playstation-5.png") center center / cover no-repeat;
+}
+
+.imagen--consolas-nintendo-nes {
+    background: url("../../img/productos/consolas/nintendo-nes.png") center center / cover no-repeat;
+}
+
+.imagen--consolas-control-nintendo-switch {
+    background: url("../../img/productos/consolas/control-nintendo-switch.png") center center / cover no-repeat;
+}
+
+.imagen--consolas-xbox-series-x {
+    background: url("../../img/productos/consolas/xbox-series-x.png") center center / cover no-repeat;
+}
+
+.imagen--consolas-gameboy-color {
+    background: url("../../img/productos/consolas/gameboy-color.png") center center / cover no-repeat;
+}
+
+.imagen--playera-atari {
+    background: url("../../img/productos/diversos/playera-atari.png") center center / cover no-repeat;
+}
+
+.imagen--playera-snes {
+    background: url("../../img/productos/diversos/playera-snes.png") center center / cover no-repeat;
+}
+
+.imagen--figura-sonic {
+    background: url("../../img/productos/diversos/figura-sonic.png") center center / cover no-repeat;
+}
+
+.imagen--reloj {
+    background: url("../../img/productos/diversos/reloj.png") center center / cover no-repeat;
+}
+
+.imagen--oculus-vr {
+    background: url("../../img/productos/diversos/oculus-vr.png") center center / cover no-repeat;
+}
+
+.imagen--peluche-pikachu {
+    background: url("../../img/productos/diversos/peluche-pikachu.png") center center / cover no-repeat;
+}
+
 .productos__nombre {
     font-size: 0.875rem;
     font-weight: var(--font-medium);
