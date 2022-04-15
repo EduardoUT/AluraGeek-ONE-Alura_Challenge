@@ -1,5 +1,9 @@
 .productos-existentes {
-    padding: 4.5rem 0 0 0;
+    padding: 4.5rem 2rem 2rem 2rem;
+}
+
+.productos-existentes__detalles {
+    grid-template-columns: repeat(auto-fill, minmax(8.75em, 1fr))!important;
 }
 
 .productos-existentes__producto {
@@ -20,4 +24,29 @@
 
 .productos-existentes__boton {
     width: fit-content;
+}
+
+.productos-existentes__container {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: flex-end;
+}
+
+.productos-existentes__botones {
+    border: none;
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.boton--eliminar {
+    background: url("../../img/iconos/eliminar.svg") center no-repeat;
+    background-size: 0.875rem 1.125rem;
+    margin: 0 0.6562rem 0 0;
+}
+
+.boton--editar {
+    background: url("../../img/iconos/editar.svg") center no-repeat;
+    background-size: 1.125rem 1.125rem;
+    margin: 0 0 0 0.6562rem;
 }
