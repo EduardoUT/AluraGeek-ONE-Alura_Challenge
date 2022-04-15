@@ -45,6 +45,7 @@ y borde gris acorde a la WCAG*/
     .boton--primario,
     .boton--secundario {
         font-size: 1rem;
+        font-weight: var(--font-regular);
         height: 3.187rem;
         padding: 1rem;
         text-align: center;
