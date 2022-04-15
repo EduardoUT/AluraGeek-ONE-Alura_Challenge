@@ -165,7 +165,6 @@ ocultar logo, botón Login y botón de lupa*/
     }
 
     .cabecera__boton {
-        font-weight: var(--font-regular);
         width: 11.375rem;
     }
 }
