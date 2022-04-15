@@ -55,8 +55,28 @@
     }
 
     .productos-existentes__encabezado {
+        align-items: center;
         flex-direction: row;
         justify-content: space-between;
         margin: 2.4375rem 0 1rem 0;
     }
+
+    .productos-existentes__titulo {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .productos-existentes {
+        padding: 7.187rem 0 0 0 !important;
+    }
+
+    .productos-existentes__detalles {
+        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr))!important;
+    }
+
+    .productos-existentes__encabezado {
+        margin: 4.40625em 0 1.4062rem 0;
+    }
+
 }
