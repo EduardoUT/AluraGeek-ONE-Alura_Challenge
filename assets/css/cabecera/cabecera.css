@@ -92,14 +92,13 @@ buscadorMovil.js en el evento click*/
 /*Posicionando icono de lupa en input de búsqueda para
 Firefox 19+ */
 .cabecera__campo[type="text"]::-moz-placeholder {
-    background: url("../../img/iconos/lupa.svg") calc(100% - 1rem) center / auto no-repeat;
+    background: url("../../img/iconos/lupa.svg") calc(100% - 1rem) center / 1.0656rem 1.0656rem no-repeat;
 }
 
 /* Posicionando icono de lupa en input de búsqueda para
 Chrome/Opera/Safari */
 .cabecera__campo[type="text"]::-webkit-input-placeholder {
-    background: url("../../img/iconos/lupa.svg") right center no-repeat;
-    background-size: 1rem;
+    background: url("../../img/iconos/lupa.svg") right center / 1rem 1rem no-repeat;
 }
 
 /*Selector de clase usado en mostrarOcultarMenu.js en JavaScript para
