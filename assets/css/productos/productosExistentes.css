@@ -40,13 +40,23 @@
 }
 
 .boton--eliminar {
-    background: url("../../img/iconos/eliminar.svg") center no-repeat;
-    background-size: 0.875rem 1.125rem;
+    background: url("../../img/iconos/eliminar.svg") center / 0.875rem 1.125rem no-repeat;
     margin: 0 0.6562rem 0 0;
 }
 
 .boton--editar {
-    background: url("../../img/iconos/editar.svg") center no-repeat;
-    background-size: 1.125rem 1.125rem;
+    background: url("../../img/iconos/editar.svg") center / 1.125rem 1.125rem no-repeat;
     margin: 0 0 0 0.6562rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .productos-existentes__detalles {
+        grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr))!important;
+    }
+
+    .productos-existentes__encabezado {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 2.4375rem 0 1rem 0;
+    }
 }
