@@ -4,23 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/componentes/boton.css">
     <title>AluraGeek | Agregar Nuevo Producto</title>
 </head>
 <body>
     <style>
+        .agregar-producto__container {
+            display: flex;
+        }
+
+        .agregar-producto__dropbox {
+            align-items: center;
+            background: var(--color-blanco);
+            border: dashed 2px #C8C8C8;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            justify-content: center;
+            padding: 2rem;
+            width: 18.8125rem;
+        }
+
+        .agregar-producto__usuarioImagen {
+            height: inherit;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .dropbox--activo {
+            border: solid 2px #C8C8C8;
+        }
+
+        .agregar-producto__imagen {
+            margin: 0 0 1rem 0;
+            height: 2rem;
+            width: 2rem;
+        }
+
+        .imagen--photo {
+            background: url("../assets/img/iconos/photo.svg") center / 100% 100% no-repeat;
+        }
+
+        .agregar-producto__texto {
+            text-align: center;
+        }
+
         .agregar-producto__archivo {
-            background: darkcyan;
-            color: transparent;
-            height: 8.375rem;
-            width: 20.5rem;
+            visibility: hidden;
+        }
+
+        .agregar-producto__boton {
+            width: fit-content;
         }
     </style>
     <main class="principal">
         <section class="agregar-producto">
-            <input class="agregar-producto__archivo" type="file" id="archivoImagen" value="Agregar una imágen para el producto" accept="image/png, image/jpeg" >
+            <div class="agregar-producto__container">
+                <div class="agregar-producto__dropbox" data-dropBox>
+                    <div class="agregar-producto__imagen imagen--photo"></div>
+                    <p class="agregar-producto__texto parrafo" data-info>Arrastre para agregar una imagen para el producto.</p>
+                    <input class="agregar-producto__archivo" type="file" id="archivoImagen" data-campo>
+                </div>
+                <button class="agregar-producto__boton boton--primario" id="botonFile">Busque en su computador</button>
+            </div>
         </section>
         <h1 class="titulo"></h1>
     </main>
-    <script src="../assets/js/formularios/dragAndDropImagen.js"></script>
+    <script src="../assets/js/formularios/arrastrarSoltarImagen.js"></script>
 </body>
 </html>
