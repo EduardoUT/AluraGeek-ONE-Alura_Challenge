@@ -3,6 +3,8 @@ const mostrarOcultarBuscador = (logoBuscadorContainer, logoCabecera,
     //Especificando variables para tamaño de dispositivos menores que 767px
     const minWidth = 0;
     const maxWidth = 767;
+    const campoAddProductImg = document.querySelector(".agregar-producto__imagen"); 
+    const textInfo = document.querySelector("[data-info]");
 
     const mostrarBuscador = () => {
         //Ocultando elementos (logotipo, botón login y lupa) del menú original.
@@ -59,12 +61,18 @@ const mostrarOcultarBuscador = (logoBuscadorContainer, logoCabecera,
             botonBuscarMovil.addEventListener("click", mostrarBuscador);
             //Mostrando elementos (logotipo, botón login y lupa) cuando el campo pierde el foco.
             campoBuscar.addEventListener("blur", ocultarBuscador);
+            campoAddProductImg.classList.remove("imagen--photo");
+            campoAddProductImg.classList.add("imagen--add");
+            textInfo.textContent = "Agregar una imágen para el producto.";
         } else {
             /**
              * Cuando el dispositivo sea mayor sólo se remueve el foco
              * del campo de búsqueda y volverá el menú original
              */
             campoBuscar.blur();
+            campoAddProductImg.classList.remove("imagen--add");
+            campoAddProductImg.classList.add("imagen--photo");
+            textInfo.textContent = "Arrastre para agregar una imágen para el producto.";
         }
     }
 
