@@ -118,7 +118,7 @@ const vistaPreviaImagen = () => {
         }
         leerArchivo.readAsDataURL(archivo); /**Leyendo información de archivo en Base64 */
     } else {
-        console.log("Esta no es una imágen");
+        alert("El archivo seleccionado no es una imágen");
     }
 }
 
