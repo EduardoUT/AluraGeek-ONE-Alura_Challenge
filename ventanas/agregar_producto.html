@@ -21,8 +21,22 @@
 
 <body>
     <style>
+        .agregar-producto {
+            padding: 4.5rem 0 0 0;
+        }
+
+        .agregar-producto__formulario {
+            width: 100%;
+        }
+
+        .agregar-producto__legend {
+            font-size: 1.365rem;
+            margin: 0 0 1rem 0;
+        }
+
         .agregar-producto__container {
             display: flex;
+            width: 100%;
         }
 
         .agregar-producto__dropbox {
@@ -35,7 +49,7 @@
             height: fit-content;
             justify-content: center;
             padding: 2rem;
-            width: 18.8125rem;
+            width: 100%;
         }
 
         .agregar-producto__usuarioImagen {
@@ -58,15 +72,21 @@
             background: url("../assets/img/iconos/photo.svg") center / 100% 100% no-repeat;
         }
 
+        .imagen--add {
+            background: url("../assets/img/iconos/add.svg") center / 1.1668rem 1.1668rem no-repeat;
+        }
+
         .agregar-producto__texto {
+            font-size: 0.875rem;
             text-align: center;
         }
 
         .agregar-producto__archivo {
-            visibility: visible;
+            visibility: hidden;
         }
 
         .agregar-producto__boton {
+            display: none;
             width: fit-content;
         }
     </style>
@@ -90,7 +110,8 @@
     </header>
     <main class="principal container">
         <section class="agregar-producto">
-            <form action="">
+            <form class="agregar-producto__formulario" action="">
+                <legend class="agregar-producto__legend formulario__legend" tabindex="0">Agregar nuevo producto</legend>
                 <div class="agregar-producto__container">
                     <div class="agregar-producto__dropbox" data-dropBox>
                         <div class="agregar-producto__imagen imagen--photo"></div>
