@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="../assets/css/componentes/boton.css">
     <title>AluraGeek | Agregar Nuevo Producto</title>
 </head>
+
 <body>
     <style>
         .agregar-producto__container {
@@ -54,7 +56,7 @@
         }
 
         .agregar-producto__archivo {
-            visibility: hidden;
+            visibility: visible;
         }
 
         .agregar-producto__boton {
@@ -63,17 +65,23 @@
     </style>
     <main class="principal">
         <section class="agregar-producto">
-            <div class="agregar-producto__container">
-                <div class="agregar-producto__dropbox" data-dropBox>
-                    <div class="agregar-producto__imagen imagen--photo"></div>
-                    <p class="agregar-producto__texto parrafo" data-info>Arrastre para agregar una imagen para el producto.</p>
-                    <input class="agregar-producto__archivo" type="file" id="archivoImagen" data-campo>
+            <form action="">
+                <div class="agregar-producto__container">
+                    <div class="agregar-producto__dropbox" data-dropBox>
+                        <div class="agregar-producto__imagen imagen--photo"></div>
+                        <p class="agregar-producto__texto parrafo" data-info>Arrastre para agregar una imagen para el
+                            producto.</p>
+                        <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-campo>
+                    </div>
+                    <button class="agregar-producto__boton boton--primario" id="botonFile">Busque en su
+                        computador</button>
                 </div>
-                <button class="agregar-producto__boton boton--primario" id="botonFile">Busque en su computador</button>
-            </div>
+                <input type="submit" id="btn">
+            </form>
         </section>
         <h1 class="titulo"></h1>
     </main>
     <script src="../assets/js/formularios/arrastrarSoltarImagen.js"></script>
 </body>
+
 </html>
