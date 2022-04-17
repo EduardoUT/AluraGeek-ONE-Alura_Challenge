@@ -4,8 +4,16 @@ const dropBox = document.querySelector("[data-dropBox]"),
     inputFile = dropBox.querySelector("[data-campo]");
 /**Botón fuera del área dropBox **/
 const botonBuscarArchivo = document.querySelector(".agregar-producto__boton");
+const btnEnviar = document.querySelector("#btn");
 let archivo;
+let valor = document.querySelector("[data-campo]").value;
+let inputValido = false;
+inputFile.value = "";
 
+btnEnviar.addEventListener("click", (event) => {
+    event.preventDefault();
+    //console.log("LOL" + habilitarBotonProductos(inputValido));
+});
 const clickInput = () => {
     inputFile.click();
 }
@@ -70,10 +78,26 @@ const soltarArchivo = (event) => {
      * primero.
      */
     archivo = event.dataTransfer.files[0];
+
     vistaPreviaImagen();
 }
 
 const vistaPreviaImagen = () => {
+    console.log(inputFile.validity.valueMissing = false);
+    validarInput(inputFile);
+
+
+    /**Llamar función para habilitar botón aquí y reciba 
+     * como parámetro el contenido de inputFile.validity 
+     * que a partir de este momento será false
+     * const inputvalido = true;
+     * habilitarBotonProductos(inputValido);
+     * 
+     * inputValido <- Posible nombre de variable que almacenará el validity state.
+     */
+    inputValido = true;
+
+    habilitarBotonProductos(inputValido);
     const tipoArchivo = archivo.type;
     /**
      * Añadir esta validación
@@ -109,6 +133,23 @@ inputFile.addEventListener("change", function () {
     vistaPreviaImagen();
 });
 
+const validarInput = (input) => {
+    console.log(input.validity);
+    /* const valido = input.validity.valid;
+    console.log(valido); */
+}
+
+const habilitarBotonProductos = (input) => {
+    if (input) {
+        btnEnviar.removeAttribute("disabled");
+        btnEnviar.classList.remove("boton--bloqueado");
+    } else {
+        btnEnviar.setAttribute("disabled", "true");
+        btnEnviar.classList.add("boton--bloqueado");
+    }
+    return input;
+}
+
 /**
  * Eventos en zona dropBox.
  * click: Al hacer click se abrirá el administrador de archivos del usuario (Útil para versión móvil).
@@ -123,3 +164,4 @@ dropBox.addEventListener("click", clickInput);
 dropBox.addEventListener("dragover", arrastrarSobre);
 dropBox.addEventListener("dragleave", arrastrarFuera);
 dropBox.addEventListener("drop", soltarArchivo);
+habilitarBotonProductos(inputValido);
