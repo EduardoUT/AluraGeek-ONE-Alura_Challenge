@@ -1,0 +1,74 @@
+.agregar-producto {
+    padding: 4.5rem 0 0 0;
+}
+
+.agregar-producto__formulario {
+    width: 100%;
+}
+
+.agregar-producto__legend {
+    font-size: 1.365rem;
+    margin: 0 0 1rem 0;
+}
+
+.agregar-producto__container {
+    display: flex;
+    margin: 0 0 1rem 0;
+    width: 100%;
+}
+
+.agregar-producto__dropbox {
+    align-items: center;
+    background: var(--color-blanco);
+    border: dashed 2px #C8C8C8;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.dropbox--activo {
+    border: solid 2px #C8C8C8;
+}
+
+.agregar-producto__usuarioImagen {
+    height: inherit;
+    object-fit: cover;
+    width: 100%;
+}
+
+.agregar-producto__imagen {
+    margin: 0 0 1rem 0;
+    height: 2rem;
+    width: 2rem;
+}
+
+.imagen--photo {
+    background: url("../../img/iconos/photo.svg") center / 100% 100% no-repeat;
+}
+
+.imagen--add {
+    background: url("../../img/iconos/add.svg") center / 1.1668rem 1.1668rem no-repeat;
+}
+
+.agregar-producto__texto {
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.agregar-producto__archivo {
+    visibility: hidden;
+}
+
+.agregar-producto__boton {
+    display: none;
+    width: fit-content;
+}
+
+.agregar-producto__btnform {
+    margin: 1rem 0 0 0;
+    width: 100%;
+}
