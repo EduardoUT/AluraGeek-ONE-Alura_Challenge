@@ -13,8 +13,8 @@ class Footer extends HTMLElement {
         <div class="informaciones__alurageek">
             <div class="informaciones__contactos">
                 <div class="informaciones__cabecera">
-                    <a class="informaciones__logo" href="#" title="Ir a la página principal" tabindex="0">
-                        <img class="informaciones__logo" src="./assets/img/iconos/logo-alura-geek.svg"
+                    <a class="informaciones__logo" href="../index.html" title="Ir a la página principal" tabindex="0">
+                        <img class="informaciones__logo" src="../assets/img/iconos/logo-alura-geek.svg"
                             alt="Logo de AluraGeek">
                     </a>
                 </div>
@@ -65,7 +65,7 @@ class Footer extends HTMLElement {
                     <input class="formulario__campo formulario__campoEstilo" id="nombre" type="text" required
                         placeholder="Nombre(s) Apellido(s)" tabindex="0"
                         title="La primer letra de cada nombre y apellido debe ser en mayúscula, no debe haber más de un espacio en blanco y no puede haber más de 50 carácteres."
-                        pattern="^(?=.{3,50}$)([A-ZÁÉÍÓÚ][a-záéíóúñ]+(?:[\s][A-ZÁÉÍÓÚ][a-záéíóúñ]+)+)$" minlength="3"
+                        pattern="^(?=.{3,50}$)([A-ZÁÉÍÓÚ][a-záéíóúñ]+(?:[\\s][A-ZÁÉÍÓÚ][a-záéíóúñ]+)+)$" minlength="3"
                         maxlength="40" data-contacto="nombre">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
