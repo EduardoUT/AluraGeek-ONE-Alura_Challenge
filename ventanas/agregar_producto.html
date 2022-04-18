@@ -59,7 +59,7 @@
                     placeholder="Nombre del producto" tabindex="0"
                     title="El campo nombre del producto no puede estar en blanco o vacío, debe tener máximo 20 carácteres."
                     pattern="^(?=.{0,21}$)([A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+(?:[\s][A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+)+)$"
-                    minlength="0" maxlength="20">
+                    minlength="0" maxlength="20" data-contacto="producto">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
@@ -67,13 +67,13 @@
                     <input class="formulario__campo formulario__campoEstilo" id="precioProducto" type="text" step="0.01" required 
                     placeholder="60.00" tabindex="0"
                     title="El campo precio no puede estar en blanco o vacío, formato de precio 10.99 o 1900.99, usando el punto (.) como decimal."
-                    pattern="^[\d]{1,7}\.[\d]{2}$" minlength="0" maxlength="9">
+                    pattern="^[\d]{1,7}\.[\d]{2}$" minlength="0" maxlength="9" data-contacto="precio">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
                     <label class="formulario__label" for="descProducto">Descripción del producto:</label>
                     <textarea class="formulario__textarea formulario__campoEstilo" id="descProducto" cols="5" 
-                    placeholder="Escriba la descripción" minlength="10" maxlength="150"></textarea>
+                    placeholder="Escriba la descripción" minlength="10" maxlength="150" data-contacto="descripcion"></textarea>
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <input class="agregar-producto__btnform boton--secundario" type="submit" id="btn" value="Agregar Producto">
@@ -159,7 +159,7 @@
         <p class="copyright__autor parrafo">&#169; 2022</p>
     </div>
     <script src="../assets/js/main.js" type="module"></script>
-    <script src="../assets/js/formularios/arrastrarSoltarImagen.js"></script>
+    <script src="../assets/js/agregarProducto.js" type="module"></script>
 </body>
 
 </html>
