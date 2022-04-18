@@ -1,3 +1,7 @@
+/**
+ * Referencia:
+ * https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/
+ */
 class Header extends HTMLElement {
     constructor() {
         super();
