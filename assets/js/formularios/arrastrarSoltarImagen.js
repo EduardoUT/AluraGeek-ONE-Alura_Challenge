@@ -17,7 +17,7 @@ const dragAndDropBox = () => {
         event.preventDefault();
         //console.log("LOL" + habilitarBotonProductos(inputValido));
     });
-    const clickInput = () => {
+    const clickInputFile = () => {
         inputFile.click();
     }
     /* 
@@ -27,7 +27,7 @@ const dragAndDropBox = () => {
      * Se ejecutará un click() función que a su vez
      * contendrá dentro un click correspondiente al input de tipo file.
     
-    buttonHidden.click(buttonHidden.addEventListener("click", clickInput));
+    buttonHidden.click(buttonHidden.addEventListener("click", clickInputFile));
     } */
 
     /**
@@ -165,11 +165,11 @@ const dragAndDropBox = () => {
      * la misma zona.
     */
     window.addEventListener("resize", contenidoDropBox);
-    dropBox.addEventListener("click", clickInput);
+    dropBox.addEventListener("click", clickInputFile);
     dropBox.addEventListener("dragover", arrastrarSobre);
     dropBox.addEventListener("dragleave", arrastrarFuera);
     dropBox.addEventListener("drop", soltarArchivo);
-    botonBuscarArchivo.addEventListener("click", clickInput);
+    botonBuscarArchivo.addEventListener("click", clickInputFile);
     habilitarBotonProductos(inputValido);
     contenidoDropBox();
 }
