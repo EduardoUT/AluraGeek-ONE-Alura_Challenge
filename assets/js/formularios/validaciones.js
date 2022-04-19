@@ -9,6 +9,9 @@ const tiposDeErrores = [
     "tooShort",
     "tooLong",
     "typeMismatch",
+    "customError",
+    "badInput",
+    "stepMismatch"
 ];
 
 /**
@@ -40,7 +43,7 @@ export function valida(input) {
      * Variable que contiene el tipo de dataset, obtenido
      * de la propiedad data- del DOM.
      */
-    const tipoDeInput = input.dataset.contacto;
+    const tipoDeInput = input.dataset.campo;
     if (validadores[tipoDeInput]) {
         validadores[tipoDeInput](input);
     }
@@ -95,13 +98,12 @@ function mostrarMensajeDeError(tipoDeInput, input) {
 const mensajesDeError = {
     nombre: {
         valueMissing: "El campo nombre no puede estar en blanco o vacío.",
-        patternMismatch:
-            "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
-            "Debes incluir por lo menos un apellido. <br>" +
-            "Sólo la primera letra de los nombres y apellidos debe ser mayúscula. <br>" +
-            "No puede haber más de un espacio en blanco. <br>",
         tooShort: "El valor mínimo requerido de carácteres es de 3.",
         tooLong: "El campo nombre sólo puede contener un máximo de 40 carácteres",
+        patternMismatch: "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
+            "Debes incluir por lo menos un apellido. <br>" +
+            "Sólo la primera letra de los nombres y apellidos debe ser mayúscula. <br>" +
+            "No puede haber más de un espacio en blanco. <br>"
     },
     mensaje: {
         valueMissing: "El campo mensaje no puede estar en blanco o vacío.",
@@ -117,6 +119,28 @@ const mensajesDeError = {
     },
     password: {
         valueMissing: "El campo contraseña no puede estar en blanco o vacío.",
+    },
+    producto: {
+        valueMissing: "El campo producto no puede estar en blanco o vacío.",
+        patternMismatch: "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
+            "No debe haber más de un espacio en blanco. <br>" +
+            "Se admiten números si el nombre lo requiera. <br>" +
+            "Se admiten los símbolos: .-,¿?!¡&/$()=+# <br>",
+        tooLong: "El nombre del producto no puede exceder los 20 carácteres."
+    },
+    precio: {
+        valueMissing: "El campo precio no puede estar en blanco o vacío.",
+        patternMismatch: "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
+            "No se aceptan letras ni carácteres especiales, sólo un punto<br>" +
+            "Si es un precio sin centavos, escriba la cifra con .00 centavos.<br>" +
+            "Formatos de ejemplo: 9999999.99 1200.99 20.30 506.00<br>" +
+            "Incluya un punto para índicar los centavos.",
+        tooLong: "No debe exceder los 9 dígitos, contando décimales.",
+    },
+    descripcion: {
+        valueMissing: "El campo descripción no puede estar en blanco o vacío.",
+        tooShort: "Debe contener mínimo 20 carácteres",
+        tooLong: "No debe exceder los 150 carácteres."
     }
 };
 
@@ -124,5 +148,14 @@ const mensajesDeError = {
  * Objeto opcional que contendrá validaciones específicas
  * cuyos mensajes de error serán customizados.
  */
- const validadores = {
+const validadores = {
+
+    // precio: (input) => validarPrecio(input),
 };
+/* 
+const validarPrecio = (input) => {
+    const precioIngresado = input.value;
+    if () {
+
+    }
+}  */
