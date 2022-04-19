@@ -1,3 +1,5 @@
+import mediaQueryCelular from "../componentes/mediaQuery.js";
+
 const dragAndDropBox = () => {
     //Selectores para dropBox área.
     const dropBox = document.querySelector("[data-dropBox]"),
@@ -138,6 +140,20 @@ const dragAndDropBox = () => {
         return input;
     }
 
+    const contenidoDropBox = () => {
+        const icono = document.querySelector(".agregar-producto__imagen");
+        const textInfo = document.querySelector("[data-info]");
+        if (mediaQueryCelular()) {
+            icono.classList.remove("imagen--photo");
+            icono.classList.add("imagen--add");
+            textInfo.textContent = "Agregar una imágen para el producto.";
+        } else {
+            icono.classList.remove("imagen--add");
+            icono.classList.add("imagen--photo");
+            textInfo.textContent = "Arrastre para agregar una imágen para el producto.";
+        }
+    }
+
     /**
      * Eventos en zona dropBox.
      * click: Al hacer click se abrirá el administrador de archivos del usuario (Útil para versión móvil).
@@ -148,12 +164,14 @@ const dragAndDropBox = () => {
      * drop: Al soltar el archivo en la zona se carga una vista previa en 
      * la misma zona.
     */
+    window.addEventListener("resize", contenidoDropBox);
     dropBox.addEventListener("click", clickInput);
     dropBox.addEventListener("dragover", arrastrarSobre);
     dropBox.addEventListener("dragleave", arrastrarFuera);
     dropBox.addEventListener("drop", soltarArchivo);
-    habilitarBotonProductos(inputValido);
     botonBuscarArchivo.addEventListener("click", clickInput);
+    habilitarBotonProductos(inputValido);
+    contenidoDropBox();
 }
 
 export default dragAndDropBox;
