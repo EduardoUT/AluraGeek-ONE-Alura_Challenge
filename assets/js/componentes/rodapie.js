@@ -65,8 +65,8 @@ class Footer extends HTMLElement {
                     <input class="formulario__campo formulario__campoEstilo" id="nombre" type="text" required
                         placeholder="Nombre(s) Apellido(s)" tabindex="0"
                         title="La primer letra de cada nombre y apellido debe ser en mayúscula, no debe haber más de un espacio en blanco y no puede haber más de 50 carácteres."
-                        pattern="^(?=.{3,50}$)([A-ZÁÉÍÓÚ][a-záéíóúñ]+(?:[\\s][A-ZÁÉÍÓÚ][a-záéíóúñ]+)+)$" minlength="3"
-                        maxlength="40" data-contacto="nombre">
+                        pattern="^(?=.{3,51}$)([A-ZÁÉÍÓÚ][a-záéíóúñ]+(?:[\\s][A-ZÁÉÍÓÚ][a-záéíóúñ]+)+)$" 
+                        minlength="3" maxlength="50" data-campo="nombre">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
@@ -74,7 +74,7 @@ class Footer extends HTMLElement {
                     <textarea class="formulario__textarea formulario__campoEstilo" id="mensaje" required
                         placeholder="Escribe tu mensaje" rows="3" tabindex="0"
                         title="El campo nombre no puede estar en blanco o vacío, debe contener mínimo 20 carácteres máximo 120"
-                        minlength="20" maxlength="120" data-contacto="mensaje"></textarea>
+                        minlength="20" maxlength="120" data-campo="mensaje"></textarea>
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <input class="formulario__boton boton--secundario" id="btn-enviar" type="submit" value="Enviar Mensaje"
