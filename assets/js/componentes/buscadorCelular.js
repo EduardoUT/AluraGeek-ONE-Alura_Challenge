@@ -2,8 +2,6 @@ import mediaQueryCelular from "./mediaQuery.js";
 
 const buscadorCelular = (logoBuscadorContainer, logoCabecera,
     formularioBusqueda, campoBuscar, botonBuscarMovil, botonLogin) => {
-    /* const campoAddProductImg = document.querySelector(".agregar-producto__imagen"); 
-    const textInfo = document.querySelector("[data-info]"); */
 
     const mostrarBuscador = () => {
         //Ocultando elementos (logotipo, botón login y lupa) del menú original.
