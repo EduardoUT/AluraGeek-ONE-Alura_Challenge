@@ -128,7 +128,6 @@ const dragAndDropBox = () => {
         const campoNombreProductoValido = campoNombreProducto.validity.valid;
         const campoPrecioProductoValido = campoPrecioProducto.validity.valid;
         const campoDscProductoValido = campoDscProducto.validity.valid;
-        console.log(campoPrecioProductoValido);
         const formularioAgregarProductoValido = (input && campoNombreProductoValido &&
             campoPrecioProductoValido && campoDscProductoValido);
         if (formularioAgregarProductoValido) {
