@@ -131,9 +131,9 @@ const mensajesDeError = {
     precio: {
         valueMissing: "El campo precio no puede estar en blanco o vacío.",
         patternMismatch: "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
-            "No se aceptan letras ni carácteres especiales, sólo un punto<br>" +
+            "No se aceptan letras, carácteres especiales ni valores negativos, sólo un punto<br>" +
             "Si es un precio sin centavos, escriba la cifra con .00 centavos.<br>" +
-            "Formatos de ejemplo: 9999999.99 1200.99 20.30 506.00<br>" +
+            "Formatos de ejemplo: 9999999.99 1200.99 20.30 506.00 1.99<br>" +
             "Incluya un punto para índicar los centavos.",
         tooLong: "No debe exceder los 9 dígitos, contando décimales.",
     },
@@ -149,13 +149,4 @@ const mensajesDeError = {
  * cuyos mensajes de error serán customizados.
  */
 const validadores = {
-
-    // precio: (input) => validarPrecio(input),
 };
-/* 
-const validarPrecio = (input) => {
-    const precioIngresado = input.value;
-    if () {
-
-    }
-}  */
