@@ -41,30 +41,32 @@
                 <div class="formulario__componentes">
                     <label class="formulario__label" for="nombreProducto">Nombre del producto:</label>
                     <input class="formulario__campo formulario__campoEstilo" id="nombreProducto" type="text" required
-                    placeholder="Nombre del producto" tabindex="0"
-                    title="El campo nombre del producto no puede estar en blanco o vacío, debe tener máximo 20 carácteres."
-                    pattern="^(?=.{0,21}$)([A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+(?:[\s][A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+)+)$"
-                    minlength="0" maxlength="20" data-contacto="producto">
+                        placeholder="Nombre del producto" tabindex="0"
+                        title="El campo nombre del producto no puede estar en blanco o vacío, debe tener máximo 20 carácteres."
+                        pattern="^(?=.{0,21}$)([A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+(?:[\s]?[A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+)+)$"
+                        minlength="0" maxlength="20" data-campo="producto">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
-                    <label class="formulario__label" for="precioProducto">Precio del producto (Formato 1900.99, usa punto decimal para centavos):</label>
-                    <input class="formulario__campo formulario__campoEstilo" id="precioProducto" type="text" step="0.01" required 
-                    placeholder="60.00" tabindex="0"
-                    title="El campo precio no puede estar en blanco o vacío, formato de precio 10.99 o 1900.99, usando el punto (.) como decimal."
-                    pattern="^[\d]{1,7}\.[\d]{2}$" minlength="0" maxlength="9" data-contacto="precio">
+                    <label class="formulario__label" for="precioProducto">Precio del producto (Formato 1900.99, usa
+                        punto decimal para centavos):</label>
+                    <input class="formulario__campo formulario__campoEstilo" id="precioProducto" type="text" step="0.01"
+                        required placeholder="60.00" tabindex="0"
+                        title="El campo precio no puede estar en blanco o vacío, formato de precio 10.99 o 1900.99, usando el punto (.) como decimal."
+                        pattern="^[\d]{1,7}\.[\d]{2}$" maxlength="10" data-campo="precio">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
                     <label class="formulario__label" for="descProducto">Descripción del producto:</label>
-                    <textarea class="formulario__textarea formulario__campoEstilo" id="descProducto" cols="5" 
-                    placeholder="Escriba la descripción" minlength="10" maxlength="150" data-contacto="descripcion"></textarea>
+                    <textarea class="formulario__textarea formulario__campoEstilo" id="descProducto" cols="5" required
+                        placeholder="Escriba la descripción" minlength="20" maxlength="150"
+                        data-campo="descripcion"></textarea>
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
-                <input class="agregar-producto__btnform boton--secundario" type="submit" id="btn" value="Agregar Producto">
+                <input class="agregar-producto__btnform boton--secundario" type="submit" id="btn"
+                    value="Agregar Producto">
             </form>
         </section>
-        <h1 class="titulo"></h1>
     </main>
     <footer-component></footer-component>
     <script src="../assets/js/main.js" type="module"></script>
