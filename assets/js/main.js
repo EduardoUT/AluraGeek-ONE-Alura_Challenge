@@ -1,7 +1,7 @@
 import mostrarOcultarMenu from "./componentes/mostrarOcultarMenu.js";
-import mostrarOcultarBuscador from "./componentes/buscadorMovil.js";
 import validarCampos from "./formularios/validarCampos.js";
 import { habilitarBtnRodapie } from "./formularios/habilitarBoton.js";
+import buscadorCelular from "./componentes/buscadorCelular.js";
 
 /**Función IIFE */
 (() => {
@@ -15,7 +15,7 @@ import { habilitarBtnRodapie } from "./formularios/habilitarBoton.js";
     const formularioRodapie = document.getElementById("formulario-rodapie");
 
     mostrarOcultarMenu();
-    mostrarOcultarBuscador(logoBuscadorContainer, logoCabecera,
+    buscadorCelular(logoBuscadorContainer, logoCabecera,
         formularioBusqueda, campoBuscar, btnBuscarMovil, btnLoginCabecera);
     habilitarBtnRodapie(btnEnviar);
     validarCampos();
