@@ -5,46 +5,23 @@ const dragAndDropBox = () => {
     const dropBox = document.querySelector("[data-dropBox]"),
         textoInfo = dropBox.querySelector("[data-info]"),
         inputFile = dropBox.querySelector("[data-campo]");
-    /**Botón fuera del área dropBox **/
+    //Botón fuera del área dropBox
     const botonBuscarArchivo = document.querySelector(".agregar-producto__boton");
-    const btnEnviar = document.querySelector("#btn");
-
+    const formularioAgregarProducto = document.getElementById("agregarProducto");
     let archivo;
     let inputValido = false;
     inputFile.value = "";
 
-    btnEnviar.addEventListener("click", (event) => {
-        event.preventDefault();
-        //console.log("LOL" + habilitarBotonProductos(inputValido));
-    });
     const clickInputFile = () => {
         inputFile.click();
     }
-    /* 
-    const clickButtonHidden = () => {
-    *
-     * Evento click:
-     * Se ejecutará un click() función que a su vez
-     * contendrá dentro un click correspondiente al input de tipo file.
-    
-    buttonHidden.click(buttonHidden.addEventListener("click", clickInputFile));
-    } */
 
     /**
-    * Evento click:
-    * Cuando el usuario pulse el botón, se propagará el evento 
-    * al inputFile.
+     * arrastrarSobre, permite saber si un elemento es arrastrado sobre 
+     * la zona definida.
     */
-    /**
-  * arrastrarSobre, permite saber si un
-  * elemento es arrastrado sobre la zona
-  * definida.
-  */
     const arrastrarSobre = (event) => {
-        /**
-         * Evitando que al arrastrar y soltar la imágen
-         * se abra en una nueva ventana.
-         */
+        //Evitando que al arrastrar y soltar la imágen se abra en una nueva ventana.
         event.preventDefault();
         //Agregando clase CSS para que el borde sea solido en la dropBox.
         dropBox.classList.add("dropbox--activo");
@@ -52,8 +29,7 @@ const dragAndDropBox = () => {
     }
 
     /**
-     * arrastrarFuera, permite saber si un
-     * elemento es arrastrado sobre la zona
+     * arrastrarFuera, permite saber si un elemento es arrastrado sobre la zona
      * definida.
      */
     const arrastrarFuera = () => {
@@ -62,15 +38,11 @@ const dragAndDropBox = () => {
         textoInfo.textContent = "Arrastre para agregar una imagen para el producto.";
     }
 
-    /**
-     * soltar, cuando el usuario suelta el
-     * archivo dentro del dropBox
-     */
+    
+    //soltar, cuando el usuario suelta el archivo dentro del dropBox
     const soltarArchivo = (event) => {
-        /**
-         * Evitando que al soltar la imágen
-         * se abra en una nueva ventana.
-         */
+        
+        //Evitando que al soltar la imágen se abra en una nueva ventana.
         event.preventDefault();
         /**
          * Capturando el archivo seleccionado por el usuario,
@@ -79,26 +51,11 @@ const dragAndDropBox = () => {
          * primero.
          */
         archivo = event.dataTransfer.files[0];
-
         vistaPreviaImagen();
     }
 
     const vistaPreviaImagen = () => {
-        /**Llamar función para habilitar botón aquí y reciba 
-         * como parámetro el contenido de inputFile.validity 
-         * que a partir de este momento será false
-         * const inputvalido = true;
-         * habilitarBotonProductos(inputValido);
-         * 
-         * inputValido <- Posible nombre de variable que almacenará el validity state.
-         */
-        const tipoArchivo = archivo.type;
-        /**
-         * Añadir esta validación
-         * en función de validaciones.
-         */
-        const extensionesValidas = ["image/jpeg", "image/jpg", "image/png"];
-        if (extensionesValidas.includes(tipoArchivo)) {
+        if (formatoValido()) {
             inputValido = true;
             habilitarBotonProductos(inputValido);
             const leerArchivo = new FileReader(); //Creando un nuevo objeto lector de archivo
@@ -109,10 +66,16 @@ const dragAndDropBox = () => {
                  * en el atributo src.
                  */
                 const imgView = `<img src="${archivoUrl}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
-                dropBox.innerHTML = imgView; /**Agregando el tag dentro de la zona */
+                dropBox.innerHTML = imgView; //Agregando el tag dentro del div
             }
-            leerArchivo.readAsDataURL(archivo); /**Leyendo información de archivo en Base64 */
+            leerArchivo.readAsDataURL(archivo); //Leyendo información de archivo en Base64
         } else {
+            /**Si se cargo una imágen antes y se ingreso después un formato
+             * incorrecto, limpiar la imágen anterior con contenidoDropBox().
+             */
+            if (dropBox.innerHTML.includes("img")) {
+                contenidoDropBox();
+            }
             alert("El formato ingresado no es admitido, sólo (.jpeg .jpg y .png), intente nuevamente.");
         }
     }
@@ -128,29 +91,60 @@ const dragAndDropBox = () => {
         vistaPreviaImagen();
     });
 
+    const formatoValido = () => {
+        const tipoArchivo = archivo.type;
+        const extensionesValidas = ["image/jpeg", "image/jpg", "image/png"];
+        const archivoValido = extensionesValidas.includes(tipoArchivo);
+        if (archivoValido) {
+            return archivoValido;
+        } else {
+            return archivoValido;
+        }
+    }
+
+    const contenidoDropBox = () => {
+        if (mediaQueryCelular()) {
+            const contenidoDropBoxCelular = `
+                <div class="agregar-producto__imagen imagen--add"></div>
+                <p class="agregar-producto__texto parrafo" data-info>Agregar imágen para
+                    el producto</p>
+                <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-campo>`;
+            dropBox.innerHTML = contenidoDropBoxCelular;
+        } else {
+            const contenidoDropBoxEscritorio = `
+                <div class="agregar-producto__imagen imagen--photo"></div>
+                <p class="agregar-producto__texto parrafo" data-info>Arrastre para agregar una imagen para el
+                    producto.</p>
+                <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-campo>`;
+            dropBox.innerHTML = contenidoDropBoxEscritorio;
+        }
+    }
+
     const habilitarBotonProductos = (input) => {
-        console.log(input);
-        if (input) {
+        const btnEnviar = document.querySelector("#btn");
+        const campoNombreProducto = document.getElementById("nombreProducto");
+        const campoPrecioProducto = document.getElementById("precioProducto");
+        const campoDscProducto = document.getElementById("descProducto");
+        const campoNombreProductoValido = campoNombreProducto.validity.valid;
+        const campoPrecioProductoValido = campoPrecioProducto.validity.valid;
+        const campoDscProductoValido = campoDscProducto.validity.valid;
+        const formularioAgregarProductoValido = (input && campoNombreProductoValido &&
+            campoPrecioProductoValido && campoDscProductoValido);
+        if (formularioAgregarProductoValido) {
             btnEnviar.removeAttribute("disabled");
             btnEnviar.classList.remove("boton--bloqueado");
         } else {
             btnEnviar.setAttribute("disabled", "true");
             btnEnviar.classList.add("boton--bloqueado");
         }
-        return input;
     }
 
-    const contenidoDropBox = () => {
-        const icono = document.querySelector(".agregar-producto__imagen");
-        const textInfo = document.querySelector("[data-info]");
-        if (mediaQueryCelular()) {
-            icono.classList.remove("imagen--photo");
-            icono.classList.add("imagen--add");
-            textInfo.textContent = "Agregar una imágen para el producto.";
-        } else {
-            icono.classList.remove("imagen--add");
-            icono.classList.add("imagen--photo");
-            textInfo.textContent = "Arrastre para agregar una imágen para el producto.";
+    const validarBtnProducto = (event) => {
+        const element = event.target;
+        if (element && element.tagName == 'INPUT') {
+            habilitarBotonProductos(inputValido);
+        } else if (element && element.tagName == 'TEXTAREA') {
+            habilitarBotonProductos(inputValido);
         }
     }
 
@@ -164,6 +158,7 @@ const dragAndDropBox = () => {
      * drop: Al soltar el archivo en la zona se carga una vista previa en 
      * la misma zona.
     */
+    formularioAgregarProducto.addEventListener("keyup", validarBtnProducto);
     window.addEventListener("resize", contenidoDropBox);
     dropBox.addEventListener("click", clickInputFile);
     dropBox.addEventListener("dragover", arrastrarSobre);
