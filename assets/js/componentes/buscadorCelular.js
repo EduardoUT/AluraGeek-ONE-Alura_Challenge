@@ -52,8 +52,6 @@ const buscadorCelular = (logoBuscadorContainer, logoCabecera,
 
 
     const visualizacionBuscador = () => {
-        //Capturando ancho de ventana
-        //const anchoActual = window.innerWidth;
         //Evaluando si el ancho corresponde al tamaño de un dispositivo móvil
         if (mediaQueryCelular()) {
             //Ocultando elementos del header al hacer click en la lupa.
