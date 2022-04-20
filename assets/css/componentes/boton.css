@@ -15,7 +15,7 @@
 }
 
 .boton--primario {
-    background: var(--color-blanco);
+    background: transparent;
     border: solid 1px var(--color-azul-fuerte);
     color: var(--color-azul-fuerte);
     opacity: 1;
@@ -41,7 +41,6 @@ y borde gris acorde a la WCAG*/
 }
 
 @media only screen and (min-width: 1366px) {
-
     .boton--primario,
     .boton--secundario {
         font-size: 1rem;
