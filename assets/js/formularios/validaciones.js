@@ -9,9 +9,6 @@ const tiposDeErrores = [
     "tooShort",
     "tooLong",
     "typeMismatch",
-    "customError",
-    "badInput",
-    "stepMismatch"
 ];
 
 /**
@@ -49,11 +46,9 @@ export function valida(input) {
     }
 
     if (input.validity.valid) {
-        console.log(input.validity)
         input.parentElement.classList.remove("formulario__componentes--incorrecto");
         input.parentElement.querySelector(".formulario__span--error").innerHTML = "";
     } else {
-        console.log(input.validity)
         input.parentElement.classList.add("formulario__componentes--incorrecto");
         input.parentElement.querySelector(".formulario__span--error").innerHTML =
             mostrarMensajeDeError(tipoDeInput, input);
