@@ -110,6 +110,7 @@ const dragAndDropBox = () => {
                     el producto</p>
                 <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-campo>`;
             dropBox.innerHTML = contenidoDropBoxCelular;
+            dropBox.addEventListener("click", clickInputFile);
         } else {
             const contenidoDropBoxEscritorio = `
                 <div class="agregar-producto__imagen imagen--photo"></div>
@@ -160,7 +161,6 @@ const dragAndDropBox = () => {
     */
     formularioAgregarProducto.addEventListener("keyup", validarBtnProducto);
     //window.addEventListener("resize", contenidoDropBox);
-    dropBox.addEventListener("click", clickInputFile);
     dropBox.addEventListener("dragover", arrastrarSobre);
     dropBox.addEventListener("dragleave", arrastrarFuera);
     dropBox.addEventListener("drop", soltarArchivo);
