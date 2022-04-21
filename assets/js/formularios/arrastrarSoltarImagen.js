@@ -159,7 +159,7 @@ const dragAndDropBox = () => {
      * la misma zona.
     */
     formularioAgregarProducto.addEventListener("keyup", validarBtnProducto);
-    window.addEventListener("resize", contenidoDropBox);
+    //window.addEventListener("resize", contenidoDropBox);
     dropBox.addEventListener("click", clickInputFile);
     dropBox.addEventListener("dragover", arrastrarSobre);
     dropBox.addEventListener("dragleave", arrastrarFuera);
