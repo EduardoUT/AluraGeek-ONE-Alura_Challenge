@@ -12,7 +12,7 @@ const leerArchivo = new FileReader();
  * @function cargarImagen()
  * @function contenidoDropBoxArea()
  */
-export const vistaPreviaImagen = (dropBoxArea, archivo) => {
+const vistaPreviaImagen = (dropBoxArea, archivo) => {
     const imagenValida = esFormatoValido();
     const imagenVisible = esImagenVisible(dropBoxArea);
     if (imagenValida) {
@@ -85,3 +85,4 @@ export const limpiarValorImagen = (inputFile) => {
     return inputFile.value = "";
 }
 
+export default vistaPreviaImagen;
