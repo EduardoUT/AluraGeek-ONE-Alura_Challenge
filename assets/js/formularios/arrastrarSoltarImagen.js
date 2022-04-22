@@ -38,10 +38,10 @@ const dragAndDropBox = () => {
         textoInfo.textContent = "Arrastre para agregar una imagen para el producto.";
     }
 
-    
+
     //soltar, cuando el usuario suelta el archivo dentro del dropBox
     const soltarArchivo = (event) => {
-        
+
         //Evitando que al soltar la imágen se abra en una nueva ventana.
         event.preventDefault();
         /**
@@ -67,15 +67,25 @@ const dragAndDropBox = () => {
                  */
                 const imgView = `<img src="${archivoUrl}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
                 dropBox.innerHTML = imgView; //Agregando el tag dentro del div
+                /**
+                 * Para evitar que la vista previa desaparezca se desactiva el
+                 * evento resize que trae de vuelta el icono y el mensaje inicial dentro del dropbox
+                 * */
+                window.removeEventListener("resize", contenidoDropBox);
             }
             leerArchivo.readAsDataURL(archivo); //Leyendo información de archivo en Base64
         } else {
-            /**Si se cargo una imágen antes y se ingreso después un formato
-             * incorrecto, limpiar la imágen anterior con contenidoDropBox().
+            /**Si se carga una imágen correcta antes, y posteriormente 
+             * se intenta ingresar un archivo que no corresponda al solicitado, se limpia
+             * la vista previa y se trae el contenido inicial con contenidoDropBox, para que
+             * no quede en blanco después de borrar la vista previa.
              */
             if (dropBox.innerHTML.includes("img")) {
+                const img = document.querySelector(".agregar-producto__usuarioImagen");
+                img.remove();
                 contenidoDropBox();
             }
+
             alert("El formato ingresado no es admitido, sólo (.jpeg .jpg y .png), intente nuevamente.");
         }
     }
@@ -102,6 +112,9 @@ const dragAndDropBox = () => {
         }
     }
 
+    /**Aquí cargamos dinámicamente el contenido del dropbox dependiendo
+     * del tamaño del dispositvo.
+     */
     const contenidoDropBox = () => {
         if (mediaQueryCelular()) {
             const contenidoDropBoxCelular = `
@@ -110,7 +123,6 @@ const dragAndDropBox = () => {
                     el producto</p>
                 <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-campo>`;
             dropBox.innerHTML = contenidoDropBoxCelular;
-            dropBox.addEventListener("click", clickInputFile);
         } else {
             const contenidoDropBoxEscritorio = `
                 <div class="agregar-producto__imagen imagen--photo"></div>
@@ -121,6 +133,14 @@ const dragAndDropBox = () => {
         }
     }
 
+    /**Aquí habilitamos el evento click en el dropbox sólo para dispositivos móviles. */
+    const clickOnDropBox = () => {
+        if (mediaQueryCelular()) {
+            dropBox.addEventListener("click", clickInputFile);
+        } else {
+            dropBox.removeEventListener("click", clickInputFile);
+        }
+    }
     const habilitarBotonProductos = (input) => {
         const btnEnviar = document.querySelector("#btn");
         const campoNombreProducto = document.getElementById("nombreProducto");
@@ -159,13 +179,15 @@ const dragAndDropBox = () => {
      * drop: Al soltar el archivo en la zona se carga una vista previa en 
      * la misma zona.
     */
-    formularioAgregarProducto.addEventListener("keyup", validarBtnProducto);
-    //window.addEventListener("resize", contenidoDropBox);
     dropBox.addEventListener("dragover", arrastrarSobre);
     dropBox.addEventListener("dragleave", arrastrarFuera);
     dropBox.addEventListener("drop", soltarArchivo);
+    window.addEventListener("resize", clickOnDropBox);
+    window.addEventListener("resize", contenidoDropBox);
+    formularioAgregarProducto.addEventListener("keyup", validarBtnProducto);
     botonBuscarArchivo.addEventListener("click", clickInputFile);
     habilitarBotonProductos(inputValido);
+    clickOnDropBox();
     contenidoDropBox();
 }
 
