@@ -10,11 +10,7 @@
 const mediaQueryCelular = () => {
     const mediaQueryCelular = window.matchMedia("(min-width: 0px) and (max-width: 767px)");
     const anchoValido = (mediaQueryCelular.matches);
-    if (anchoValido) {
-        return anchoValido;
-    } else {
-        return anchoValido;
-    }
+    return anchoValido;
 }
 
 export default mediaQueryCelular;
