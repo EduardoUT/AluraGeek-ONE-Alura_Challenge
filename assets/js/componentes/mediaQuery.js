@@ -25,7 +25,6 @@ const mediaQueryCelular = () => {
 export const mediaQueryCelularHorizontal = () => {
     const mediaQueryCelular = window.matchMedia("(min-width: 667px) and (max-width: 1080px)");
     const anchoValido = (mediaQueryCelular.matches);
-    console.log(anchoValido);
     return anchoValido;
 }
 
