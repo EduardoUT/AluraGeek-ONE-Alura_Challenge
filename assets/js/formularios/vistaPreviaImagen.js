@@ -1,4 +1,4 @@
-import { contenidoDropBoxArea, esFormatoValido } from "../componentes/dropBoxArea.js";
+import { contenidoDropBoxArea, esFormatoValido } from "./dropBoxArea.js";
 const formAgregarProducto = document.getElementById("agregarProductoForm");
 let archivoCorrecto = false;
 //Creando nuevo objeto lector de archivo
