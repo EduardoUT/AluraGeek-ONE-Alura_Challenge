@@ -31,24 +31,27 @@ original*/
     width: inherit;
 }
 
-.cabecera__logo { /*Ocultar*/
+.cabecera__logo {
+    /*Ocultar*/
     height: 1.75rem;
     width: 6.25rem;
 }
 
 .cabecera__formulario,
 .cabecera__campo[type="text"] {
-    display: none; 
-} 
+    display: none;
+}
 
-.cabecera__botonBuscarMovil {
+.cabecera__botonBuscarMovil,
+.cabecera__botonClose {
     background: transparent;
     border: none;
     cursor: pointer;
     display: flex;
 }
 
-.cabecera__iconoMovil {/*Ocultar*/
+.cabecera__iconoMovil {
+    /*Ocultar*/
     height: 1.1rem;
     width: 1.094rem;
 }
@@ -60,11 +63,11 @@ original*/
 }
 
 /*Altera el ancho del container del
-logo y el buscador a un ancho completo con
+logo y el buscador con
 JavaScript para dispositivos móviles en
-buscadorMovil.js en el evento click*/
+buscadorCelular.js en el evento click*/
 .cabecera__logoBuscador--ancho {
-    width: 100%;
+    width: 90%;
 }
 
 .cabecera__formulario {
@@ -112,7 +115,7 @@ ocultar logo, botón Login y botón de lupa*/
     .cabecera__botonBuscarMovil,
     .cabecera__iconoMovil {
         display: none;
-    } 
+    }
 
     .cabecera__logoBuscador {
         align-items: center;
