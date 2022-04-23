@@ -1,4 +1,5 @@
 const precio = document.getElementById("precioProducto");
+const btnEnviar = document.getElementById("agregarProducto");
 /**
  * Función asociada a evento keyup del campo precio,
  * al escribir evita que el usuario ingrese primero un 0.
@@ -16,5 +17,4 @@ const precio = document.getElementById("precioProducto");
     }
     precio.value = valorFinal;
 }
-
 precio.addEventListener("keyup", checkPrecio);
