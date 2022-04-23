@@ -26,17 +26,17 @@
     <header-component></header-component>
     <main class="principal container">
         <section class="agregar-producto">
-            <form class="agregar-producto__formulario" id="agregarProducto" action="">
+            <form class="agregar-producto__formulario" id="agregarProductoForm" action="">
                 <legend class="agregar-producto__legend formulario__legend" tabindex="0">Agregar nuevo producto</legend>
                 <div class="agregar-producto__container">
-                    <div class="agregar-producto__dropbox" data-dropBox>
+                    <div class="agregar-producto__dropbox" data-dropbox-area>
                         <div class="agregar-producto__imagen imagen--photo"></div>
-                        <p class="agregar-producto__texto parrafo" data-info>Arrastre para agregar una imagen para el
+                        <p class="agregar-producto__texto parrafo" data-dropbox-info>Arrastre para agregar una imagen para el
                             producto.</p>
-                        <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-campo>
+                        <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-dropbox-campo>
                     </div>
                     <p class="agregar-producto__parrafo parrafo">O</p>
-                    <button class="agregar-producto__boton boton--primario" id="botonFile">Busque en su
+                    <button class="agregar-producto__boton boton--primario" id="botonFile" data-dropbox-btn>Busque en su
                         computador</button>
                 </div>
                 <div class="formulario__componentes">
@@ -64,13 +64,14 @@
                         data-campo="descripcion"></textarea>
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
-                <input class="agregar-producto__btnform boton--secundario" type="submit" id="btn"
+                <input class="agregar-producto__btnform boton--secundario" type="submit" id="agregarProducto"
                     value="Agregar Producto">
             </form>
         </section>
     </main>
     <footer-component></footer-component>
     <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/componentes/dropBoxArea.js" type="module"></script>
     <script src="../assets/js/agregarProducto.js" type="module"></script>
 </body>
 
