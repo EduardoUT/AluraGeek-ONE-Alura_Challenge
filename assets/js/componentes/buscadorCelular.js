@@ -9,7 +9,6 @@ const btnBuscarMovil = document.querySelector(".cabecera__botonBuscarMovil");
 const btnClose = document.querySelector(".cabecera__botonClose");
 
 const buscadorCelular = () => {
-
     const visualizacionBuscador = () => {
         const anchoValido = mediaQueryCelular();
         //Evaluando si el ancho corresponde al tamaño de un dispositivo móvil
