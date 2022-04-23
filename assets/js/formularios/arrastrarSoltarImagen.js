@@ -75,7 +75,8 @@ const dragAndDropBox = () => {
             }
             leerArchivo.readAsDataURL(archivo); //Leyendo información de archivo en Base64
         } else {
-            /**Si se carga una imágen correcta antes, y posteriormente 
+            /**
+             * Si se carga una imágen correcta antes, y posteriormente 
              * se intenta ingresar un archivo que no corresponda al solicitado, se limpia
              * la vista previa y se trae el contenido inicial con contenidoDropBox, para que
              * no quede en blanco después de borrar la vista previa.
