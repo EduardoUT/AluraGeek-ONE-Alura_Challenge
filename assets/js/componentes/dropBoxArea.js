@@ -1,5 +1,5 @@
 import mediaQueryCelular from "./mediaQuery.js";
-import { limpiarValorImagen, vistaPreviaImagen } from "../formularios/vistaPreviaImagen.js";
+import vistaPreviaImagen, { limpiarValorImagen } from "../formularios/vistaPreviaImagen.js";
 
 const dropBoxArea = document.querySelector("[data-dropbox-area]"),
     textoInfo = dropBoxArea.querySelector("[data-dropbox-info]"),
