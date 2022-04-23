@@ -10,7 +10,15 @@ let archivo;
 //Si la página se carga o recarga se limpia el archivo.
 limpiarValorImagen(inputFile);
 
-const clickInputFile = () => {
+/**
+ * Se propaga el evento click al input de tipo file visiblemente
+ * oculto con CSS, se habilita en el botón "Busque en su computador" en
+ * la versión de escritorio y en el dropBoxArea en la versión celular.
+ * @param {click} event 
+ */
+const clickInputFile = (event) => {
+    //Evitando que se recargue la página al hacer click.
+    event.preventDefault();
     inputFile.click();
 }
 
