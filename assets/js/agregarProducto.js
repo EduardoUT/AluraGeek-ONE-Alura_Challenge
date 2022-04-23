@@ -1,4 +1,3 @@
-const formAgregarProducto = document.getElementById("agregarProducto");
 const precio = document.getElementById("precioProducto");
 /**
  * Función asociada a evento keyup del campo precio,
