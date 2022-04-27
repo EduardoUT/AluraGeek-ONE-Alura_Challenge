@@ -128,7 +128,8 @@ const capturarCambioArchivo = (e) => {
 
 /**
  * Función asociada a evento keyup del campo precio,
- * al escribir evita que el usuario ingrese cifras con precios 0.
+ * al escribir evita que el usuario ingrese cifras con precios 0
+ * y sólo escriba cifras y puntos decimales, en este caso sólo 1.
  * @param {keyup} event 
  */
  const validarPrecioIngresado = (event) => {
