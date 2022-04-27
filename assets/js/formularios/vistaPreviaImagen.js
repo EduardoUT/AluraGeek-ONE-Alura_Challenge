@@ -1,8 +1,11 @@
-import { contenidoDropBoxArea, esFormatoValido } from "./dropBoxArea.js";
+import { contenidoDropBoxArea, esFormatoValido } from "./agregarProducto.js";
 const formAgregarProducto = document.getElementById("agregarProductoForm");
 let archivoCorrecto = false;
-//Creando nuevo objeto lector de archivo
 const leerArchivo = new FileReader();
+export let producto = {
+    img: null
+}
+
 /**
  * Genera una vista de la imágen seleccionada por el usuario
  * dentro del dropBoxArea.
@@ -10,7 +13,7 @@ const leerArchivo = new FileReader();
  * @param {File} archivo 
  * @function esFormatoValido()
  * @function esImagenVisible()
- * @function cargarImagen()
+ * @function leerUrl()
  * @function contenidoDropBoxArea()
  */
 const vistaPreviaImagen = (dropBoxArea, archivo) => {
@@ -19,14 +22,24 @@ const vistaPreviaImagen = (dropBoxArea, archivo) => {
     if (imagenValida) {
         archivoCorrecto = true;
         habilitarBotonProducto(archivoCorrecto);
-        leerArchivo.onload = () => {
-            cargarImagen(dropBoxArea);
+        leerArchivo.onload = (e) => {
+            e.preventDefault();
+            const obtenerUrl = leerUrl(leerArchivo);
+            leerUrl(leerArchivo);
+            /**
+             * Creando un tag HTML de tipo imágen, asignandole la URL obtenida
+             * en el atributo src.
+             */
+            const imgView = `<img src="${obtenerUrl}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
+            //Agregando el tag dentro del div
+            dropBoxArea.innerHTML = imgView;
             /**
              * Desactivamos el evento resize para evitar que
              * la imágen desaparezca al cambiar el ancho de la
              * ventana.
              */
             window.removeEventListener("resize", contenidoDropBoxArea);
+            producto.img = obtenerUrl;
         }
         //Leyendo información de archivo en Base64
         leerArchivo.readAsDataURL(archivo);
@@ -45,6 +58,7 @@ const vistaPreviaImagen = (dropBoxArea, archivo) => {
             archivo = "";
         }
         archivoCorrecto = false;
+        producto.img = null;
         habilitarBotonProducto(archivoCorrecto);
         alert("El formato ingresado no es admitido, sólo (.jpeg .jpg y .png), intente nuevamente.");
     }
@@ -56,17 +70,11 @@ const vistaPreviaImagen = (dropBoxArea, archivo) => {
  * creada por una URL.
  * @param {div} dropBoxArea 
  */
-const cargarImagen = (dropBoxArea) => {
+export const leerUrl = (leerArchivo) => {
     //Asignando dirección URL del archivo del usuario en variable.
     /**CONTEMPLAT VALOR A FUTURO */
-    const archivoUrl = leerArchivo.result;
-    /**
-     * Creando un tag HTML de tipo imágen, asignandole la URL obtenida
-     * en el atributo src.
-     */
-    const imgView = `<img src="${archivoUrl}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
-    //Agregando el tag dentro del div
-    dropBoxArea.innerHTML = imgView;
+    const dataImagenBase64 = leerArchivo.result;
+    return dataImagenBase64;
 }
 
 /**
