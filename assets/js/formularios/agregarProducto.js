@@ -134,13 +134,15 @@ const capturarCambioArchivo = (e) => {
  const validarPrecioIngresado = (event) => {
     let valorIngresado = event.target.value;
     let valorFinal = "";
-    const filtro = [];
+    const filtro = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
     const cifrasInvalidas = ["0000000.00", "000000.00", "00000.00", "0000.00", "000.00", "00.00", "0.00"];
     const esInvalido = cifrasInvalidas.includes(valorIngresado);
-    if (esInvalido) {
-        valorFinal += "";
-    } else {
-        valorFinal = valorIngresado;
+    for (let i = 0; i <= valorIngresado.length; i++) {
+        if (filtro.includes(valorIngresado[i]) && !esInvalido) {
+            valorFinal = valorIngresado;
+        } else {
+            valorFinal += "";
+        }
     }
     precio.value = valorFinal;
 }
