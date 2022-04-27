@@ -7,12 +7,16 @@ const dropBoxArea = document.querySelector("[data-dropbox-area]"),
     inputFile = dropBoxArea.querySelector("[data-dropbox-campo]");
 const btnBuscarArchivo = document.querySelector("[data-dropbox-btn]");
 const precio = document.getElementById("precioProducto");
+const campoSelect = document.querySelector("[data-campo=categoria]");
+const opcionDefault = document.getElementById("voidValue");
+
 const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
 
 const agregarProducto = (event) => {
     event.preventDefault();
     console.log(producto);
+    const selectValor = capturarValorCampoSelect(campoSelect);
 }
 
 //Si la página se carga o recarga se limpia el archivo.
@@ -144,6 +148,15 @@ const capturarCambioArchivo = (event) => {
     precio.value = valorFinal;
 }
 
+const capturarValorCampoSelect = (campoSelect) => {
+    const valorOpcion = campoSelect.value;
+    return valorOpcion;
+}
+
+const seleccionarOpcionDefault = (opcionDefault) => {
+    opcionDefault.selected = "true";
+} 
+
 formAgregarProducto.addEventListener("submit", agregarProducto);
 dropBoxArea.addEventListener("dragover", arrastrarArchivoSobre);
 dropBoxArea.addEventListener("dragleave", arrastrarArchivoFuera);
@@ -153,3 +166,4 @@ btnBuscarArchivo.addEventListener("click", clickInputFile);
 window.addEventListener("resize", contenidoDropBoxArea);
 contenidoDropBoxArea();
 precio.addEventListener("keyup", validarPrecioIngresado);
+seleccionarOpcionDefault(opcionDefault);
