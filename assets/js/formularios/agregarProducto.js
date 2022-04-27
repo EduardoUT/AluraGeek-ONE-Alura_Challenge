@@ -10,6 +10,11 @@ const precio = document.getElementById("precioProducto");
 const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
 
+const agregarProducto = (event) => {
+    event.preventDefault();
+    console.log(producto);
+}
+
 //Si la página se carga o recarga se limpia el archivo.
 limpiarValorImagen(inputFile);
 
@@ -139,12 +144,7 @@ const capturarCambioArchivo = (e) => {
     precio.value = valorFinal;
 }
 
-const enviarFormulario = (event) => {
-    event.preventDefault();
-    console.log(producto);
-}
-
-formAgregarProducto.addEventListener("submit", enviarFormulario);
+formAgregarProducto.addEventListener("submit", agregarProducto);
 dropBoxArea.addEventListener("dragover", arrastrarArchivoSobre);
 dropBoxArea.addEventListener("dragleave", arrastrarArchivoFuera);
 dropBoxArea.addEventListener("drop", soltarArchivo);
