@@ -16,7 +16,8 @@ let archivo;
 const agregarProducto = (event) => {
     event.preventDefault();
     console.log(producto);
-    const selectValor = capturarValorCampoSelect(campoSelect);
+    const selectValor = campoSelect.value;
+    console.log(selectValor)
 }
 
 //Si la página se carga o recarga se limpia el archivo.
@@ -146,11 +147,6 @@ const capturarCambioArchivo = (event) => {
         }
     }
     precio.value = valorFinal;
-}
-
-const capturarValorCampoSelect = (campoSelect) => {
-    const valorOpcion = campoSelect.value;
-    return valorOpcion;
 }
 
 const seleccionarOpcionDefault = (opcionDefault) => {
