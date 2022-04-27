@@ -86,8 +86,6 @@ const arrastrarArchivoFuera = () => {
  * @function vistaPreviaImagen() 
  */
 const soltarArchivo = (event) => {
-    //Creando nuevo objeto lector de archivo
-    const leerArchivo = new FileReader();
     //Evita que al arrastrar un archivo se abra nueva ventana.
     event.preventDefault();
     /**
@@ -97,7 +95,7 @@ const soltarArchivo = (event) => {
      * primero.
      */
     archivo = event.dataTransfer.files[0];
-    vistaPreviaImagenDropBoxArea(dropBoxArea, archivo, leerArchivo);
+    vistaPreviaImagenDropBoxArea(dropBoxArea, archivo);
     //console.log(archivo);
     //capturarValorImagen(inputFile);
 }
@@ -120,9 +118,9 @@ export const esFormatoValido = () => {
  * versión de escritorio el nuevo archivo se captura.
  * @function vistaPreviaImagen()
  */
-const capturarCambioArchivo = (e) => {
-    e.preventDefault();
-    archivo = e.target.files[0];
+const capturarCambioArchivo = (event) => {
+    event.preventDefault();
+    archivo = event.target.files[0];
     vistaPreviaImagenDropBoxArea(dropBoxArea, archivo)
 }
 
