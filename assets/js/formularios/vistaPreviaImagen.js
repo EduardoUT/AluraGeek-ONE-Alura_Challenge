@@ -1,4 +1,5 @@
 import { contenidoDropBoxArea, esFormatoValido } from "./agregarProducto.js";
+
 const formAgregarProducto = document.getElementById("agregarProductoForm");
 let archivoCorrecto = false;
 const leerArchivo = new FileReader();
@@ -13,18 +14,18 @@ export let producto = {
  * @param {File} archivo 
  * @function esFormatoValido()
  * @function esImagenVisible()
- * @function leerUrl()
+ * @function obtenerUrl()
  * @function contenidoDropBoxArea()
  */
-const vistaPreviaImagen = (dropBoxArea, archivo) => {
+const vistaPreviaImagenDropBoxArea = (dropBoxArea, archivo) => {
     const imagenValida = esFormatoValido();
     const imagenVisible = esImagenVisible(dropBoxArea);
     if (imagenValida) {
         archivoCorrecto = true;
         habilitarBotonProducto(archivoCorrecto);
-        leerArchivo.onload = (e) => {
+        leerArchivo.addEventListener("load", (e) => {
             e.preventDefault();
-            const obtenerUrl = leerUrl(leerArchivo);
+            const url = obtenerUrl(leerArchivo);
             /**
              * Creando un tag HTML de tipo imágen, asignandole la URL obtenida
              * en el atributo src.
@@ -38,8 +39,8 @@ const vistaPreviaImagen = (dropBoxArea, archivo) => {
              * ventana.
              */
             window.removeEventListener("resize", contenidoDropBoxArea);
-            producto.img = obtenerUrl;
-        }
+            producto.img = url;
+        });
         //Leyendo información de archivo en Base64
         leerArchivo.readAsDataURL(archivo);
     } else {
@@ -69,9 +70,8 @@ const vistaPreviaImagen = (dropBoxArea, archivo) => {
  * creada por una URL.
  * @param {div} dropBoxArea 
  */
-export const leerUrl = (leerArchivo) => {
+export const obtenerUrl = (leerArchivo) => {
     //Asignando dirección URL del archivo del usuario en variable.
-    /**CONTEMPLAT VALOR A FUTURO */
     const dataImagenBase64 = leerArchivo.result;
     return dataImagenBase64;
 }
@@ -97,7 +97,7 @@ export const limpiarValorImagen = (inputFile) => {
     return inputFile.value = "";
 }
 
-export const habilitarBotonProducto = (archivoCorrecto) => {
+const habilitarBotonProducto = (archivoCorrecto) => {
     const btnAgregarProducto = document.getElementById("agregarProducto");
     const campoNombreProducto = document.getElementById("nombreProducto");
     const campoPrecioProducto = document.getElementById("precioProducto");
@@ -116,6 +116,7 @@ export const habilitarBotonProducto = (archivoCorrecto) => {
     }
 }
 
+
 const validarBtnProducto = (event) => {
     const element = event.target;
     if (element && element.tagName == 'INPUT') {
@@ -128,4 +129,4 @@ const validarBtnProducto = (event) => {
 habilitarBotonProducto(archivoCorrecto);
 formAgregarProducto.addEventListener("keyup", validarBtnProducto);
 
-export default vistaPreviaImagen;
+export default vistaPreviaImagenDropBoxArea;
