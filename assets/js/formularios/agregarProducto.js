@@ -96,8 +96,6 @@ const soltarArchivo = (event) => {
      */
     archivo = event.dataTransfer.files[0];
     vistaPreviaImagenDropBoxArea(dropBoxArea, archivo);
-    //console.log(archivo);
-    //capturarValorImagen(inputFile);
 }
 
 /**
