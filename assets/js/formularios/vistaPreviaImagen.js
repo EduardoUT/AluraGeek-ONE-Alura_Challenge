@@ -99,14 +99,14 @@ export const limpiarValorImagen = (inputFile) => {
 
 const habilitarBotonProducto = (archivoCorrecto) => {
     const btnAgregarProducto = document.getElementById("agregarProducto");
-    const campoNombreProducto = document.getElementById("nombreProducto");
-    const campoPrecioProducto = document.getElementById("precioProducto");
-    const campoDscProducto = document.getElementById("descProducto");
-    const campoNombreProductoValido = campoNombreProducto.validity.valid;
-    const campoPrecioProductoValido = campoPrecioProducto.validity.valid;
-    const campoDscProductoValido = campoDscProducto.validity.valid;
-    const formularioAgregarProductoValido = (archivoCorrecto && campoNombreProductoValido &&
-        campoPrecioProductoValido && campoDscProductoValido);
+    const nombreProducto = document.getElementById("nombreProducto");
+    const precioProducto = document.getElementById("precioProducto");
+    const dscProducto = document.getElementById("descProducto");
+    const nombreProductoValido = nombreProducto.validity.valid;
+    const precioProductoValido = precioProducto.validity.valid;
+    const dscProductoValido = dscProducto.validity.valid;
+    const formularioAgregarProductoValido = (archivoCorrecto && nombreProductoValido &&
+        precioProductoValido && categoriaProductoValido && dscProductoValido);
     if (formularioAgregarProductoValido) {
         btnAgregarProducto.removeAttribute("disabled");
         btnAgregarProducto.classList.remove("boton--bloqueado");
