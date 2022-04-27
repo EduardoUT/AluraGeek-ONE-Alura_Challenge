@@ -25,7 +25,6 @@ const vistaPreviaImagen = (dropBoxArea, archivo) => {
         leerArchivo.onload = (e) => {
             e.preventDefault();
             const obtenerUrl = leerUrl(leerArchivo);
-            leerUrl(leerArchivo);
             /**
              * Creando un tag HTML de tipo imágen, asignandole la URL obtenida
              * en el atributo src.
