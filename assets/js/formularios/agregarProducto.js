@@ -9,8 +9,6 @@ const btnBuscarArchivo = document.querySelector("[data-dropbox-btn]");
 const precio = document.getElementById("precioProducto");
 const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
-let archivoCorrecto = false;
-let imgInfo = [];
 
 //Si la página se carga o recarga se limpia el archivo.
 limpiarValorImagen(inputFile);
