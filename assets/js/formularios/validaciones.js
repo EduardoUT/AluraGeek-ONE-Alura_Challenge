@@ -132,6 +132,9 @@ const mensajesDeError = {
             "Incluya un punto para índicar los centavos.",
         tooLong: "No debe exceder los 9 dígitos, contando décimales.",
     },
+    categoria: {
+        valueMissing: "Por favor, seleccione una categoría."
+    },
     descripcion: {
         valueMissing: "El campo descripción no puede estar en blanco o vacío.",
         tooShort: "Debe contener mínimo 20 carácteres",
