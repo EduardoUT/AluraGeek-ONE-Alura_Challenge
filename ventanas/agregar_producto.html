@@ -58,6 +58,16 @@
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
+                    <label class="formulario__label" for="categoriaProducto">Seleccione la categoría del producto:</label>
+                    <select class="formulario__campo" id="categoriaProducto" name="categoriaProducto" required tabindex="0" data-campo="categoria">
+                        <option id="voidValue" value="" disabled>Seleccione una categoría</option>
+                        <option value="Star Wars">Star Wars</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Diversos">Diversos</option>
+                    </select>
+                    <span class="formulario__span--error" tabindex="0">Error</span>
+                </div>
+                <div class="formulario__componentes">
                     <label class="formulario__label" for="descProducto">Descripción del producto:</label>
                     <textarea class="formulario__textarea formulario__campoEstilo" id="descProducto" cols="5" required
                         placeholder="Escriba la descripción" minlength="20" maxlength="150"
