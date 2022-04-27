@@ -75,7 +75,8 @@ pueden agregarse numéricos*/
 .formulario__campo[type="text"],
 .formulario__campo[type="email"],
 .formulario__campo[type="password"],
-.formulario__textarea {
+.formulario__textarea,
+.formulario__campo {
     border: none;
     color: var(--font-color);
     display: block;
