@@ -23,14 +23,14 @@ const vistaPreviaImagenDropBoxArea = (dropBoxArea, archivo) => {
     if (imagenValida) {
         archivoCorrecto = true;
         habilitarBotonProducto(archivoCorrecto);
-        leerArchivo.addEventListener("load", (e) => {
-            e.preventDefault();
-            const url = obtenerUrl(leerArchivo);
+        leerArchivo.addEventListener("load", (event) => {
+            event.preventDefault();
+            const url = obtenerUrl(event.target);
             /**
              * Creando un tag HTML de tipo imágen, asignandole la URL obtenida
              * en el atributo src.
              */
-            const imgView = `<img src="${obtenerUrl}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
+            const imgView = `<img src="${url}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
             //Agregando el tag dentro del div
             dropBoxArea.innerHTML = imgView;
             /**
@@ -70,9 +70,9 @@ const vistaPreviaImagenDropBoxArea = (dropBoxArea, archivo) => {
  * creada por una URL.
  * @param {div} dropBoxArea 
  */
-export const obtenerUrl = (leerArchivo) => {
+export const obtenerUrl = (dataFile) => {
     //Asignando dirección URL del archivo del usuario en variable.
-    const dataImagenBase64 = leerArchivo.result;
+    const dataImagenBase64 = dataFile.result;
     return dataImagenBase64;
 }
 
