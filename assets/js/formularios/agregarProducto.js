@@ -1,5 +1,5 @@
 import mediaQueryCelular from "../componentes/mediaQuery.js";
-import vistaPreviaImagen, { limpiarValorImagen, producto } from "./vistaPreviaImagen.js";
+import vistaPreviaImagenDropBoxArea, { limpiarValorImagen, producto } from "./vistaPreviaImagen.js";
 
 const formAgregarProducto = document.getElementById("agregarProductoForm");
 const dropBoxArea = document.querySelector("[data-dropbox-area]"),
@@ -19,23 +19,11 @@ const agregarProducto = (event) => {
 limpiarValorImagen(inputFile);
 
 /**
- * Se propaga el evento click al input de tipo file visiblemente
- * oculto con CSS, se habilita en el botón "Busque en su computador" en
- * la versión de escritorio y en el dropBoxArea en la versión celular.
- * @param {click} event 
- */
-const clickInputFile = (event) => {
-    //Evitando que se recargue la página al hacer click.
-    event.preventDefault();
-    inputFile.click();
-}
-
-/**
  * Función encargada de modificar la visualización
  * del contenido del dropBoxArea con las instrucciones y icono
  * según corresponda el tamaño del dispositivo.
  */
-export const contenidoDropBoxArea = () => {
+ export const contenidoDropBoxArea = () => {
     const anchoCelular = mediaQueryCelular();
     if (anchoCelular) {
         const contenidoDropBoxCelular = `
@@ -54,6 +42,18 @@ export const contenidoDropBoxArea = () => {
         dropBoxArea.innerHTML = contenidoDropBoxEscritorio;
         dropBoxArea.removeEventListener("click", clickInputFile);
     }
+}
+
+/**
+ * Se propaga el evento click al input de tipo file visiblemente
+ * oculto con CSS, se habilita en el botón "Busque en su computador" en
+ * la versión de escritorio y en el dropBoxArea en la versión celular.
+ * @param {click} event 
+ */
+ export const clickInputFile = (event) => {
+    //Evitando que se recargue la página al hacer click.
+    event.preventDefault();
+    inputFile.click();
 }
 
 /**
@@ -97,7 +97,7 @@ const soltarArchivo = (event) => {
      * primero.
      */
     archivo = event.dataTransfer.files[0];
-    vistaPreviaImagen(dropBoxArea, archivo, leerArchivo);
+    vistaPreviaImagenDropBoxArea(dropBoxArea, archivo, leerArchivo);
     //console.log(archivo);
     //capturarValorImagen(inputFile);
 }
@@ -123,7 +123,7 @@ export const esFormatoValido = () => {
 const capturarCambioArchivo = (e) => {
     e.preventDefault();
     archivo = e.target.files[0];
-    vistaPreviaImagen(dropBoxArea, archivo)
+    vistaPreviaImagenDropBoxArea(dropBoxArea, archivo)
 }
 
 /**
@@ -134,6 +134,7 @@ const capturarCambioArchivo = (e) => {
  const validarPrecioIngresado = (event) => {
     let valorIngresado = event.target.value;
     let valorFinal = "";
+    const filtro = [];
     const cifrasInvalidas = ["0000000.00", "000000.00", "00000.00", "0000.00", "000.00", "00.00", "0.00"];
     const esInvalido = cifrasInvalidas.includes(valorIngresado);
     if (esInvalido) {
