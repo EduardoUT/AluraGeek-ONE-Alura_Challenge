@@ -1,12 +1,12 @@
 import { precio } from "../formularios/agregarProducto.js";
-import { producto } from "../formularios/vistaPreviaImagen.js";
+import { producto } from "../formularios/imagenDropBoxArea.js";
 
 const formAgregarProducto = document.querySelector("[data-form-add-product]");
 const nombreProducto = document.querySelector("[data-campo=producto]");
 const categoria = document.querySelector("[data-campo=categoria]");
 const descripcion = document.querySelector("[data-campo=descripcion]");
 
-const agregarProducto = (event) => {
+const guardarProducto = (event) => {
     event.preventDefault();
     const valorImagen = producto.img;
     const valorNombreProducto = nombreProducto.value;
@@ -20,4 +20,4 @@ const agregarProducto = (event) => {
     console.log(valorDescripcion);
 }
 
-formAgregarProducto.addEventListener("submit", agregarProducto);
+formAgregarProducto.addEventListener("submit", guardarProducto);
