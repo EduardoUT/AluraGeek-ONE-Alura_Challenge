@@ -10,6 +10,7 @@
     position: fixed;
     transition: transform 0.4s;
     width: 100%;
+    z-index: 1;
 }
 
 /*El menú subirá con un porcentaje de -100%, en el
