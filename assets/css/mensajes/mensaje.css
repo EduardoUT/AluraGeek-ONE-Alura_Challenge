@@ -16,7 +16,7 @@
 }
 
 .mensaje__icono {
-    animation: shake 2s  infinite forwards;
+    animation: shake 2s infinite forwards;
     height: 10rem;
     width: 10rem;
 }
