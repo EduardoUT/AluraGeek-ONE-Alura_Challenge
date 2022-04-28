@@ -1,24 +1,14 @@
 import mediaQueryCelular from "../componentes/mediaQuery.js";
-import vistaPreviaImagenDropBoxArea, { limpiarValorImagen, producto } from "./vistaPreviaImagen.js";
+import vistaPreviaImagenDropBoxArea, { limpiarValorImagen } from "./vistaPreviaImagen.js";
 
-const formAgregarProducto = document.getElementById("agregarProductoForm");
 const dropBoxArea = document.querySelector("[data-dropbox-area]"),
     textoInfo = dropBoxArea.querySelector("[data-dropbox-info]"),
     inputFile = dropBoxArea.querySelector("[data-dropbox-campo]");
 const btnBuscarArchivo = document.querySelector("[data-dropbox-btn]");
-const precio = document.getElementById("precioProducto");
-const campoSelect = document.querySelector("[data-campo=categoria]");
-const opcionDefault = document.getElementById("voidValue");
-
+export const precio = document.querySelector("[data-campo=precio]");
+const opcionDefault = document.querySelector("[data-select-option=default]");
 const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
-
-const agregarProducto = (event) => {
-    event.preventDefault();
-    console.log(producto);
-    const selectValor = campoSelect.value;
-    console.log(selectValor)
-}
 
 //Si la página se carga o recarga se limpia el archivo.
 limpiarValorImagen(inputFile);
@@ -153,7 +143,6 @@ const seleccionarOpcionDefault = (opcionDefault) => {
     opcionDefault.selected = "true";
 } 
 
-formAgregarProducto.addEventListener("submit", agregarProducto);
 dropBoxArea.addEventListener("dragover", arrastrarArchivoSobre);
 dropBoxArea.addEventListener("dragleave", arrastrarArchivoFuera);
 dropBoxArea.addEventListener("drop", soltarArchivo);
