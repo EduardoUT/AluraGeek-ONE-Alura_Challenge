@@ -1,0 +1,34 @@
+.mensaje {
+    align-items: center;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 4.5rem ;
+    padding: 5.5rem 1rem 5.5rem 1rem;
+    background-color: #1abc9c;
+    width: 100%;
+}
+
+.mensaje__icono {
+    animation: shake 2s  infinite forwards;
+    height: 10rem;
+    width: 10rem;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(-20deg);
+    } 
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+}
+
+.icono--palomita {
+    background: url("../../img/iconos/comprobado.png") center / 100% 100% no-repeat;
+}
+
