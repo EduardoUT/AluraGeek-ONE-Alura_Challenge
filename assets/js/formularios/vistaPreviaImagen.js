@@ -106,7 +106,7 @@ const habilitarBotonProducto = (archivoCorrecto) => {
     const precioProductoValido = precioProducto.validity.valid;
     const dscProductoValido = dscProducto.validity.valid;
     const formularioAgregarProductoValido = (archivoCorrecto && nombreProductoValido &&
-        precioProductoValido && categoriaProductoValido && dscProductoValido);
+        precioProductoValido && dscProductoValido);
     if (formularioAgregarProductoValido) {
         btnAgregarProducto.removeAttribute("disabled");
         btnAgregarProducto.classList.remove("boton--bloqueado");
