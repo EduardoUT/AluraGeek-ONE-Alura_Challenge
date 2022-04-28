@@ -1,6 +1,5 @@
 .mensaje__seccion {
     align-items: center;
-    background-color: #1abc9c;
     border-radius: 0.4rem;
     display: flex;
     flex-direction: column;
@@ -10,18 +9,37 @@
     width: 100%;
 }
 
+.seccion--successColor {
+    background-color: #1abc9c;
+}
+
+.seccion--unsuccessColor {
+    background-color: #b40000;
+}
+
 .mensaje__icono,
 .mensaje__titulo {
     margin: 0 0 .5rem 0 !important;
 }
 
+.titulo--unsuccessFontColor {
+    color: var(--color-blanco);
+}
+
+.texto--unsuccessFontColor {
+    color: var(--color-blanco);
+}
+
 .mensaje__icono {
-    animation: shake 2s infinite forwards;
     height: 10rem;
     width: 10rem;
 }
 
-@keyframes shake {
+.icono--rotar {
+    animation: rotar 2s infinite forwards;
+}
+
+@keyframes rotar {
     0% {
         transform: rotate(-20deg);
     } 
@@ -30,6 +48,22 @@
     }
     100% {
         transform: rotate(-20deg);
+    }
+}
+
+.icono--temblar {
+    animation: temblar 3s infinite forwards;
+}
+
+@keyframes temblar {
+    0% {
+        transform: translateX(-20px);
+    } 
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(-20px);
     }
 }
 
