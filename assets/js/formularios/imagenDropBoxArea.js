@@ -60,7 +60,7 @@ const imagenDropBoxArea = (dropBoxArea, archivo) => {
         archivoCorrecto = false;
         producto.img = null;
         habilitarBotonProducto(archivoCorrecto);
-        alert("El formato ingresado no es admitido, sólo (.jpeg .jpg y .png), intente nuevamente.");
+        Swal.fire("El formato ingresado no es admitido, sólo (.jpeg .jpg y .png), intente nuevamente.");
     }
 }
 
