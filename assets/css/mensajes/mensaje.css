@@ -1,37 +1,33 @@
+.mensaje {
+    background: var(--color-gris-suave);
+}
+
 .mensaje__seccion {
     align-items: center;
     border-radius: 0.4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 4.5rem ;
+    margin-top: 4.5rem;
     padding: 5.5rem 1rem 5.5rem 1rem;
     width: 100%;
 }
 
 .seccion--successColor {
-    background-color: #1abc9c;
+    background: url("../../img/banner/wave-haikei.svg") center / cover no-repeat;
 }
 
 .seccion--unsuccessColor {
-    background-color: #b40000;
+    background: url("../../img/banner/error.svg") center / cover no-repeat;
 }
 
 .seccion--updatedColor {
-    background-color: #a7c6eb;
+    background: url("../../img/banner/wave-haikei.svg") center / cover no-repeat;
 }
 
 .mensaje__icono,
 .mensaje__titulo {
     margin: 0 0 .5rem 0 !important;
-}
-
-.titulo--unsuccessFontColor {
-    color: var(--color-blanco);
-}
-
-.texto--unsuccessFontColor {
-    color: var(--color-blanco);
 }
 
 .mensaje__icono {
@@ -46,10 +42,12 @@
 @keyframes rotar {
     0% {
         transform: rotate(-20deg);
-    } 
+    }
+
     50% {
         transform: rotate(20deg);
     }
+
     100% {
         transform: rotate(-20deg);
     }
@@ -62,10 +60,12 @@
 @keyframes temblar {
     0% {
         transform: translateX(-20px);
-    } 
+    }
+
     50% {
         transform: translateX(20px);
     }
+
     100% {
         transform: translateX(-20px);
     }
@@ -83,13 +83,15 @@
     background: url("../../img/iconos/updated.png") center / 100% 100% no-repeat;
 }
 
-.mensaje__titulo {
+.mensaje__titulo,
+.mensaje__texto {
+    color: white;
     text-align: center;
 }
 
 @media only screen and (min-width: 1366px) {
     .mensaje {
-        padding: calc(7.187rem + .5rem) 0 0 0 !important;
+        padding: calc(7.187rem + .5rem) 0 2rem 0 !important;
     }
 
     .mensaje__icono,
@@ -100,6 +102,5 @@
     .mensaje__seccion {
         margin: 0 auto;
         max-width: 71rem;
-
     }
 }
