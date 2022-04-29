@@ -17,6 +17,10 @@
     background-color: #b40000;
 }
 
+.seccion--updatedColor {
+    background-color: #a7c6eb;
+}
+
 .mensaje__icono,
 .mensaje__titulo {
     margin: 0 0 .5rem 0 !important;
@@ -73,6 +77,14 @@
 
 .icono--error {
     background: url("../../img/iconos/cancelar.png") center / 100% 100% no-repeat;
+}
+
+.icono--update {
+    background: url("../../img/iconos/updated.png") center / 100% 100% no-repeat;
+}
+
+.mensaje__titulo {
+    text-align: center;
 }
 
 @media only screen and (min-width: 1366px) {
