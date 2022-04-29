@@ -9,3 +9,7 @@ const crearProducto = (imagen, nombre, precio, categoria, desc) => {
         body: JSON.stringify({ id: uuid.v4(), imagen, nombre, precio, categoria, desc})
     });
 } 
+
+export const productServices = {
+    crearProducto,
+}
