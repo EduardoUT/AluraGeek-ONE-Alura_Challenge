@@ -1,6 +1,10 @@
+import { login } from "../login.js";
+import { estaAutenticado } from "../main.js";
+
 export const precio = document.querySelector("[data-campo=precio]");
 const opcionDefault = document.querySelector("[data-select-option=default]");
 
+console.log(login(estaAutenticado));
 /**
  * Función asociada a evento keyup del campo precio,
  * al escribir evita que el usuario ingrese cifras con precios 0
