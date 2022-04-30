@@ -31,8 +31,9 @@
                 <h2 class="productos-existentes__titulo titulo">Todos los productos</h2>
                 <a class="productos-existentes__boton boton--secundario" href="./agregar_producto.html" data-agregar-producto>Agregar Producto</a>
             </header>
-            <div class="productos-existentes__detalles productos__detalles">
-                <div class="productos-existentes__producto productos__producto">
+            <div class="productos-existentes__detalles productos__detalles" data-lista-productos>
+                <!--
+                    <div class="productos-existentes__producto productos__producto" data-producto>
                     <div class="productos-existentes__container productos__imagen imagen--taza-stormtrooper" tabindex="0">
                         <button class="productos-existentes__botones boton--eliminar" data-borrar-boton></button>
                         <button class="productos-existentes__botones boton--editar" data-editar-boton></button>
@@ -194,12 +195,15 @@
                     <p class="productos__precio parrafo" tabindex="0">$ 60,00</p>
                     <p class="productos__id parrafo" tabindex="0">#1111111</p>
                 </div>
+                -->
             </div>
         </section>
     </main>
     <footer-component></footer-component>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
     <script src="../assets/js/main.js" type="module"></script>
     <script src="../assets/js/productosExistentes.js" type="module"></script>
+    <script src="../assets/js/controllers/producto-controller.js" type="module"></script>
 </body>
 
 </html>
