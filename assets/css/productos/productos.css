@@ -38,7 +38,7 @@
     width: inherit;
 }
 
-.imagen--taza-stormtrooper {
+/* .imagen--taza-stormtrooper {
     background: url("../../img/productos/star_wars/taza-stormtrooper.png") center / 100% 100% no-repeat;
 }
 
@@ -108,7 +108,7 @@
 
 .imagen--peluche-pikachu {
     background: url("../../img/productos/diversos/peluche-pikachu.png") center / 100% 100% no-repeat;
-}
+} */
 
 .productos__nombre {
     font-size: 0.875rem;
