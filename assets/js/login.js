@@ -16,7 +16,7 @@ if (window.location.href.includes("login.html")) {
         const contrasenaUsuario = document.querySelector("[data-campo=password]").value;
         if (correoUsuario == correoAlmacenado && contrasenaUsuario == passAlmacenado) {
             sessionStorage.setItem("autenticado", "true");
-            window.location.href = "../../ventanas/productos_existentes.html";
+            window.location.href = "/ventanas/productos_existentes.html";
         } else {
             sessionStorage.setItem("autenticado", "false");
             Swal.fire({
