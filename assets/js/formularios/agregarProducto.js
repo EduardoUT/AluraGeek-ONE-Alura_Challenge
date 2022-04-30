@@ -5,13 +5,29 @@ export const precio = document.querySelector("[data-campo=precio]");
 const opcionDefault = document.querySelector("[data-select-option=default]");
 
 console.log(login(estaAutenticado));
+
+const comprobarAcceso = () => {
+    if (!login(estaAutenticado)) {
+        Swal.fire({
+            icon: "warning",
+            title: "Acceso denegado.",
+            text: "Inicie sesión para poder acceder a este sitio.",
+            showConfirmButton: false,
+            allowOutsideClick: false
+        });
+        setTimeout(() => {
+            window.location.href = "../../../index.html";
+        }, 4000);
+    }
+}
+
 /**
  * Función asociada a evento keyup del campo precio,
  * al escribir evita que el usuario ingrese cifras con precios 0
  * y sólo escriba cifras y puntos decimales, en este caso sólo 1.
  * @param {keyup} event 
  */
- const validarPrecioIngresado = (event) => {
+const validarPrecioIngresado = (event) => {
     let valorIngresado = event.target.value;
     let valorFinal = "";
     const filtro = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
@@ -31,5 +47,6 @@ const seleccionarOpcionDefault = (opcionDefault) => {
     opcionDefault.selected = "true";
 }
 
+comprobarAcceso();
 precio.addEventListener("keyup", validarPrecioIngresado);
 seleccionarOpcionDefault(opcionDefault);
