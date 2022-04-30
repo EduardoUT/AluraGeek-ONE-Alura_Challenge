@@ -4,8 +4,6 @@ import { estaAutenticado } from "../main.js";
 export const precio = document.querySelector("[data-campo=precio]");
 const opcionDefault = document.querySelector("[data-select-option=default]");
 
-console.log(login(estaAutenticado));
-
 const comprobarAcceso = () => {
     if (!login(estaAutenticado)) {
         Swal.fire({
