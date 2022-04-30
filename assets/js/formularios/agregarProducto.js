@@ -14,7 +14,7 @@ const comprobarAcceso = () => {
             allowOutsideClick: false
         });
         setTimeout(() => {
-            window.location.href = "../../../index.html";
+            window.location.href = "../index.html";
         }, 4000);
     }
 }
