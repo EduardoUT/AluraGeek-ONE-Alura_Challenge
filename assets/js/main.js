@@ -9,7 +9,7 @@ sessionStorage.setItem("password", "123");
 const btnLogin = document.querySelector("[data-btn-login]");
 const formularioRodapie = document.getElementById("formulario-rodapie");
 const btnEnviar = document.getElementById("btn-enviar");
-const estaAutenticado = JSON.parse(sessionStorage.getItem("autenticado"));
+export const estaAutenticado = JSON.parse(sessionStorage.getItem("autenticado"));
 
 const botonLogin = () => {
     const estaLogeado = JSON.parse(sessionStorage.getItem("autenticado"));
