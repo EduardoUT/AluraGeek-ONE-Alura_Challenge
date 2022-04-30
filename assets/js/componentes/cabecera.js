@@ -21,7 +21,7 @@ class Header extends HTMLElement {
                 </form>
             </div>
             <a class="cabecera__boton boton--primario" href="../ventanas/login.html" title="Inicia sesión"
-                tabindex="0">Login</a>
+                tabindex="0" data-btn-login>Login</a>
             <button class="cabecera__botonBuscarMovil" title="Buscar productos" tabindex="0">
                 <img class="cabecera__iconoMovil" src="../assets/img/iconos/lupa.svg" alt="Icono de Lupa">
             </button>
