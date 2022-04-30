@@ -1,6 +1,4 @@
 import validarCampos from "./formularios/validarCampos.js";
-export let emailUsuario = "";
-export let passUsuario = "";
 
 export const login = (estaAutenticado) => {
     console.log(estaAutenticado);
