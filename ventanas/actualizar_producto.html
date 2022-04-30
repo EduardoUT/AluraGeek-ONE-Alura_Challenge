@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/componentes/boton.css">
+    <link rel="stylesheet" href="../assets/css/componentes/link.css">
+    <link rel="stylesheet" href="../assets/css/cabecera/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/principal/principal.css">
+    <link rel="stylesheet" href="../assets/css/agregarProducto/agregarProducto.css">
+    <link rel="stylesheet" href="../assets/css/informaciones/informaciones.css">
+    <link rel="stylesheet" href="../assets/css/formulario/formulario.css">
+    <link rel="stylesheet" href="../assets/css/copyright/copyright.css">
+    <script src="../assets/js/componentes/cabecera.js"></script>
+    <script src="../assets/js/componentes/rodapie.js"></script>
+    <link rel="icon" href="../favicon.svg">
+    <title>AluraGeek | Actualizar Producto</title>
+
+</head>
+
+<body>
+    <header-component></header-component>
+    <main class="principal container">
+        <section class="agregar-producto">
+            <form class="agregar-producto__formulario" id="agregarProductoForm" action="" data-form-add-product>
+                <legend class="agregar-producto__legend formulario__legend" tabindex="0">Actualizar Producto</legend>
+                <div class="agregar-producto__container">
+                    <div class="agregar-producto__dropbox" data-dropbox-area>
+                        <div class="agregar-producto__imagen imagen--photo"></div>
+                        <p class="agregar-producto__texto parrafo" data-dropbox-info>Arrastre para agregar una imagen
+                            para el
+                            producto.</p>
+                        <input class="agregar-producto__archivo" type="file" id="archivoImagen" required
+                            data-dropbox-campo>
+                    </div>
+                    <p class="agregar-producto__parrafo parrafo">O</p>
+                    <button class="agregar-producto__boton boton--primario" id="botonFile" data-dropbox-btn>Busque en su
+                        computador</button>
+                </div>
+                <div class="formulario__componentes">
+                    <label class="formulario__label" for="nombreProducto">Nombre del producto:</label>
+                    <input class="formulario__campo formulario__campoEstilo" id="nombreProducto" type="text" required
+                        placeholder="Nombre del producto" tabindex="0"
+                        title="El campo nombre del producto no puede estar en blanco o vacío, debe tener máximo 20 carácteres."
+                        pattern="^(?=.{0,21}$)([A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+(?:[\s]?[A-ZÁÉÍÓÚÑa-záéíóúñ\d.\-,¿?!¡&/$()=+#]+)+)$"
+                        minlength="0" maxlength="20" data-campo="producto">
+                    <span class="formulario__span--error" tabindex="0">Error</span>
+                </div>
+                <div class="formulario__componentes">
+                    <label class="formulario__label" for="precioProducto">Precio del producto (Formato 1900.99, usa
+                        punto decimal para centavos):</label>
+                    <input class="formulario__campo formulario__campoEstilo" id="precioProducto" type="text" step="0.01"
+                        required placeholder="60.00" tabindex="0"
+                        title="El campo precio no puede estar en blanco o vacío, formato de precio 10.99 o 1900.99, usando el punto (.) como decimal."
+                        pattern="^[\d]{1,7}\.[\d]{2}$" maxlength="10" data-campo="precio">
+                    <span class="formulario__span--error" tabindex="0">Error</span>
+                </div>
+                <div class="formulario__componentes">
+                    <label class="formulario__label" for="categoriaProducto">Seleccione la categoría del
+                        producto:</label>
+                    <select class="formulario__campo" id="categoriaProducto" name="categoriaProducto" required
+                        tabindex="0" data-campo="categoria">
+                        <option id="voidValue" value="" disabled data-select-option="default">Seleccione una categoría
+                        </option>
+                        <option value="Star Wars">Star Wars</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Diversos">Diversos</option>
+                    </select>
+                    <span class="formulario__span--error" tabindex="0">Error</span>
+                </div>
+                <div class="formulario__componentes">
+                    <label class="formulario__label" for="descProducto">Descripción del producto:</label>
+                    <textarea class="formulario__textarea formulario__campoEstilo" id="descProducto" cols="5" required
+                        placeholder="Escriba la descripción" minlength="20" maxlength="150"
+                        data-campo="descripcion"></textarea>
+                    <span class="formulario__span--error" tabindex="0">Error</span>
+                </div>
+                <input class="agregar-producto__btnform boton--secundario" type="submit" id="agregarProducto"
+                    value="Actualizar Producto">
+            </form>
+        </section>
+    </main>
+    <footer-component></footer-component>
+</body>
+
+</html>
