@@ -17,6 +17,11 @@ const eliminarProducto = (id) => {
     });
 }
 
+const detalleProducto = async (id) => {
+    const respuesta = await fetch(`http://localhost:3000/producto/${id}`);
+    return await respuesta.json();
+}
+
 const actualizarProducto = async (id, imagen, nombre, precio, categoria, desc) => {
     try {
         const respuesta = await fetch(`http://localhost:3000/producto/${id}`,
@@ -37,5 +42,6 @@ export const productServices = {
     crearProducto,
     listaProductos,
     actualizarProducto,
-    eliminarProducto
+    eliminarProducto,
+    detalleProducto
 }
