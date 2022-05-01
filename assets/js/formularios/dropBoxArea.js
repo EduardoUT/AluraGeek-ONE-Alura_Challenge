@@ -1,6 +1,5 @@
 import mediaQueryCelular from "../componentes/mediaQuery.js";
-import imagenDropBoxArea from "./imagenDropBoxArea.js";
-import vistaPreviaImagenDropBoxArea, { limpiarValorImagen } from "./imagenDropBoxArea.js";
+import imagenDropBoxArea, { imagenDropBoxAreaServer } from "./imagenDropBoxArea.js";
 
 const dropBoxArea = document.querySelector("[data-dropbox-area]"),
     textoInfo = dropBoxArea.querySelector("[data-dropbox-info]"),
@@ -10,7 +9,7 @@ const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
 
 //Si la página se carga o recarga se limpia el archivo.
-limpiarValorImagen(inputFile);
+//limpiarValorImagen(inputFile);
 
 /**
  * Función encargada de modificar la visualización
@@ -114,7 +113,11 @@ const capturarCambioArchivo = (event) => {
     event.preventDefault();
     archivo = event.target.files[0];
     imagenDropBoxArea(dropBoxArea, archivo)
-} 
+}
+
+export const obtenerArchivoServer = (imagenBase64) => {
+    imagenDropBoxAreaServer(dropBoxArea, imagenBase64);
+}
 
 dropBoxArea.addEventListener("dragover", arrastrarArchivoSobre);
 dropBoxArea.addEventListener("dragleave", arrastrarArchivoFuera);
