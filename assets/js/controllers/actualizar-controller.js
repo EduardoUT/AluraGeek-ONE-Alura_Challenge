@@ -75,7 +75,7 @@ formulario.addEventListener("submit", async (event) => {
                     }
                 });
             }
-        })
+        });
     } else {
         Swal.fire({
             icon: "info",
