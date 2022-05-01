@@ -108,7 +108,7 @@ export const limpiarValorImagen = (inputFile) => {
     return inputFile.value = "";
 }
 
-const habilitarBotonProducto = (archivoCorrecto) => {
+export const habilitarBotonProducto = (archivoCorrecto) => {
     const btnAgregarProducto = document.getElementById("agregarProducto");
     const nombreProducto = document.getElementById("nombreProducto");
     const precioProducto = document.getElementById("precioProducto");
