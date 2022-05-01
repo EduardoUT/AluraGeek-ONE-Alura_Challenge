@@ -61,11 +61,27 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
             btnEliminar.setAttribute("id", `${id}`);
             btnEditar.setAttribute("href", `../../../ventanas/actualizar_producto.html?id=${id}`);
             btnEliminar.addEventListener("click", () => {
-                const idProducto = btnEliminar.id;
-                productServices.eliminarProducto(idProducto)
-                    .then((respuesta) => {
-                        console.log(respuesta);
-                    }).catch((error) => alert(error));
+                Swal.fire({
+                    icon: "question",
+                    title: "¿Desea eliminar este producto?",
+                    text: "Los cambios se verán reflejados inmediatamente.",
+                    confirmTextButton: "Eliminar",
+                    showCancelButton: true,
+                    cancelButtonText: "Cancelar"
+                }).then((respuesta) => {
+                    if (respuesta.isConfirmed) {
+                        const idProducto = btnEliminar.id;
+                        productServices.eliminarProducto(idProducto)
+                            .then((respuesta) => {
+                                console.log(respuesta);
+                            }).catch((error) => alert(error));
+                    } else if (respuesta.isDismissed) {
+                        Swal.fire({
+                            icon: "info",
+                            title: "Eliminación cancelada."
+                        });
+                    }
+                });
             });
         }
     }
@@ -76,7 +92,7 @@ productServices.listaProductos()
     .then((data) => {
         console.log(data)
         data.forEach(({ id, imagen, nombre, precio }) => {
-            const nuevoProducto = obtenerProducto( id, imagen, nombre, precio);
+            const nuevoProducto = obtenerProducto(id, imagen, nombre, precio);
             productos.appendChild(nuevoProducto);
         });
     })
