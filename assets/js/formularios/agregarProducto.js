@@ -1,23 +1,7 @@
-import { login } from "../login.js";
-import { estaAutenticado } from "../main.js";
+import { comprobarAcceso } from "../main.js";
 
 export const precio = document.querySelector("[data-campo=precio]");
 const opcionDefault = document.querySelector("[data-select-option=default]");
-
-const comprobarAcceso = () => {
-    if (!login(estaAutenticado)) {
-        Swal.fire({
-            icon: "warning",
-            title: "Acceso denegado.",
-            text: "Inicie sesión para poder acceder a este sitio.",
-            showConfirmButton: false,
-            allowOutsideClick: false
-        });
-        setTimeout(() => {
-            window.location.href = "../index.html";
-        }, 4000);
-    }
-}
 
 /**
  * Función asociada a evento keyup del campo precio,
