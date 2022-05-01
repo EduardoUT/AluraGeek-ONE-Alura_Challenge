@@ -1,6 +1,7 @@
 import { contenidoDropBoxArea, esFormatoValido } from "./dropBoxArea.js";
 
 const formAgregarProducto = document.getElementById("agregarProductoForm");
+const formActualizarProducto = document.querySelector("[data-form-update-product]");
 let archivoCorrecto = false;
 const leerArchivo = new FileReader();
 export let producto = {
@@ -107,7 +108,7 @@ export const limpiarValorImagen = (inputFile) => {
     return inputFile.value = "";
 }
 
-const habilitarBotonProducto = (archivoCorrecto) => {
+export const habilitarBotonProducto = (archivoCorrecto) => {
     const btnAgregarProducto = document.getElementById("agregarProducto");
     const nombreProducto = document.getElementById("nombreProducto");
     const precioProducto = document.getElementById("precioProducto");
@@ -148,5 +149,4 @@ const validarBtnProducto = (event) => {
 
 habilitarBotonProducto(archivoCorrecto);
 formAgregarProducto.addEventListener("keyup", validarBtnProducto);
-
 export default imagenDropBoxArea;
