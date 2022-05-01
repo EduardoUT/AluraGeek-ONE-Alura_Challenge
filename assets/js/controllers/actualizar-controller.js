@@ -1,10 +1,12 @@
 import { obtenerArchivoServer } from "../formularios/dropBoxArea.js";
 import { habilitarBotonProducto, producto } from "../formularios/imagenDropBoxArea.js";
-import { login } from "../login.js";
-import { comprobarAcceso, estaAutenticado } from "../main.js";
 import { productServices } from "../service/product-service.js";
 
 const formulario = document.querySelector("[data-form-update-product]");
+const nombreFormulario = document.querySelector("[data-campo=producto]");
+const precioFormulario = document.querySelector("[data-campo=precio]");
+const categoriaFormulario = document.querySelector("[data-campo=categoria]");
+const descripcionFormulario = document.querySelector("[data-campo=descripcion]");
 
 const obtenerInformacion = async () => {
     const url = new URL(window.location);
@@ -13,24 +15,18 @@ const obtenerInformacion = async () => {
         window.location.href = "/ventanas/error.html";
     }
 
-    const nombre = document.querySelector("[data-campo=producto]");
-    const precio = document.querySelector("[data-campo=precio]");
-    const categoria = document.querySelector("[data-campo=categoria]");
-    const descripcion = document.querySelector("[data-campo=descripcion]");
-    //console.log(dropBoxArea, nombre, precio, categoria, descripcion);
     try {
         const productoDetalles = await productServices.detalleProducto(id);
-        //console.log(productoDetalles);
-        //console.log(productoDetalles.imagen);
         const existenValores = (productoDetalles.imagen && productoDetalles.nombre &&
             productoDetalles.precio && productoDetalles.categoria && productoDetalles.desc);
+
         if (existenValores) {
             producto.img = productoDetalles.imagen;
             obtenerArchivoServer(producto.img);
-            nombre.value = productoDetalles.nombre;
-            precio.value = productoDetalles.precio;
-            categoria.value = productoDetalles.categoria;
-            descripcion.value = productoDetalles.desc;
+            nombreFormulario.value = productoDetalles.nombre;
+            precioFormulario.value = productoDetalles.precio;
+            categoriaFormulario.value = productoDetalles.categoria;
+            descripcionFormulario.value = productoDetalles.desc;
             habilitarBotonProducto();
         } else {
             throw new Error();
@@ -38,7 +34,6 @@ const obtenerInformacion = async () => {
     } catch (error) {
         console.log(error);
         window.location.href = "/ventanas/error.html";
-
     }
 }
 
@@ -47,14 +42,14 @@ formulario.addEventListener("submit", async (event) => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     const productoServer = await productServices.detalleProducto(id);
-    const imagen = producto.img;
-    const nombre = document.querySelector("[data-campo=producto]").value;
-    const precio = document.querySelector("[data-campo=precio]").value;
-    const categoria = document.querySelector("[data-campo=categoria]").value;
-    const descripcion = document.querySelector("[data-campo=descripcion]").value;
-    const existeValorEnServidor = ((productoServer.imagen == imagen) && (productoServer.nombre == nombre) &&
-        (productoServer.precio == precio) && (productoServer.categoria == categoria) &&
-        (productoServer.desc == descripcion));
+    const imagenValor = producto.img;
+    const nombreValor = nombreFormulario.value;
+    const precioValor = precioFormulario.value;
+    const categoriaValor = categoriaFormulario.value;
+    const descripcionValor = descripcionFormulario.value;
+    const existeValorEnServidor = ((productoServer.imagen == imagenValor) && (productoServer.nombre == nombreValor) &&
+        (productoServer.precio == precioValor) && (productoServer.categoria == categoriaValor) &&
+        (productoServer.desc == descripcionValor));
 
     if (!existeValorEnServidor) {
         Swal.fire({
@@ -66,7 +61,7 @@ formulario.addEventListener("submit", async (event) => {
             cancelButtonText: "Cancelar"
         }).then((respuesta) => {
             if (respuesta.isConfirmed) {
-                productServices.actualizarProducto(id, imagen, nombre, precio, categoria, descripcion)
+                productServices.actualizarProducto(id, imagenValor, nombreValor, precioValor, categoriaValor, descripcionValor)
                     .then(() => {
                         window.location.href = "/ventanas/actualizado_exitosamente.html";
                     });
