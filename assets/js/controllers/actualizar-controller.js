@@ -41,8 +41,16 @@ const obtenerInformacion = async () => {
 formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     const url = new URL(window.location);
-    console.log(producto.img);
-
+    const id = url.searchParams.get("id");
+    const imagen = producto.img;
+    const nombre = document.querySelector("[data-campo=producto]").value;
+    const precio = document.querySelector("[data-campo=precio]").value;
+    const categoria = document.querySelector("[data-campo=categoria]").value;
+    const descripcion = document.querySelector("[data-campo=descripcion]").value;
+    productServices.actualizarProducto(id, imagen, nombre, precio, categoria, descripcion)
+        .then(() => {
+            window.location.href = "/ventanas/actualizado_exitosamente.html";
+        });
 });
 
 obtenerInformacion();
