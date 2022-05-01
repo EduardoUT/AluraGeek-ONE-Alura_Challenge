@@ -67,6 +67,13 @@ const imagenDropBoxArea = (dropBoxArea, archivo) => {
     }
 }
 
+export const imagenDropBoxAreaServer = (dropBoxArea, imagenBase64) => {
+    const img = `<img src="${imagenBase64}" class="agregar-producto__usuarioImagen" alt="Su imágen">`;
+    dropBoxArea.innerHTML = img;
+    window.removeEventListener("resize", contenidoDropBoxArea);
+    producto.img = imagenBase64;
+}
+
 /**
  * Obtiene la información de la imágen en Base64, y la
  * asigna en la propiedad src de la imágen de vista previa 
@@ -110,15 +117,25 @@ const habilitarBotonProducto = (archivoCorrecto) => {
     const dscProductoValido = dscProducto.validity.valid;
     const formularioAgregarProductoValido = (archivoCorrecto && nombreProductoValido &&
         precioProductoValido && dscProductoValido);
-    if (formularioAgregarProductoValido) {
-        btnAgregarProducto.removeAttribute("disabled");
-        btnAgregarProducto.classList.remove("boton--bloqueado");
+    const formActualizarValido = (nombreProductoValido && precioProductoValido && dscProductoValido);
+    if (window.location.href.includes("agregar_producto.html")) {
+        if (formularioAgregarProductoValido) {
+            btnAgregarProducto.removeAttribute("disabled");
+            btnAgregarProducto.classList.remove("boton--bloqueado");
+        } else {
+            btnAgregarProducto.setAttribute("disabled", "true");
+            btnAgregarProducto.classList.add("boton--bloqueado");
+        }
     } else {
-        btnAgregarProducto.setAttribute("disabled", "true");
-        btnAgregarProducto.classList.add("boton--bloqueado");
+        if (formActualizarValido) {
+            btnAgregarProducto.removeAttribute("disabled");
+            btnAgregarProducto.classList.remove("boton--bloqueado");
+        } else {
+            btnAgregarProducto.setAttribute("disabled", "true");
+            btnAgregarProducto.classList.add("boton--bloqueado");
+        }
     }
 }
-
 
 const validarBtnProducto = (event) => {
     const element = event.target;
