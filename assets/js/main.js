@@ -41,6 +41,21 @@ const evitarRecarga = (event) => {
     event.preventDefault();
 }
 
+export const comprobarAcceso = () => {
+    if (!login(estaAutenticado)) {
+        Swal.fire({
+            icon: "warning",
+            title: "Acceso denegado.",
+            text: "Inicie sesión para poder acceder a este sitio.",
+            showConfirmButton: false,
+            allowOutsideClick: false
+        });
+        setTimeout(() => {
+            window.location.href = "../index.html";
+        }, 4000);
+    }
+}
+
 login(estaAutenticado);
 botonLogin();
 menu();
