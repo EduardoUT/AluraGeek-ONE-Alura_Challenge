@@ -43,16 +43,16 @@
             </button>
         </nav>
     </header>
-    <main class="principal">
-        <section class="banner container">
-            <div class="banner__texto">
-                <h1 class="banner__titulo titulo-style">Febrero Promocional</h1>
-                <p class="banner__parrafo">Productos selecionados con 33% de descuento</p>
-                <a class="banner__boton boton--secundario" href="#" title="Ver más consolas" tabindex="0">Ver
-                    consolas</a>
-            </div>
-        </section>
-        <section class="productos container">
+    <section class="banner container">
+        <div class="banner__texto">
+            <h1 class="banner__titulo titulo-style">Febrero Promocional</h1>
+            <p class="banner__parrafo">Productos selecionados con 33% de descuento</p>
+            <a class="banner__boton boton--secundario" href="#" title="Ver más consolas" tabindex="0">Ver
+                consolas</a>
+        </div>
+    </section>
+    <main class="principal" data-categorias>
+        <!-- <section class="productos container" data-seccion-productos>
             <header class="productos__categoria">
                 <h2 class="titulo">Star Wars</h2>
                 <a class="productos__linkCategoria link link--categoria" href="./ventanas/productos_existentes.html"
@@ -217,7 +217,7 @@
                 </div>
 
             </div>
-        </section>
+        </section> -->
     </main>
     <footer class="informaciones container">
         <div class="informaciones__alurageek">
@@ -297,6 +297,7 @@
         <p class="copyright__autor parrafo">&#169; 2022</p>
     </div>
     <script src="./assets/js/main.js" type="module"></script>
+    <script src="./assets/js/controllers/productos-index-controller.js" type="module"></script>
 </body>
 
 </html>
