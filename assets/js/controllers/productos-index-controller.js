@@ -7,7 +7,7 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
     const seccion = document.createElement("section");
     seccion.setAttribute("class", "productos container");
 
-    const contenido = `
+    const contenidoSeccionCategoria = `
         <header class="productos__categoria">
             <h2 class="titulo">${categoriaExistente}</h2>
             <a class="productos__linkCategoria link link--categoria" href="./ventanas/productos_existentes.html"
@@ -18,30 +18,28 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
         </header>
         <div class="productos__detalles"></div>
     `;
-    
-    seccion.innerHTML = contenido;
+    seccion.innerHTML = contenidoSeccionCategoria;
 
     const productosCategoria = seccion.querySelector(".productos__detalles");
-    console.log(productosCategoria)
-    data.forEach(({categoria}) => {
-        if(categoriaExistente.includes(categoria)) {
-            console.log(categoria);
+
+    data.forEach(({ id, imagen, nombre, precio, categoria }) => {
+        if (categoriaExistente.includes(categoria)) {
+            const rangoId = (id <= 18);
+            if (rangoId) {
+                const contenidoProductos = crearSeccionProductosLocales(id, imagen, nombre, precio);
+                productosCategoria.innerHTML += contenidoProductos;
+            } else {
+                const contenidoProductos = crearSeccionProductosServidor(id, imagen, nombre, precio);
+                productosCategoria.innerHTML += contenidoProductos;
+            }
         }
     });
-        /* data.forEach(({ id, imagen, nombre, precio, categoria }) => {
-            console.log(categoria)
-            const exhibirProductos = crearSeccionProductos(id, imagen, nombre, precio, categoria);
-            productosCategoria.appendChild(exhibirProductos);
-        });  */
 
     return seccion;
 }
 
-const crearSeccionProductos = (id, imagen, nombre, precio, categoria) => {
-    console.log(categoria)
-    const containerProductos = document.querySelector(".productos__detalles");
-    if (categoria.includes("Star Wars")) {
-        const contenido = `
+const crearSeccionProductosLocales = (id, imagen, nombre, precio) => {
+    const contenidoSeccionCategoria = `
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
@@ -50,31 +48,24 @@ const crearSeccionProductos = (id, imagen, nombre, precio, categoria) => {
                 Producto</a>
         </div>
     `;
-        containerProductos.innerHTML += contenido;
-    }
+    return contenidoSeccionCategoria;
+}
 
-    if (categoria.includes("Consolas")) {
-        const contenido = `
+const crearSeccionProductosServidor = (id, imagen, nombre, precio) => {
+    const contenidoSeccionCategoria = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
             <a class="productos__link link" href="#" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
-        containerProductos.innerHTML += contenido;
-    }
-
-    return containerProductos;
+    return contenidoSeccionCategoria;
 }
 
 productServices.listaProductos()
     .then((data) => {
-        console.log(data.length);
-        /* const nuevo = obtenerProductosCategoria(categoria);
-            categorias.appendChild(nuevo); */
-
         /**
          * Filtrando las categorias existentes y almacenandolas
          * en un arreglo.
@@ -94,19 +85,5 @@ productServices.listaProductos()
             const nuevaSeccion = crearSeccionCategoria(categoriaExistente, data);
             categorias.appendChild(nuevaSeccion);
         });
-
-        
-        
-
-
-
-
-
-
-
-        console.log(categoriasExistentes);
-
     })
     .catch((error) => console.log(error));
-
-
