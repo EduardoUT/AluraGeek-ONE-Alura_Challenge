@@ -5,11 +5,9 @@ import { productServices } from "../service/product-service.js";
 const productos = document.querySelector("[data-lista-productos]");
 
 const obtenerProducto = (id, imagen, nombre, precio) => {
-    //console.log(id);
     const rangoId = (id <= 18);
     const producto = document.createElement("div");
     producto.setAttribute("class", "productos-existentes__producto productos__producto");
-    //<div class="productos-existentes__producto productos__producto" data-producto>
     if (rangoId) {
         const contenido = `
             <div class="productos-existentes__container productos__imagen"
@@ -35,7 +33,6 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
         `;
         producto.innerHTML = contenido;
     }
-    //</div>
 
     const btnEliminar = producto.querySelector("[data-borrar-boton]");
     const btnEditar = producto.querySelector("[data-editar-boton]");
