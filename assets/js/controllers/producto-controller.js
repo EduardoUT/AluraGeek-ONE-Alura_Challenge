@@ -12,26 +12,26 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
     //<div class="productos-existentes__producto productos__producto" data-producto>
     if (rangoId) {
         const contenido = `
-        <div class="productos-existentes__container productos__imagen"
-            style="background: url('../assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0">
-            <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
-            <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
-        </div>
-        <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-        <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-        <p class="productos__id parrafo" tabindex="0">${id}</p>
+            <div class="productos-existentes__container productos__imagen"
+                style="background: url('../assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0">
+                <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
+                <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
+            </div>
+            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
+            <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
+            <p class="productos__id parrafo" tabindex="0">${id}</p>
         `;
         producto.innerHTML = contenido;
     } else {
         const contenido = `
-        <div class="productos-existentes__container productos__imagen"
-            style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0">
-            <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
-            <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
-        </div>
-        <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-        <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-        <p class="productos__id parrafo" tabindex="0">${id}</p>
+            <div class="productos-existentes__container productos__imagen"
+                style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0">
+                <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
+                <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
+            </div>
+            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
+            <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
+            <p class="productos__id parrafo" tabindex="0">${id}</p>
         `;
         producto.innerHTML = contenido;
     }
