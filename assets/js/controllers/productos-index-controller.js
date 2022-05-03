@@ -21,7 +21,6 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
     seccion.innerHTML = contenidoSeccionCategoria;
 
     const productosDetalles = seccion.querySelector("[data-productos]");
-
     let contadorProductos = 0;
 
     data.forEach(({ id, imagen, nombre, precio, categoria }) => {
@@ -38,10 +37,7 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
             filtrarProductosExcedentes(productosDetalles, contadorProductos);
         }
     });
-
-    /* const producto = productosDetalles.querySelector("[data-producto]");
-                const productoEstaOculto = producto.attributes; */
-
+    
     return seccion;
 }
 
