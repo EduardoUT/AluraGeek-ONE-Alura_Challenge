@@ -58,6 +58,10 @@
     width: 4.812rem;
 }
 
+.productos__link {
+    width: fit-content;
+}
+
 @media only screen and (min-width: 704px) {
 
     .productos__linkCategoria {
