@@ -16,11 +16,11 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
                 <div class="productos__link--flecha"></div>
             </a>
         </header>
-        <div class="productos__detalles"></div>
+        <div class="productos__detalles" data-productos></div>
     `;
     seccion.innerHTML = contenidoSeccionCategoria;
 
-    const productosDetalles = seccion.querySelector(".productos__detalles");
+    const productosDetalles = seccion.querySelector("[data-productos]");
 
     let contadorProductos = 0;
 
@@ -28,45 +28,54 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
         if (categoriaExistente.includes(categoria)) {
             const rangoId = (id <= 18);
             if (rangoId) {
-                const contenidoProductos = crearSeccionProductosLocales(id, imagen, nombre, precio);
-                productosDetalles.innerHTML += contenidoProductos;
+                const contenidoProductosDetalles = exhibirProductosLocales(id, imagen, nombre, precio);
+                productosDetalles.innerHTML += contenidoProductosDetalles;
             } else {
-                const contenidoProductos = crearSeccionProductosServidor(id, imagen, nombre, precio);
-                productosDetalles.innerHTML += contenidoProductos;
+                const contenidoProductosDetalles = exhibirProductosServidor(id, imagen, nombre, precio);
+                productosDetalles.innerHTML += contenidoProductosDetalles;
             }
             contadorProductos++;
-            if (contadorProductos - 1 > 5) {
-                productosDetalles.children[contadorProductos - 1].setAttribute("style", "display: none");
-            }
+            filtrarProductosExcedentes(productosDetalles, contadorProductos);
         }
     });
+
+    /* const producto = productosDetalles.querySelector("[data-producto]");
+                const productoEstaOculto = producto.attributes; */
+
     return seccion;
 }
 
-const crearSeccionProductosLocales = (id, imagen, nombre, precio) => {
+const exhibirProductosLocales = (id, imagen, nombre, precio) => {
     const contenidoSeccionCategoria = `
-        <div class="productos__producto">
+        <div class="productos__producto" data-producto>
             <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <a class="productos__link link" href="#" title="Ver más detalles" tabindex="0">Ver
+            <a class="productos__link link" href="./ventanas/detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
     `;
     return contenidoSeccionCategoria;
 }
 
-const crearSeccionProductosServidor = (id, imagen, nombre, precio) => {
+const exhibirProductosServidor = (id, imagen, nombre, precio) => {
     const contenidoSeccionCategoria = `
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <a class="productos__link link" href="#" title="Ver más detalles" tabindex="0">Ver
+            <a class="productos__link link" href="./ventanas/detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
     `;
     return contenidoSeccionCategoria;
+}
+
+const filtrarProductosExcedentes = (productosDetalles, contadorProductos) => {
+    //Si son más de 6 productos se asigna display: none, para no romper la visualización.
+    if (contadorProductos - 1 > 5) {
+        productosDetalles.children[contadorProductos - 1].setAttribute("style", "display: none");
+    }
 }
 
 productServices.listaProductos()
