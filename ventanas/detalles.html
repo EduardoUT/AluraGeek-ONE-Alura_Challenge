@@ -26,20 +26,12 @@
 <body>
     <header-component></header-component>
     <main class="principal">
-        <section class="producto-info">
-            <div class="producto-info__imagen imagen--taza-stormtrooper" tabindex="0"></div>
+        <section class="producto-info" data-detalles-producto>
+            <div class="producto-info__imagen" tabindex="0" data-detalles-imagen></div>
             <div class="producto-info__textos container">
-                <h1 class="producto-info__nombre" tabindex="0">Producto XYZ</h1>
-                <p class="productos__precio parrafo" tabindex="0">$ 60.00</p>
-                <p class="producto-info__descripcion" tabindex="0">
-                    Voluptas voluptatum quibusdam similique, 
-                    class debitis alias maecenas eveniet ridiculus, 
-                    facilis fusce! Ullam conubia? Sociis, 
-                    minima malesuada habitasse distinctio sequi aliqua malesuada. 
-                    Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, 
-                    quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. 
-                    Animi porta anim magnam
-                </p>
+                <h1 class="producto-info__nombre" tabindex="0" data-detalles-nombre></h1>
+                <p class="productos__precio parrafo" tabindex="0" data-detalles-precio></p>
+                <p class="producto-info__descripcion" tabindex="0" data-detalles-dsc></p>
             </div>
         </section>
         <section class="productos container">
@@ -94,6 +86,7 @@
     </main>
     <footer-component></footer-component>
     <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/controllers/detalles-controller.js" type="module"></script>
 </body>
 
 </html>
