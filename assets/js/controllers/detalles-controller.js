@@ -4,6 +4,7 @@ const imagenDetalles = document.querySelector("[data-detalles-imagen]");
 const nombre = document.querySelector("[data-detalles-nombre]");
 const precio = document.querySelector("[data-detalles-precio]");
 const descripcion = document.querySelector("[data-detalles-dsc]");
+const titleWindow = document.querySelector("title");
 
 const mostrarImagen = (imagen) => {
     const regexImagen = /^(([a-z\d]+)([-]?[a-z\d]+)+[.](jpeg|jpg|png))$/g;
@@ -27,6 +28,7 @@ const obtenerDetallesProducto = async () => {
         const existenValores = (productoDetalles.imagen && productoDetalles.nombre &&
             productoDetalles.precio && productoDetalles.categoria && productoDetalles.desc);
         if (existenValores) {
+            titleWindow.textContent = "AluraGeek | " + productoDetalles.nombre;
             mostrarImagen(productoDetalles.imagen);
             nombre.textContent = productoDetalles.nombre;
             precio.textContent = "$ " + productoDetalles.precio;
