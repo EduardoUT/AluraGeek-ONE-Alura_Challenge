@@ -20,21 +20,26 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
     `;
     seccion.innerHTML = contenidoSeccionCategoria;
 
-    const productosCategoria = seccion.querySelector(".productos__detalles");
+    const productosDetalles = seccion.querySelector(".productos__detalles");
+
+    let contadorProductos = 0;
 
     data.forEach(({ id, imagen, nombre, precio, categoria }) => {
         if (categoriaExistente.includes(categoria)) {
             const rangoId = (id <= 18);
             if (rangoId) {
                 const contenidoProductos = crearSeccionProductosLocales(id, imagen, nombre, precio);
-                productosCategoria.innerHTML += contenidoProductos;
+                productosDetalles.innerHTML += contenidoProductos;
             } else {
                 const contenidoProductos = crearSeccionProductosServidor(id, imagen, nombre, precio);
-                productosCategoria.innerHTML += contenidoProductos;
+                productosDetalles.innerHTML += contenidoProductos;
+            }
+            contadorProductos++;
+            if (contadorProductos - 1 > 5) {
+                productosDetalles.children[contadorProductos - 1].setAttribute("style", "display: none");
             }
         }
     });
-
     return seccion;
 }
 
