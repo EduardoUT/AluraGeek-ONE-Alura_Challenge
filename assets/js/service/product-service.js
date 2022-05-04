@@ -22,6 +22,11 @@ const detalleProducto = async (id) => {
     return await respuesta.json();
 }
 
+const detalleCategoria = async (categoria) => {
+    const respuesta  = await fetch(`http://localhost:3000/producto?categoria=${categoria}`);
+    return await respuesta.json();
+}
+
 const actualizarProducto = async (id, imagen, nombre, precio, categoria, desc) => {
     try {
         const respuesta = await fetch(`http://localhost:3000/producto/${id}`,
@@ -43,5 +48,6 @@ export const productServices = {
     listaProductos,
     actualizarProducto,
     eliminarProducto,
-    detalleProducto
+    detalleProducto,
+    detalleCategoria,
 }
