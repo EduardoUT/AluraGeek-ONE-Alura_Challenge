@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/componentes/boton.css">
+    <link rel="stylesheet" href="../assets/css/componentes/link.css">
+    <link rel="stylesheet" href="../assets/css/cabecera/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/principal/principal.css">
+    <link rel="stylesheet" href="../assets/css/productos/productosExistentes.css">
+    <link rel="stylesheet" href="../assets/css/productos/productos.css">
+    <link rel="stylesheet" href="../assets/css/informaciones/informaciones.css">
+    <link rel="stylesheet" href="../assets/css/formulario/formulario.css">
+    <link rel="stylesheet" href="../assets/css/copyright/copyright.css">
+    <script src="../assets/js/componentes/cabecera.js"></script>
+    <script src="../assets/js/componentes/rodapie.js"></script>
+    <link rel="icon" href="../favicon.svg">
+    <title>AluraGeek | Categorías</title>
+</head>
+
+<body>
+    <header-component></header-component>
+    <main class="principal">
+        <section class="productos-existentes productos">
+            <header class="productos-existentes__encabezado">
+                <h2 class="productos-existentes__titulo titulo" data-categoria-titulo></h2>
+            </header>
+            <div class="productos__detalles" data-categoria-productos>
+            </div>
+        </section>
+    </main>
+    <footer-component></footer-component>
+    <script src="../assets/js/controllers/productos-categoria-controller.js" type="module"></script>
+</body>
+
+</html>
