@@ -10,7 +10,7 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
     const contenidoSeccionCategoria = `
         <header class="productos__categoria">
             <h2 class="titulo">${categoriaExistente}</h2>
-            <a class="productos__linkCategoria link link--categoria" href="./ventanas/productos_existentes.html"
+            <a class="productos__linkCategoria link link--categoria" href="./ventanas/productos_categoria.html?categoria=${categoriaExistente}"
                 title="Ver todos los productos de Star Wars" tabindex="0">
                 Ver todo
                 <div class="productos__link--flecha"></div>
