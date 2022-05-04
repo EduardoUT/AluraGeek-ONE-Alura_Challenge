@@ -4,12 +4,8 @@ import { productServices } from "../service/product-service.js";
 
 const productos = document.querySelector("[data-lista-productos]");
 
-const obtenerProducto = (id, imagen, nombre, precio) => {
-    const rangoId = (id <= 18);
-    const producto = document.createElement("div");
-    producto.setAttribute("class", "productos-existentes__producto productos__producto");
-    if (rangoId) {
-        const contenido = `
+const contenidoProductoLocal = (id, imagen, nombre, precio) => {
+    const contenido = `
             <div class="productos-existentes__container productos__imagen"
                 style="background: url('../assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0">
                 <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
@@ -19,9 +15,11 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
             <p class="productos__id parrafo" tabindex="0">${id}</p>
         `;
-        producto.innerHTML = contenido;
-    } else {
-        const contenido = `
+    return contenido;
+} 
+
+const contenidoProductoServidor = (id, imagen, nombre, precio) => {
+    const contenido = `
             <div class="productos-existentes__container productos__imagen"
                 style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0">
                 <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
@@ -31,7 +29,19 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
             <p class="productos__id parrafo" tabindex="0">${id}</p>
         `;
-        producto.innerHTML = contenido;
+    return contenido;
+}
+
+const obtenerProducto = (id, imagen, nombre, precio) => {
+    const rangoId = (id <= 18);
+    const producto = document.createElement("div");
+    producto.setAttribute("class", "productos-existentes__producto productos__producto");
+    if (rangoId) {
+        const contenidoLocal = contenidoProductoLocal(id, imagen, nombre, precio);
+        producto.innerHTML = contenidoLocal;
+    } else {
+        const contenidoServidor = contenidoProductoServidor(id, imagen, nombre, precio);
+        producto.innerHTML = contenidoServidor;
     }
 
     const btnEliminar = producto.querySelector("[data-borrar-boton]");
