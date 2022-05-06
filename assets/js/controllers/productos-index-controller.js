@@ -1,16 +1,25 @@
 import { productServices } from "../service/product-service.js";
 
-const categorias = document.querySelector("[data-categorias]");
-const categoriasExistentes = [];
+const elementoMain = document.querySelector("[data-categorias]");
 
-const crearSeccionCategoria = (categoriaExistente, data) => {
+const categoriasUnicas = (productos) => {
+    const categoriaUnicas = [];
+    productos.forEach(({ categoria }) => {
+        if (!categoriaUnicas.includes(categoria)) {
+            categoriaUnicas.push(categoria);
+        }
+    });
+    return categoriaUnicas;
+}
+
+const crearSeccionCategoria = (categoriaUnica) => {
     const seccion = document.createElement("section");
     seccion.setAttribute("class", "productos container");
 
     const contenidoSeccionCategoria = `
         <header class="productos__categoria">
-            <h2 class="titulo">${categoriaExistente}</h2>
-            <a class="productos__linkCategoria link link--categoria" href="./ventanas/productos_categoria.html?categoria=${categoriaExistente}"
+            <h2 class="titulo">${categoriaUnica}</h2>
+            <a class="productos__linkCategoria link link--categoria" href="./ventanas/productos_categoria.html?categoria=${categoriaUnica}"
                 title="Ver todos los productos de Star Wars" tabindex="0">
                 Ver todo
                 <div class="productos__link--flecha"></div>
@@ -20,30 +29,12 @@ const crearSeccionCategoria = (categoriaExistente, data) => {
     `;
     seccion.innerHTML = contenidoSeccionCategoria;
 
-    const productosDetalles = seccion.querySelector("[data-productos]");
-    let contadorProductos = 0;
-
-    data.forEach(({ id, imagen, nombre, precio, categoria }) => {
-        if (categoriaExistente.includes(categoria)) {
-            const rangoId = (id <= 18);
-            if (rangoId) {
-                const contenidoProductosDetalles = exhibirProductosLocales(id, imagen, nombre, precio);
-                productosDetalles.innerHTML += contenidoProductosDetalles;
-            } else {
-                const contenidoProductosDetalles = exhibirProductosServidor(id, imagen, nombre, precio);
-                productosDetalles.innerHTML += contenidoProductosDetalles;
-            }
-            contadorProductos++;
-            filtrarProductosExcedentes(productosDetalles, contadorProductos);
-        }
-    });
-    
     return seccion;
 }
 
 const exhibirProductosLocales = (id, imagen, nombre, precio) => {
-    const contenidoSeccionCategoria = `
-        <div class="productos__producto" data-producto>
+    const contenido = `
+        <div class="productos__producto">
             <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
@@ -51,11 +42,11 @@ const exhibirProductosLocales = (id, imagen, nombre, precio) => {
                 Producto</a>
         </div>
     `;
-    return contenidoSeccionCategoria;
+    return contenido;
 }
 
 const exhibirProductosServidor = (id, imagen, nombre, precio) => {
-    const contenidoSeccionCategoria = `
+    const contenido = `
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
@@ -64,36 +55,53 @@ const exhibirProductosServidor = (id, imagen, nombre, precio) => {
                 Producto</a>
         </div>
     `;
-    return contenidoSeccionCategoria;
+    return contenido;
 }
 
-const filtrarProductosExcedentes = (productosDetalles, contadorProductos) => {
+const filtrarProductosExcedentes = (listaProductos, contadorProductos) => {
     //Si son más de 6 productos se asigna display: none, para no romper la visualización.
     if (contadorProductos - 1 > 5) {
-        productosDetalles.children[contadorProductos - 1].setAttribute("style", "display: none");
+        listaProductos.children[contadorProductos - 1].setAttribute("style", "display: none");
     }
 }
 
-productServices.listaProductos()
-    .then((data) => {
-        /**
-         * Filtrando las categorias existentes y almacenandolas
-         * en un arreglo.
-         */
-        data.forEach(({ categoria }) => {
-            if (!categoriasExistentes.includes(categoria)) {
-                categoriasExistentes.push(categoria);
-            }
-        });
+const crearListaProductos = (productos, categoriaUnica, seccion) => {
+    const listaProductos = seccion.querySelector("[data-productos]");
+    let contadorProductos = 0;
 
-        /**
-         * Creando elementos section acorde a las 
-         * categorias filtradas y asignando el valor a los 
-         * encabezados.
-         */
-        categoriasExistentes.forEach((categoriaExistente) => {
-            const nuevaSeccion = crearSeccionCategoria(categoriaExistente, data);
-            categorias.appendChild(nuevaSeccion);
+    productos.forEach(({ id, imagen, nombre, precio, categoria }) => {
+        if (categoriaUnica.includes(categoria)) {
+            const rangoId = (id <= 18);
+            if (rangoId) {
+                const contenidoProductosLocales = exhibirProductosLocales(id, imagen, nombre, precio);
+                listaProductos.innerHTML += contenidoProductosLocales;
+            } else {
+                const contenidoProductosServidor = exhibirProductosServidor(id, imagen, nombre, precio);
+                listaProductos.innerHTML += contenidoProductosServidor;
+            }
+            contadorProductos++;
+            filtrarProductosExcedentes(listaProductos, contadorProductos);
+        }
+    });
+
+    return listaProductos;
+}
+
+productServices.listaProductos()
+    .then((productos) => {
+        //Filtrando las categorias repetidas en un arreglo.
+        const listaCategorias = categoriasUnicas(productos);
+        listaCategorias.forEach((categoria) => {
+            /**
+             * Creando secciones por categoria y asignando el nombre
+             * de la categoría al encabezado y links de referencia a la página de categoría
+             * correspondiente.
+             */
+            const nuevaSeccion = crearSeccionCategoria(categoria);
+                  elementoMain.appendChild(nuevaSeccion);
+            //Asignando la lista de productos a su sección correspondiente.
+            const nuevaListaProductos = crearListaProductos(productos, categoria, nuevaSeccion);
+                  nuevaSeccion.appendChild(nuevaListaProductos);
         });
     })
     .catch((error) => console.log(error));
