@@ -6,8 +6,6 @@ const precio = document.querySelector("[data-detalles-precio]");
 const descripcion = document.querySelector("[data-detalles-dsc]");
 const titleWindow = document.querySelector("title");
 const seccionSimilares = document.querySelector("[data-productos-similares]");
-const listaDesordenada = [];
-
 
 const mostrarImagen = (imagen) => {
     const regexImagen = /^(([a-z\d]+)([-]?[a-z\d]+)+[.](jpeg|jpg|png))$/g;
@@ -46,67 +44,72 @@ const obtenerDetallesProducto = async () => {
 }
 
 const generarProductoAleatorio = (productos) => {
-    productos = productos.sort(() => { return Math.random() - 0.5 });
-    return productos;
+    const producto = productos.sort(() => { return Math.random() - 0.5 });
+    return producto;
 }
 
-const contenidoProductosLocales = (id, imagen, nombre, precio) => {
+const generarListaDesordenada = (productos) => {
+    const listaDesordenada = [];
+    productos.forEach((producto) => {
+        const productoAleatorio = generarProductoAleatorio(productos);
+        if (!listaDesordenada.includes(productoAleatorio) && !listaDesordenada.includes(productos.indexOf(producto))) {
+            listaDesordenada.push(productoAleatorio);
+        }
+    });
+    return listaDesordenada;
+}
+
+
+
+const contenidoProductosLocales = (producto) => {
     const contenido = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
-            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">${precio}</p>
-            <a class="productos__link link" href="./ventanas/detalles.html?id=${id}" title="Ver más detalles" tabindex="0">Ver
+            <div class="productos__imagen" style="background: url('../assets/img/productos/${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
+            <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
+            <a class="productos__link link" href="./ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
     return contenido;
 }
 
-const contenidoProductosServidor = (id, imagen, nombre, precio) => {
+const contenidoProductosServidor = (producto) => {
     const contenido = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
-            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">${precio}</p>
-            <a class="productos__link link" href="./ventanas/detalles.html?id=${id}" title="Ver más detalles" tabindex="0">Ver
+            <div class="productos__imagen" style="background: url('${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
+            <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
+            <a class="productos__link link" href="./ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
     return contenido;
 }
 
-const crearListaProductosSimilares = () => {
+const crearListaProductosSimilares = (producto) => {
     const productosContainer = document.querySelector("[data-productos]");
-
-
+    const rangoId = (producto.id <= 18);
+    if (rangoId) {
+        const productosLocal = contenidoProductosLocales(producto);
+        productosContainer.innerHTML += productosLocal;
+    } else {
+        const productosServidor = contenidoProductosServidor(producto);
+        productosContainer.innerHTML += productosServidor;
+    }
+    return productosContainer;
 }
 
 productServices.listaProductos()
     .then((productos) => {
-
-        for (let i = 0; i < productos.length; i++) {
-            const productoAleatorio = generarProductoAleatorio(productos);
-            if (!listaDesordenada.includes(productoAleatorio) && !listaDesordenada.includes(productos[i])) {
-                listaDesordenada.push(productoAleatorio);
-            }
-        }
-        /* const product = generarProductoAleatorio(productos);
-        console.log(productos); */
-        //console.log(listaDesordenada[0])
-        //console.log(listaDesordenada[0])
-        for(let i = 0; i < listaDesordenada.length; i++) {
+        const lista = generarListaDesordenada(productos);
+        for (let i = 0; i < lista.length; i++) {
             for (let j = 0; j < productos.length; j++) {
-                console.log(listaDesordenada[i][j]);
+                const producto = lista[i][j];
+                const listaProductosSimilares = crearListaProductosSimilares(producto);
+                seccionSimilares.appendChild(listaProductosSimilares);
             }
         }
-        /* listaDesordenada.forEach((item , i) => {
-            console.log(item[i].categoria);
-        }); */
-        /* listaDesordenada.forEach((item) => {
-            console.log(item)
-        }); */
-        //console.log(listaDesordenada[0][0].imagen);
     })
     .catch((error) => console.log(error));
 
