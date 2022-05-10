@@ -9,7 +9,7 @@ const obtenerProducto = async (filtroCategoria) => {
         const rangoId = (id <= 18);
         if (rangoId) {
             const contenidoLocal = `
-                <div class="productos__producto">
+                <div class="productos__producto" style="display: flex; flex-direction: column; width: inherit;">
                     <div class="productos__imagen" style="background: url('../assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
                     <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
                     <p class="productos__precio parrafo" tabindex="0">${precio}</p>
@@ -19,7 +19,7 @@ const obtenerProducto = async (filtroCategoria) => {
             listaProductos.innerHTML += contenidoLocal;
         } else {
             const contenidoServidor = `
-                <div class="productos__producto">
+                <div class="productos__producto" style="display: flex; flex-direction: column; width: inherit;">
                     <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
                     <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
                     <p class="productos__precio parrafo" tabindex="0">${precio}</p>
