@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraGeek | Productos Similares</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/componentes/boton.css">
+    <link rel="stylesheet" href="../assets/css/componentes/link.css">
+    <link rel="stylesheet" href="../assets/css/cabecera/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/principal/principal.css">
+    <link rel="stylesheet" href="../assets/css/productos/productoInfo.css">
+    <link rel="stylesheet" href="../assets/css/productos/productos.css">
+    <link rel="stylesheet" href="../assets/css/informaciones/informaciones.css">
+    <link rel="stylesheet" href="../assets/css/formulario/formulario.css">
+    <link rel="stylesheet" href="../assets/css/copyright/copyright.css">
+    <script src="../assets/js/componentes/cabecera.js"></script>
+    <script src="../assets/js/componentes/rodapie.js"></script>
+    <link rel="icon" href="../favicon.svg">
+</head>
+
+<body>
+    <header-component></header-component>
+    <main class="principal">
+        <section class="producto-info" data-detalles-producto>
+            <div class="producto-info__imagen" tabindex="0" data-detalles-imagen></div>
+            <div class="producto-info__textos container">
+                <h1 class="producto-info__nombre" tabindex="0" data-detalles-nombre></h1>
+                <p class="productos__precio parrafo" tabindex="0" data-detalles-precio></p>
+                <p class="producto-info__descripcion" tabindex="0" data-detalles-dsc></p>
+            </div>
+        </section>
+        <section class="productos container" data-productos-similares>
+            <header class="productos__categoria">
+                <h2 class="titulo">Productos Similares</h2>
+            </header>
+            <div class="productos__detalles" data-productos>
+            </div>
+        </section>
+    </main>
+    <footer-component></footer-component>
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/controllers/productos-detalles-controller.js" type="module"></script>
+</body>
+
+</html>
