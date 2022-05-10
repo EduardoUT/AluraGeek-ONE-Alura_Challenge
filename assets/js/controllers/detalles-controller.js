@@ -56,10 +56,9 @@ const generarListaDesordenada = (productos) => {
             listaDesordenada.push(productoAleatorio);
         }
     });
+    
     return listaDesordenada;
 }
-
-
 
 const contenidoProductosLocales = (producto) => {
     const contenido = `
@@ -67,7 +66,7 @@ const contenidoProductosLocales = (producto) => {
             <div class="productos__imagen" style="background: url('../assets/img/productos/${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
-            <a class="productos__link link" href="./ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
+            <a class="productos__link link" href="/ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
@@ -80,14 +79,20 @@ const contenidoProductosServidor = (producto) => {
             <div class="productos__imagen" style="background: url('${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
-            <a class="productos__link link" href="./ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
+            <a class="productos__link link" href="/ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
     return contenido;
 }
 
-const crearListaProductosSimilares = (producto) => {
+const filtrarProductosExcedentes = (productosContainer, contadorProductos) => {
+    if (contadorProductos > 5) {
+        productosContainer.children[contadorProductos].setAttribute("style", "display: none;");
+    }
+}
+
+const crearListaProductosSimilares = (producto, contadorProductos) => {
     const productosContainer = document.querySelector("[data-productos]");
     const rangoId = (producto.id <= 18);
     if (rangoId) {
@@ -97,6 +102,7 @@ const crearListaProductosSimilares = (producto) => {
         const productosServidor = contenidoProductosServidor(producto);
         productosContainer.innerHTML += productosServidor;
     }
+    filtrarProductosExcedentes(productosContainer, contadorProductos);
     return productosContainer;
 }
 
@@ -106,7 +112,8 @@ productServices.listaProductos()
         for (let i = 0; i < lista.length; i++) {
             for (let j = 0; j < productos.length; j++) {
                 const producto = lista[i][j];
-                const listaProductosSimilares = crearListaProductosSimilares(producto);
+                const contadorProductos = j;
+                const listaProductosSimilares = crearListaProductosSimilares(producto, contadorProductos);
                 seccionSimilares.appendChild(listaProductosSimilares);
             }
         }
@@ -114,4 +121,3 @@ productServices.listaProductos()
     .catch((error) => console.log(error));
 
 obtenerDetallesProducto();
-/* console.log(listaDesordenada); */
