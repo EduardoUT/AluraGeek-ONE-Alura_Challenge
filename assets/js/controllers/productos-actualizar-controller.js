@@ -12,7 +12,7 @@ const obtenerInformacion = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     if (id == null) {
-        window.location.href = "/ventanas/error.html";
+        window.location.href = "/ventanas/mensajes/error.html";
     }
 
     try {
@@ -33,7 +33,7 @@ const obtenerInformacion = async () => {
         }
     } catch (error) {
         console.log(error);
-        window.location.href = "/ventanas/error.html";
+        window.location.href = "/ventanas/mensajes/error.html";
     }
 }
 
@@ -63,7 +63,7 @@ formulario.addEventListener("submit", async (event) => {
             if (respuesta.isConfirmed) {
                 productServices.actualizarProducto(id, imagenValor, nombreValor, precioValor, categoriaValor, descripcionValor)
                     .then(() => {
-                        window.location.href = "/ventanas/actualizado_exitosamente.html";
+                        window.location.href = "/ventanas/mensajes/actualizado_exitosamente.html";
                     });
             } else if (respuesta.isDismissed) {
                 Swal.fire({
