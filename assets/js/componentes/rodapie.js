@@ -1,3 +1,7 @@
+import rutaRelativaCabeceraRodapie from "./rutaRelativaCabeceraRodapie.js";
+
+const ruta = rutaRelativaCabeceraRodapie();
+
 /**
  * Referencia:
  * https://www.freecodecamp.org/news/reusable-html-components-how-to-reuse-a-header-and-footer-on-a-website/
@@ -13,8 +17,8 @@ class Footer extends HTMLElement {
         <div class="informaciones__alurageek">
             <div class="informaciones__contactos">
                 <div class="informaciones__cabecera">
-                    <a class="informaciones__logo" href="../index.html" title="Ir a la página principal" tabindex="0">
-                        <img class="informaciones__logo" src="../assets/img/iconos/logo-alura-geek.svg"
+                    <a class="informaciones__logo" href="${ruta}index.html" title="Ir a la página principal" tabindex="0">
+                        <img class="informaciones__logo" src="${ruta}assets/img/iconos/logo-alura-geek.svg"
                             alt="Logo de AluraGeek">
                     </a>
                 </div>
