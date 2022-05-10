@@ -28,7 +28,6 @@ const guardarProducto = (event) => {
             limpiarValores();
             const redir = window.location.href = "../../../ventanas/guardado_exitosamente.html";
             setTimeout(redir, 20000);
-
         }).catch((error) => {
             console.log(error)
             const redir = window.location.href = "../../../ventanas/error.html";
