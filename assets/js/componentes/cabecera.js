@@ -19,7 +19,7 @@ class Header extends HTMLElement {
                 <a class="cabecera__logo" href="${ruta}index.html" title="Ir a la página principal" tabindex="0">
                     <img class="cabecera__logo" src="${ruta}assets/img/iconos/logo-alura-geek.svg" alt="Logo de AluraGeek">
                 </a>
-                <form action="" class="cabecera__formulario">
+                <form action="" class="cabecera__formulario" data-formulario-busqueda>
                     <input class="cabecera__campo campo--busqueda" type="text" placeholder="¿Qué deseas buscar?"
                         data-form-buscador>
                 </form>
