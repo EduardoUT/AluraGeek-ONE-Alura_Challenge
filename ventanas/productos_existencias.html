@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraGeek | Productos Existentes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/componentes/boton.css">
+    <link rel="stylesheet" href="../assets/css/componentes/link.css">
+    <link rel="stylesheet" href="../assets/css/cabecera/cabecera.css">
+    <link rel="stylesheet" href="../assets/css/principal/principal.css">
+    <link rel="stylesheet" href="../assets/css/productos/productosExistentes.css">
+    <link rel="stylesheet" href="../assets/css/productos/productos.css">
+    <link rel="stylesheet" href="../assets/css/informaciones/informaciones.css">
+    <link rel="stylesheet" href="../assets/css/formulario/formulario.css">
+    <link rel="stylesheet" href="../assets/css/copyright/copyright.css">
+    <script src="../assets/js/componentes/cabecera.js" type="module"></script>
+    <script src="../assets/js/componentes/rodapie.js" type="module"></script>
+    <link rel="icon" href="../favicon.svg">
+</head>
+
+<body>
+    <header-component></header-component>
+    <main class="principal">
+        <section class="productos-existentes productos">
+            <header class="productos-existentes__encabezado">
+                <h2 class="productos-existentes__titulo titulo">Todos los productos</h2>
+                <a class="productos-existentes__boton boton--secundario" href="./productos_registrar.html" data-agregar-producto>Agregar Producto</a>
+            </header>
+            <div class="productos-existentes__detalles productos__detalles" data-lista-productos>
+            </div>
+        </section>
+    </main>
+    <footer-component></footer-component>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
+    <script src="../assets/js/main.js" type="module"></script>
+    <script src="../assets/js/productosExistentes.js" type="module"></script>
+    <script src="../assets/js/controllers/productos-existencias-controller.js" type="module"></script>
+</body>
+
+</html>
