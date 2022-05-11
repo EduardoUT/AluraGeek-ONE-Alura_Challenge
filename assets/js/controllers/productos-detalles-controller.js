@@ -8,8 +8,8 @@ const titleWindow = document.querySelector("title");
 const seccionSimilares = document.querySelector("[data-productos-similares]");
 
 const mostrarImagen = (imagen) => {
-    const regexImagen = /^(([a-z\d]+)([-]?[a-z\d]+)+[.](jpeg|jpg|png))$/g;
-    const esImagenLocal = regexImagen.test(imagen);
+    const regexImagenLocal = /^(([a-z\d]+)([-]?[a-z\d]+)+[.](jpeg|jpg|png))$/g;
+    const esImagenLocal = regexImagenLocal.test(imagen);
     if (esImagenLocal) {
         imagenDetalles.setAttribute("style", `background: url('../assets/img/productos/${imagen}') center / 100% 100% no-repeat;`);
     } else {
@@ -21,7 +21,7 @@ const obtenerDetallesProducto = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     if (id == null) {
-        window.location.href = "/ventanas/error.html";
+        window.location.href = "/ventanas/mensajes/error.html";
     }
 
     try {
@@ -66,7 +66,7 @@ const contenidoProductosLocales = (producto) => {
             <div class="productos__imagen" style="background: url('../assets/img/productos/${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
-            <a class="productos__link link" href="/ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
+            <a class="productos__link link" href="/ventanas/productos_detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
@@ -79,7 +79,7 @@ const contenidoProductosServidor = (producto) => {
             <div class="productos__imagen" style="background: url('${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
-            <a class="productos__link link" href="/ventanas/detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
+            <a class="productos__link link" href="/ventanas/productos_detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
