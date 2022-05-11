@@ -6,6 +6,7 @@ import { login } from "./login.js";
 sessionStorage.setItem("correo", "e@gmail.com");
 sessionStorage.setItem("password", "123");
 
+const formularioBusqueda = document.querySelector("[data-formulario-busqueda]");
 const btnLogin = document.querySelector("[data-btn-login]");
 const formularioRodapie = document.getElementById("formulario-rodapie");
 const btnEnviar = document.getElementById("btn-enviar");
@@ -56,6 +57,13 @@ export const comprobarAcceso = () => {
     }
 }
 
+const buscarProducto = (event) => {
+    event.preventDefault();
+    const campoBusqueda = document.querySelector("[data-form-buscador]");
+    const valorCampoBusqueda = campoBusqueda.value;
+    window.location.href = `/ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+}
+
 login(estaAutenticado);
 botonLogin();
 menu();
@@ -65,4 +73,5 @@ validarCampos();
 window.addEventListener("load", evitarRecarga);
 btnLogin.addEventListener("click", clickOnLogin);
 btnEnviar.addEventListener("click", evitarRecarga);
+formularioBusqueda.addEventListener("submit", buscarProducto);
 formularioRodapie.addEventListener("keyup", validarBtnRodapie);
