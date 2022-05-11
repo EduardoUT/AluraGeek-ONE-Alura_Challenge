@@ -38,7 +38,7 @@ const exhibirProductosLocales = (id, imagen, nombre, precio) => {
             <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <a class="productos__link link" href="./ventanas/detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
+            <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
     `;
@@ -51,7 +51,7 @@ const exhibirProductosServidor = (id, imagen, nombre, precio) => {
             <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
             <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <a class="productos__link link" href="./ventanas/detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
+            <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
     `;
