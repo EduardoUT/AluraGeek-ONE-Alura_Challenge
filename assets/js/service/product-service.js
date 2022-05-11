@@ -43,6 +43,11 @@ const actualizarProducto = async (id, imagen, nombre, precio, categoria, desc) =
     }
 }
 
+const nombreProducto = async (busquedaUsuario) => {
+    const respuesta = await fetch(`http://localhost:3000/producto?nombre_like=${busquedaUsuario}`);
+    return await respuesta.json();
+}
+
 export const productServices = {
     crearProducto,
     listaProductos,
@@ -50,4 +55,5 @@ export const productServices = {
     eliminarProducto,
     detalleProducto,
     detalleCategoria,
+    nombreProducto,
 }
