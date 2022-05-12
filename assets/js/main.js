@@ -61,7 +61,14 @@ const buscarProducto = (event) => {
     event.preventDefault();
     const campoBusqueda = document.querySelector("[data-form-buscador]");
     const valorCampoBusqueda = campoBusqueda.value;
-    window.location.href = `/ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+    if (valorCampoBusqueda != "") {
+        Swal.fire({
+            icon: "info",
+            title: "Por favor, escriba el nombre de un producto."
+        })
+    } else {
+        window.location.href = `/ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+    }
 }
 
 login(estaAutenticado);
