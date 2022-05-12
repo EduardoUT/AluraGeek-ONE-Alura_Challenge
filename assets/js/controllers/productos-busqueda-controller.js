@@ -43,7 +43,7 @@ const obtenerResultados = async () => {
         } else {
             Swal.fire({
                 icon: "info",
-                title: "Producto no encontrado. :(",
+                title: "Producto no encontrado. &#128561;",
                 text: "Lo sentimos, no se encontro ningún resultado.",
                 allowOutsideClick: false
             }).then((respuesta) => {
