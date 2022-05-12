@@ -44,10 +44,11 @@ const obtenerResultados = async () => {
             Swal.fire({
                 icon: "info",
                 title: "Producto no encontrado. :(",
-                text: "Lo sentimos, no se encontro ningún resultado."
+                text: "Lo sentimos, no se encontro ningún resultado.",
+                allowOutsideClick: false
             }).then((respuesta) => {
                 if (respuesta.isConfirmed) {
-                    window.location.href = "index.html";
+                    window.history.back();
                 }
             })
         }
