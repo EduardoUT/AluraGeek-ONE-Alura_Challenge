@@ -8,9 +8,6 @@ const btnBuscarArchivo = document.querySelector("[data-dropbox-btn]");
 const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
 
-//Si la página se carga o recarga se limpia el archivo.
-//limpiarValorImagen(inputFile);
-
 /**
  * Función encargada de modificar la visualización
  * del contenido del dropBoxArea con las instrucciones y icono
