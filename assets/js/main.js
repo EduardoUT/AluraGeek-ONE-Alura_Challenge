@@ -5,7 +5,6 @@ import { login } from "./login.js";
 import { productServices } from "./service/product-service.js";
 import { categoriasUnicas, incluyeCategoria } from "./controllers/categoriasUnicas.js";
 import validarCampos from "./formularios/validarCampos.js";
-sessionStorage.setItem("password", "123");
 
 const formularioBusqueda = document.querySelector("[data-formulario-busqueda]");
 const btnLogin = document.querySelector("[data-btn-login]");
