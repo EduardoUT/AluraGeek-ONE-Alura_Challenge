@@ -4,8 +4,7 @@ import { habilitarBtnRodapie } from "./formularios/habilitarBoton.js";
 import { login } from "./login.js";
 import { productServices } from "./service/product-service.js";
 import { categoriasUnicas, incluyeCategoria } from "./controllers/categoriasUnicas.js";
-import { validarCampos } from "./formularios/validarCampos.js";
-sessionStorage.setItem("correo", "e@gmail.com");
+import validarCampos from "./formularios/validarCampos.js";
 sessionStorage.setItem("password", "123");
 
 const formularioBusqueda = document.querySelector("[data-formulario-busqueda]");
@@ -61,11 +60,13 @@ export const comprobarAcceso = () => {
 
 const buscarProducto = (event) => {
     event.preventDefault();
+    
     productServices.listaProductos()
         .then((productos) => {
             const categorias = categoriasUnicas(productos);
             const campoBusqueda = document.querySelector("[data-form-buscador]");
             const valorCampoBusqueda = campoBusqueda.value;
+            validarCampoBuscar(formularioBusqueda, campoBusqueda);
             if (valorCampoBusqueda != "") {
                 const esUnValorCategoria = incluyeCategoria(categorias, valorCampoBusqueda);
                 if (esUnValorCategoria) {

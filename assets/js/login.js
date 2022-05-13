@@ -1,4 +1,4 @@
-import { validarCampos } from "./formularios/validarCampos.js";
+import validarCampos from "./formularios/validarCampos.js";
 
 export const login = (estaAutenticado) => {
     console.log(estaAutenticado);
