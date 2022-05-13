@@ -1,16 +1,7 @@
 import { productServices } from "../service/product-service.js";
+import { categoriasUnicas } from "./categoriasUnicas.js";
 
 const elementoMain = document.querySelector("[data-categorias]");
-
-const categoriasUnicas = (productos) => {
-    const categoriaUnicas = [];
-    productos.forEach(({ categoria }) => {
-        if (!categoriaUnicas.includes(categoria)) {
-            categoriaUnicas.push(categoria);
-        }
-    });
-    return categoriaUnicas;
-}
 
 const crearSeccionCategoria = (categoriaUnica) => {
     const seccion = document.createElement("section");
