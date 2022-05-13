@@ -1,10 +1,10 @@
 import menu from "./componentes/menu.js";
 import buscadorCelular from "./componentes/buscadorCelular.js";
-import validarCampos from "./formularios/validarCampos.js";
 import { habilitarBtnRodapie } from "./formularios/habilitarBoton.js";
 import { login } from "./login.js";
 import { productServices } from "./service/product-service.js";
 import { categoriasUnicas, incluyeCategoria } from "./controllers/categoriasUnicas.js";
+import { validarCampos } from "./formularios/validarCampos.js";
 sessionStorage.setItem("correo", "e@gmail.com");
 sessionStorage.setItem("password", "123");
 
