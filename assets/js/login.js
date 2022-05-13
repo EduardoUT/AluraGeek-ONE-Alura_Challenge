@@ -1,7 +1,7 @@
 import validarCampos from "./formularios/validarCampos.js";
+import { userServices } from "./service/user-service.js";
 
 export const login = (estaAutenticado) => {
-    console.log(estaAutenticado);
     return estaAutenticado;
 }
 
@@ -10,24 +10,30 @@ if (window.location.href.includes("login.html")) {
 
     const loggearse = (event) => {
         event.preventDefault();
-        const correoAlmacenado = sessionStorage.getItem("correo");
-        const passAlmacenado = sessionStorage.getItem("password");
-        const correoUsuario = document.querySelector("[data-campo=correo]").value;
-        const contrasenaUsuario = document.querySelector("[data-campo=password]").value;
-        if (correoUsuario == correoAlmacenado && contrasenaUsuario == passAlmacenado) {
-            sessionStorage.setItem("autenticado", "true");
-            window.location.href = "./productos_existencias.html";
-        } else {
-            sessionStorage.setItem("autenticado", "false");
-            Swal.fire({
-                icon: "error",
-                title: "Usuario o Contraseña Incorrectos, intente nuevamente.",
-                showConfirmButton: false
-            });
-            setTimeout(() => {
-                window.location.reload();
-            }, 4000);
-        }
+        userServices.listaUsuario()
+            .then((usuarios) => {
+                usuarios.forEach(({ correo, password }) => {
+                    const correoServidor = correo;
+                    const passwordServidor = password;
+                    const correoUsuario = document.querySelector("[data-campo=correo]").value;
+                    const passwordUsuario = document.querySelector("[data-campo=password]").value;
+                    if (correoUsuario == correoServidor && passwordUsuario == passwordServidor) {
+                        sessionStorage.setItem("autenticado", "true");
+                        window.location.href = "./productos_existencias.html";
+                    } else {
+                        sessionStorage.setItem("autenticado", "false");
+                        Swal.fire({
+                            icon: "error",
+                            title: "Usuario o Contraseña Incorrectos, intente nuevamente.",
+                            showConfirmButton: false
+                        });
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 4000);
+                    }
+                });
+            })
+            .catch((error) => console.log("Error " + error));
     }
 
     const habilitarBtnLogin = () => {
