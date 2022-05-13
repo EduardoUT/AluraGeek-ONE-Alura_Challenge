@@ -1,9 +1,10 @@
 import { productServices } from "../service/product-service.js";
+import { categoriasUnicas, incluyeCategoria } from "./categoriasUnicas.js";
 
 const listaResultados = document.querySelector("[data-productos-resultados]");
 
-const infoProductos = async (filtroNombre) => {
-    filtroNombre.forEach(({ id, imagen, nombre, precio }) => {
+const infoProductos = async (filtro) => {
+    filtro.forEach(({ id, imagen, nombre, precio }) => {
         const rangoId = (id <= 18);
         if (rangoId) {
             const contenidoLocal = `
@@ -30,31 +31,50 @@ const infoProductos = async (filtroNombre) => {
 }
 
 const obtenerResultados = async () => {
-    const url = new URL(window.location);
-    const nombreProducto = url.searchParams.get("nombre_like");
-    if (nombreProducto == null) {
-        window.location.href = "/ventanas/mensajes/error.html";
-    }
-
-    try {
-        const filtroNombre = await productServices.nombreProducto(nombreProducto);
-        if (filtroNombre.length != 0) {
-            infoProductos(filtroNombre);
-        } else {
-            Swal.fire({
-                icon: "info",
-                title: "Producto no encontrado. &#128561;",
-                text: "Lo sentimos, no se encontro ningún resultado.",
-                allowOutsideClick: false
-            }).then((respuesta) => {
-                if (respuesta.isConfirmed) {
-                    window.history.back();
+    productServices.listaProductos()
+        .then(async (productos) => {
+            const listaCategorias = categoriasUnicas(productos);
+            const url = new URL(window.location);
+            const nombreProducto = url.searchParams.get("nombre_like");
+            const categoriaProducto = url.searchParams.get("categoria_like");
+            const esUnValorCategoria = incluyeCategoria(listaCategorias, categoriaProducto);
+            if (esUnValorCategoria) {
+                if (categoriaProducto == null) {
+                    window.location.href = "/ventanas/mensajes/error.html";
                 }
-            })
-        }
-    } catch (error) {
-
-    }
+                try {
+                    const filtroCategoria = await productServices.buscarCategoriaProducto(categoriaProducto);
+                    if (filtroCategoria.length != 0) {
+                        infoProductos(filtroCategoria);
+                    } else {
+                        return;
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            } else {
+                try {
+                    const filtroNombre = await productServices.buscarNombreProducto(nombreProducto);
+                    if (filtroNombre.length != 0) {
+                        infoProductos(filtroNombre);
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            title: "Producto o Categoría no encontrados. &#128561;",
+                            text: "Lo sentimos, no se encontro ningún resultado.",
+                            allowOutsideClick: false
+                        }).then((respuesta) => {
+                            if (respuesta.isConfirmed) {
+                                window.history.back();
+                            }
+                        });
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        })
+        .catch((error) => console.log(error));
 }
 
 obtenerResultados();
