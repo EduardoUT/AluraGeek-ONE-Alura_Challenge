@@ -4,7 +4,6 @@ import { categoriasUnicas, incluyeCategoria } from "./categoriasUnicas.js";
 const listaResultados = document.querySelector("[data-productos-resultados]");
 const encabezadoResultados = document.querySelector("[data-productos-encabezdo-resultado]");
 const titulo = document.querySelector("title");
-console.log(encabezadoResultados);
 
 const infoProductos = async (filtro) => {
     filtro.forEach(({ id, imagen, nombre, precio }) => {
