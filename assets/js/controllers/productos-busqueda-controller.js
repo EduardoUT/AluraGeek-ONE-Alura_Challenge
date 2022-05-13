@@ -48,8 +48,8 @@ const obtenerResultados = async () => {
                 try {
                     const filtroCategoria = await productServices.buscarCategoriaProducto(categoriaProducto);
                     if (filtroCategoria.length != 0) {
-                        titulo.textContent = categoriaProducto;
-                        encabezadoResultados.textContent = "Alura Geek | " + categoriaProducto;
+                        titulo.textContent = "Alura Geek | " + categoriaProducto;
+                        encabezadoResultados.textContent = "Resultados Búsqueda: " + categoriaProducto;
                         infoProductos(filtroCategoria);
                     } else {
                         return;
@@ -62,7 +62,7 @@ const obtenerResultados = async () => {
                     const filtroNombre = await productServices.buscarNombreProducto(nombreProducto);
                     if (filtroNombre.length != 0) {
                         titulo.textContent = "Alura Geek | " + nombreProducto;
-                        encabezadoResultados.textContent = nombreProducto;
+                        encabezadoResultados.textContent = "Resultados Búsqueda: " + nombreProducto;
                         infoProductos(filtroNombre);
                     } else {
                         Swal.fire({
