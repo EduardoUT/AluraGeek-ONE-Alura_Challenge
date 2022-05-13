@@ -3,6 +3,8 @@ import buscadorCelular from "./componentes/buscadorCelular.js";
 import validarCampos from "./formularios/validarCampos.js";
 import { habilitarBtnRodapie } from "./formularios/habilitarBoton.js";
 import { login } from "./login.js";
+import { productServices } from "./service/product-service.js";
+import { categoriasUnicas, incluyeCategoria } from "./controllers/categoriasUnicas.js";
 sessionStorage.setItem("correo", "e@gmail.com");
 sessionStorage.setItem("password", "123");
 
@@ -59,16 +61,26 @@ export const comprobarAcceso = () => {
 
 const buscarProducto = (event) => {
     event.preventDefault();
-    const campoBusqueda = document.querySelector("[data-form-buscador]");
-    const valorCampoBusqueda = campoBusqueda.value;
-    if (valorCampoBusqueda != "") {
-        window.location.href = `/ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
-    } else {
-        Swal.fire({
-            icon: "info",
-            title: "Por favor, escriba el nombre de un producto."
-        });
-    }
+    productServices.listaProductos()
+        .then((productos) => {
+            const categorias = categoriasUnicas(productos);
+            const campoBusqueda = document.querySelector("[data-form-buscador]");
+            const valorCampoBusqueda = campoBusqueda.value;
+            if (valorCampoBusqueda != "") {
+                const esUnValorCategoria = incluyeCategoria(categorias, valorCampoBusqueda);
+                if (esUnValorCategoria) {
+                    window.location.href = `/ventanas/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
+                } else {
+                    window.location.href = `/ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+                }
+            } else {
+                Swal.fire({
+                    icon: "info",
+                    title: "Por favor, escriba el nombre de un producto."
+                });
+            }
+        })
+        .catch((error) => console.log(error));
 }
 
 login(estaAutenticado);
