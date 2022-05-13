@@ -60,7 +60,6 @@ export const comprobarAcceso = () => {
 
 const buscarProducto = (event) => {
     event.preventDefault();
-    
     productServices.listaProductos()
         .then((productos) => {
             const categorias = categoriasUnicas(productos);
