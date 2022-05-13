@@ -66,7 +66,6 @@ const buscarProducto = (event) => {
             const categorias = categoriasUnicas(productos);
             const campoBusqueda = document.querySelector("[data-form-buscador]");
             const valorCampoBusqueda = campoBusqueda.value;
-            validarCampoBuscar(formularioBusqueda, campoBusqueda);
             if (valorCampoBusqueda != "") {
                 const esUnValorCategoria = incluyeCategoria(categorias, valorCampoBusqueda);
                 if (esUnValorCategoria) {
