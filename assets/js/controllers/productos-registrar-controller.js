@@ -21,16 +21,14 @@ const guardarProducto = (event) => {
     const valorPrecio = precio.value;
     const valorCategoria = categoria.value;
     const valorDescripcion = descripcion.value;
-    productServices.crearProducto(valorImagen, valorNombreProducto,
-        valorPrecio, valorCategoria, valorDescripcion)
+    productServices
+        .crearProducto(valorImagen, valorNombreProducto,
+            valorPrecio, valorCategoria, valorDescripcion)
         .then((respuesta) => {
+            window.location.href = "../ventanas/mensajes/guardado_exitosamente.html";
             limpiarValores();
-            const redir = window.location.href = "../../../ventanas/mensajes/guardado_exitosamente.html";
-            setTimeout(redir, 3000);
         }).catch((error) => {
-            console.log(error);
-            const redir = window.location.href = "../../../ventanas/mensajes/error.html";
-            setTimeout(redir, 3000);
+            window.location.href = "../ventanas/mensajes/error.html";
         });
 }
 
