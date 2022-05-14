@@ -63,7 +63,7 @@ formulario.addEventListener("submit", async (event) => {
             if (respuesta.isConfirmed) {
                 productServices.actualizarProducto(id, imagenValor, nombreValor, precioValor, categoriaValor, descripcionValor)
                     .then(() => {
-                        window.location.href = "../../../ventanas/mensajes/actualizado_exitosamente.html";
+                        window.location.href = "/ventanas/mensajes/actualizado_exitosamente.html";
                     });
             } else if (respuesta.isDismissed) {
                 Swal.fire({
