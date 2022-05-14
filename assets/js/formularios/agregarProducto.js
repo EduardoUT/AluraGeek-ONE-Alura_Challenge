@@ -1,6 +1,6 @@
 import { comprobarAcceso } from "../main.js";
 
-export const precio = document.querySelector("[data-campo=precio]");
+const precio = document.querySelector("[data-campo=precio]");
 const opcionDefault = document.querySelector("[data-select-option=default]");
 
 /**
