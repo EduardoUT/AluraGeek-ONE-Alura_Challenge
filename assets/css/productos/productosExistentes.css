@@ -33,10 +33,16 @@
 }
 
 .productos-existentes__botones {
-    border: none;
+    border-radius: 0.2rem;
+    border: solid transparent;
+    padding: 0.9rem;
+    background-color: hsla(0, 0%, 0%, 0.64) !important;
     cursor: pointer;
     height: 1.5rem;
     width: 1.5rem;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 .boton--eliminar {
