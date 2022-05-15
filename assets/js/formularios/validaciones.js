@@ -139,6 +139,28 @@ const mensajesDeError = {
         valueMissing: "El campo descripción no puede estar en blanco o vacío.",
         tooShort: "Debe contener mínimo 20 carácteres",
         tooLong: "No debe exceder los 150 carácteres."
+    },
+    productoUpdate: {
+        valueMissing: "El campo producto no puede estar en blanco o vacío.",
+        patternMismatch: "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
+            "No debe haber más de un espacio en blanco. <br>" +
+            "Se admiten números si el nombre lo requiera. <br>" +
+            "Se admiten los símbolos: .-,¿?!¡&/$()=+# <br>",
+        tooLong: "El nombre del producto no puede exceder los 20 carácteres."
+    },
+    precioUpdate: {
+        valueMissing: "El campo precio no puede estar en blanco o vacío.",
+        patternMismatch: "Por favor, asegúrese de verificar los siguientes requerimientos: <br>" +
+            "No se aceptan letras, carácteres especiales ni valores negativos, sólo un punto<br>" +
+            "Si es un precio sin centavos, escriba la cifra con .00 centavos.<br>" +
+            "Formatos de ejemplo: 9999999.99 1200.99 20.30 506.00 1.99<br>" +
+            "Incluya un punto para índicar los centavos.",
+        tooLong: "No debe exceder los 9 dígitos, contando décimales.",
+    },
+    descripcionUpdate: {
+        valueMissing: "El campo descripción no puede estar en blanco o vacío.",
+        tooShort: "Debe contener mínimo 20 carácteres",
+        tooLong: "No debe exceder los 150 carácteres."
     }
 };
 
