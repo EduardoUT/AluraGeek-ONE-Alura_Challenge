@@ -1,4 +1,4 @@
-const listaUsuario = () => fetch("http://localhost:3000/usuario").then((respuesta) => respuesta.json());
+const listaUsuario = () => fetch("https://alurageekserver.herokuapp.com/usuario").then((respuesta) => respuesta.json());
 
 export const userServices = {
     listaUsuario,
