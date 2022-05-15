@@ -26,9 +26,9 @@ formAgregarProducto.addEventListener("submit", (event) => {
             valorPrecio, valorCategoria, valorDescripcion)
         .then((respuesta) => {
             if (respuesta != null) { 
-                window.location.href = "/ventanas/mensajes/guardado_exitosamente.html";
+                window.location.href = "./mensajes/guardado_exitosamente.html";
             }
         }).catch((error) => {
-            window.location.href = "/ventanas/mensajes/error.html";
+            window.location.href = "./mensajes/error.html";
         });
 });

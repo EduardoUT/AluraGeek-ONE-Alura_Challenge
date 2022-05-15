@@ -66,7 +66,7 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
             });
         } else {
             btnEliminar.setAttribute("id", `${id}`);
-            btnEditar.setAttribute("href", `../../../ventanas/productos_actualizar.html?id=${id}`);
+            btnEditar.setAttribute("href", `./productos_actualizar.html?id=${id}`);
             btnEliminar.addEventListener("click", () => {
                 Swal.fire({
                     icon: "question",

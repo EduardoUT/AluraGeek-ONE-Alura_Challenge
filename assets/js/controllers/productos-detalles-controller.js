@@ -21,7 +21,7 @@ const obtenerDetallesProducto = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     if (id == null) {
-        window.location.href = "/ventanas/mensajes/error.html";
+        window.location.href = "./mensajes/error.html";
     }
 
     try {
