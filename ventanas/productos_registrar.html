@@ -26,18 +26,21 @@
     <header-component></header-component>
     <main class="principal container">
         <section class="agregar-producto">
-            <form class="agregar-producto__formulario" id="agregarProductoForm" action="" data-form-add-product>
+            <form class="agregar-producto__formulario" id="agregarProductoForm" data-form-add-product>
                 <legend class="agregar-producto__legend formulario__legend" tabindex="0">Agregar nuevo producto</legend>
                 <div class="agregar-producto__container">
                     <div class="agregar-producto__dropbox" data-dropbox-area>
                         <div class="agregar-producto__imagen imagen--photo"></div>
-                        <p class="agregar-producto__texto parrafo" data-dropbox-info>Arrastre para agregar una imagen para el
-                            producto.</p>
-                        <input class="agregar-producto__archivo" type="file" id="archivoImagen" required data-dropbox-campo>
+                        <p class="agregar-producto__texto parrafo" data-dropbox-info>
+                            Arrastre para agregar una imagen para el producto.
+                        </p>
+                        <input class="agregar-producto__archivo" type="file" id="archivoImagen" required
+                            data-dropbox-campo>
                     </div>
                     <p class="agregar-producto__parrafo parrafo">O</p>
-                    <button class="agregar-producto__boton boton--primario" id="botonFile" data-dropbox-btn>Busque en su
-                        computador</button>
+                    <button class="agregar-producto__boton boton--primario" id="botonFile" data-dropbox-btn>
+                        Busque en su computador
+                    </button>
                 </div>
                 <div class="formulario__componentes">
                     <label class="formulario__label" for="nombreProducto">Nombre del producto:</label>
@@ -49,18 +52,23 @@
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
-                    <label class="formulario__label" for="precioProducto">Precio del producto (Formato 1900.99, usa
-                        punto decimal para centavos):</label>
-                    <input class="formulario__campo formulario__campoEstilo" id="precioProducto" type="text" step="0.01"
-                        required placeholder="60.00" tabindex="0"
+                    <label class="formulario__label" for="precioProducto">
+                        Precio del producto (Formato 1900.99, usa punto decimal para centavos):
+                    </label>
+                    <input class="formulario__campo formulario__campoEstilo" id="precioProducto" type="text" required
+                        placeholder="60.00" tabindex="0"
                         title="El campo precio no puede estar en blanco o vacío, formato de precio 10.99 o 1900.99, usando el punto (.) como decimal."
                         pattern="^[\d]{1,7}\.[\d]{2}$" maxlength="10" data-campo="precio">
                     <span class="formulario__span--error" tabindex="0">Error</span>
                 </div>
                 <div class="formulario__componentes">
-                    <label class="formulario__label" for="categoriaProducto">Seleccione la categoría del producto:</label>
-                    <select class="formulario__campo" id="categoriaProducto" name="categoriaProducto" required tabindex="0" data-campo="categoria">
-                        <option id="voidValue" value="" disabled data-select-option="default">Seleccione una categoría</option>
+                    <label class="formulario__label" for="categoriaProducto">
+                        Seleccione la categoría del producto:</label>
+                    <select class="formulario__campo" id="categoriaProducto" name="categoriaProducto" required
+                        tabindex="0" data-campo="categoria">
+                        <option id="voidValue" value="" disabled data-select-option="default">
+                            Seleccione una categoría
+                        </option>
                         <option value="Star Wars">Star Wars</option>
                         <option value="Consolas">Consolas</option>
                         <option value="Diversos">Diversos</option>
@@ -81,7 +89,9 @@
     </main>
     <footer-component></footer-component>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.9/dist/sweetalert2.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+        integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../assets/js/main.js" type="module"></script>
     <script src="../assets/js/formularios/agregarProducto.js" type="module"></script>
     <script src="../assets/js/formularios/dropBoxArea.js" type="module"></script>
