@@ -80,6 +80,7 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
                         const idProducto = btnEliminar.id;
                         productServices.eliminarProducto(idProducto)
                             .then((respuesta) => {
+                                window.location.reload();
                             }).catch((error) => alert(error));
                     } else if (respuesta.isDismissed) {
                         Swal.fire({
