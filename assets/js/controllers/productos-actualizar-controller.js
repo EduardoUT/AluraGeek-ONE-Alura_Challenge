@@ -3,10 +3,10 @@ import { habilitarBotonProducto, producto } from "../formularios/imagenDropBoxAr
 import { productServices } from "../service/product-service.js";
 
 const formulario = document.querySelector("[data-form-update-product]");
-const nombreFormulario = document.querySelector("[data-campo=producto]");
-const precioFormulario = document.querySelector("[data-campo=precio]");
-const categoriaFormulario = document.querySelector("[data-campo=categoria]");
-const descripcionFormulario = document.querySelector("[data-campo=descripcion]");
+const nombreFormulario = document.querySelector("[data-campo=productoUpdate]");
+const precioFormulario = document.querySelector("[data-campo=precioUpdate]");
+const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]");
+const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
 
 const obtenerInformacion = async () => {
     const url = new URL(window.location);
