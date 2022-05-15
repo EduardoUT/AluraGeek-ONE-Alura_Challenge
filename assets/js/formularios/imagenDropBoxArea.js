@@ -98,28 +98,17 @@ const esImagenVisible = (dropBoxArea) => {
     return esVisible;
 }
 
-/**
- * Se encarga de limpiar el nombre del archivo visible en
- * el campo de tipo file.
- * @param {Object} inputFile 
- * @returns Valor vacío.
- */
-export const limpiarValorImagen = (inputFile) => {
-    return inputFile.value = "";
-}
-
 export const habilitarBotonProducto = (archivoCorrecto) => {
-    const btnAgregarProducto = document.getElementById("agregarProducto");
-    const nombreProducto = document.getElementById("nombreProducto");
-    const precioProducto = document.getElementById("precioProducto");
-    const dscProducto = document.getElementById("descProducto");
-    const nombreProductoValido = nombreProducto.validity.valid;
-    const precioProductoValido = precioProducto.validity.valid;
-    const dscProductoValido = dscProducto.validity.valid;
-    const formularioAgregarProductoValido = (archivoCorrecto && nombreProductoValido &&
-        precioProductoValido && dscProductoValido);
-    const formActualizarValido = (nombreProductoValido && precioProductoValido && dscProductoValido);
-    if (window.location.href.includes("agregar_producto.html")) {
+    if (window.location.href.includes("productos_registrar.html")) {
+        const btnAgregarProducto = document.getElementById("agregarProducto");
+        const nombreProducto = document.getElementById("nombreProducto");
+        const precioProducto = document.getElementById("precioProducto");
+        const dscProducto = document.getElementById("descProducto");
+        const nombreValido = nombreProducto.validity.valid;
+        const precioValido = precioProducto.validity.valid;
+        const dscValido = dscProducto.validity.valid;
+        const formularioAgregarProductoValido = (archivoCorrecto && nombreValido &&
+            precioValido && dscValido);
         if (formularioAgregarProductoValido) {
             btnAgregarProducto.removeAttribute("disabled");
             btnAgregarProducto.classList.remove("boton--bloqueado");
@@ -127,13 +116,21 @@ export const habilitarBotonProducto = (archivoCorrecto) => {
             btnAgregarProducto.setAttribute("disabled", "true");
             btnAgregarProducto.classList.add("boton--bloqueado");
         }
-    } else {
+    } else if (window.location.href.includes("productos_actualizar.html")) {
+        const btnUpdate = document.querySelector("[data-button-update]");
+        const nombreFormularioUpdate = document.querySelector("[data-campo=productoUpdate]");
+        const precioFormularioUpdate = document.querySelector("[data-campo=precioUpdate]");
+        const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
+        const nombreValido = nombreFormularioUpdate.validity.valid;
+        const precioValido = precioFormularioUpdate.validity.valid;
+        const dscValido = descripcionFormulario.validity.valid;
+        const formActualizarValido = (nombreValido && precioValido && dscValido);
         if (formActualizarValido) {
-            btnAgregarProducto.removeAttribute("disabled");
-            btnAgregarProducto.classList.remove("boton--bloqueado");
+            btnUpdate.removeAttribute("disabled");
+            btnUpdate.classList.remove("boton--bloqueado");
         } else {
-            btnAgregarProducto.setAttribute("disabled", "true");
-            btnAgregarProducto.classList.add("boton--bloqueado");
+            btnUpdate.setAttribute("disabled", "true");
+            btnUpdate.classList.add("boton--bloqueado");
         }
     }
 }
@@ -147,6 +144,14 @@ const validarBtnProducto = (event) => {
     }
 }
 
+const comprobarFormularioActual = () => {
+    if (window.location.href.includes("productos_registrar.html")) {
+        formAgregarProducto.addEventListener("keyup", validarBtnProducto);
+    } else if (window.location.href.includes("productos_actualizar.html")) {
+        formActualizarProducto.addEventListener("keyup", validarBtnProducto);
+    }
+}
+
+comprobarFormularioActual();
 habilitarBotonProducto(archivoCorrecto);
-formAgregarProducto.addEventListener("keyup", validarBtnProducto);
 export default imagenDropBoxArea;
