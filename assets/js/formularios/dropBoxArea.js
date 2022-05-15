@@ -5,7 +5,6 @@ const dropBoxArea = document.querySelector("[data-dropbox-area]"),
     textoInfo = dropBoxArea.querySelector("[data-dropbox-info]"),
     inputFile = dropBoxArea.querySelector("[data-dropbox-campo]");
 const btnBuscarArchivo = document.querySelector("[data-dropbox-btn]");
-const btnEnviar = document.getElementById("agregarProducto");
 let archivo;
 
 /**
