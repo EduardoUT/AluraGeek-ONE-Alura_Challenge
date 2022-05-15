@@ -67,9 +67,9 @@ const buscarProducto = (event) => {
             if (valorCampoBusqueda != "") {
                 const esUnValorCategoria = incluyeCategoria(categorias, valorCampoBusqueda);
                 if (esUnValorCategoria) {
-                    window.location.href = `/ventanas/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
+                    window.location.href = `./ventanas/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
                 } else {
-                    window.location.href = `/ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+                    window.location.href = `./ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
                 }
             } else {
                 Swal.fire({
