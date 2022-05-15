@@ -1,8 +1,8 @@
 const listaProductos = () =>
-    fetch("http://localhost:3000/producto").then((respuesta) => respuesta.json());
+    fetch("https://alurageekserver.herokuapp.com/producto").then((respuesta) => respuesta.json());
 
 const crearProducto = (imagen, nombre, precio, categoria, desc) => {
-    return fetch("http://localhost:3000/producto", {
+    return fetch("https://alurageekserver.herokuapp.com/producto", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -19,19 +19,19 @@ const crearProducto = (imagen, nombre, precio, categoria, desc) => {
 };
 
 const eliminarProducto = (id) => {
-    return fetch(`http://localhost:3000/producto/${id}`, {
+    return fetch(`https://alurageekserver.herokuapp.com/producto/${id}`, {
         method: "DELETE",
     });
 };
 
 const detalleProducto = async (id) => {
-    const respuesta = await fetch(`http://localhost:3000/producto/${id}`);
+    const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto/${id}`);
     return await respuesta.json();
 };
 
 const detalleCategoria = async (categoria) => {
     const respuesta = await fetch(
-        `http://localhost:3000/producto?categoria=${categoria}`
+        `https://alurageekserver.herokuapp.com/producto?categoria=${categoria}`
     );
     return await respuesta.json();
 };
@@ -45,7 +45,7 @@ const actualizarProducto = async (
     desc
 ) => {
     try {
-        const respuesta = await fetch(`http://localhost:3000/producto/${id}`, {
+        const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -59,12 +59,12 @@ const actualizarProducto = async (
 };
 
 const buscarNombreProducto = async (busquedaUsuario) => {
-    const respuesta = await fetch(`http://localhost:3000/producto?nombre_like=${busquedaUsuario}`);
+    const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto?nombre_like=${busquedaUsuario}`);
     return await respuesta.json();
 };
 
 const buscarCategoriaProducto = async (busquedaUsuario) => {
-    const respuesta = await fetch(`http://localhost:3000/producto?categoria_like=${busquedaUsuario}`);
+    const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto?categoria_like=${busquedaUsuario}`);
     return await respuesta.json();
 }
 
