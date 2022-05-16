@@ -78,7 +78,7 @@ const buscarProducto = (event) => {
                 });
             }
         })
-        .catch((error) => console.log(error));
+        .catch((e) => console.log(e));
 }
 
 login(estaAutenticado);
