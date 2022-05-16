@@ -69,18 +69,18 @@ const buscarProducto = (event) => {
                 if (esUnValorCategoria) {
                     if ((window.location.href.includes("index.html") || window.location.href.includes("")) && !window.location.href.includes("/ventanas/")) {
                         window.location.href = `./ventanas/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
-                    } else if (window.location.href.includes("/ventanas/")) {
+                    } else if (window.location.href.includes("/ventanas/") && !window.location.href.includes("/ventanas/mensajes/")) {
                         window.location.href = `./productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
-                    } else if (window.location.href.includes("/mensajes/") && !window.location.href.includes("/ventanas/mensajes/")) {
-                        window.location.href = `./mensajes/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
+                    } else if (window.location.href.includes("/mensajes/")) {
+                        window.location.href = `./productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
                     }
                 } else {
                     if ((window.location.href.includes("index.html") || window.location.href.includes("")) && !window.location.href.includes("/ventanas/")) {
                         window.location.href = `./ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
-                    } else if (window.location.href.includes("/ventanas/")) {
+                    } else if (window.location.href.includes("/ventanas/") && !window.location.href.includes("/ventanas/mensajes/")) {
                         window.location.href = `./productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
-                    } else if (window.location.href.includes("/mensajes/") && !window.location.href.includes("/ventanas/mensajes/")) {
-                        window.location.href = `./mensajes/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+                    } else if (window.location.href.includes("/mensajes/")) {
+                        window.location.href = `./productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
                     }
                 }
             } else {
