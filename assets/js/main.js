@@ -51,9 +51,7 @@ export const comprobarAcceso = () => {
             showConfirmButton: false,
             allowOutsideClick: false
         });
-        setTimeout(() => {
-            window.location.href = "../index.html";
-        }, 4000);
+        setTimeout(() => { window.location.href = "../index.html"; }, 4000);
     }
 }
 
