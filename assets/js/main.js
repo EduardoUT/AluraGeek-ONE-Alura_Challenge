@@ -72,7 +72,7 @@ const buscarProducto = (event) => {
                     } else if (window.location.href.includes("/ventanas/") && !window.location.href.includes("/ventanas/mensajes/")) {
                         window.location.href = `./productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
                     } else if (window.location.href.includes("/mensajes/")) {
-                        window.location.href = `./productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
+                        window.location.href = `../productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
                     }
                 } else {
                     if ((window.location.href.includes("index.html") || window.location.href.includes("")) && !window.location.href.includes("/ventanas/")) {
@@ -80,7 +80,7 @@ const buscarProducto = (event) => {
                     } else if (window.location.href.includes("/ventanas/") && !window.location.href.includes("/ventanas/mensajes/")) {
                         window.location.href = `./productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
                     } else if (window.location.href.includes("/mensajes/")) {
-                        window.location.href = `./productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+                        window.location.href = `../productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
                     }
                 }
             } else {
