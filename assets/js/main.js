@@ -71,12 +71,16 @@ const buscarProducto = (event) => {
                         window.location.href = `./ventanas/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
                     } else if (window.location.href.includes("/ventanas/")) {
                         window.location.href = `./productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
+                    } else if (window.location.href.includes("/mensajes/") && !window.location.href.includes("/ventanas/mensajes/")) {
+                        window.location.href = `./mensajes/productos_busqueda.html?categoria_like=${valorCampoBusqueda}`;
                     }
                 } else {
                     if ((window.location.href.includes("index.html") || window.location.href.includes("")) && !window.location.href.includes("/ventanas/")) {
                         window.location.href = `./ventanas/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
                     } else if (window.location.href.includes("/ventanas/")) {
                         window.location.href = `./productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
+                    } else if (window.location.href.includes("/mensajes/") && !window.location.href.includes("/ventanas/mensajes/")) {
+                        window.location.href = `./mensajes/productos_busqueda.html?nombre_like=${valorCampoBusqueda}`;
                     }
                 }
             } else {
@@ -86,7 +90,7 @@ const buscarProducto = (event) => {
                 });
             }
         })
-        .catch((e) => console.log(e));
+        .catch((error) => console.log(error));
 }
 
 login(estaAutenticado);
