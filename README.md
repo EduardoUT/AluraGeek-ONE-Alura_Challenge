@@ -33,16 +33,20 @@ Desarrollado en el principio Mobile First, AluraGeek fue un proyecto con funcion
     -- Creación de componentes HTML5 repetitivos con orientación a objetos (Header y Footer) para reducción de código HTML5.
     -- Alterando información de sitio web obtenida del servidor por medio de Backticks -> ``.
     -- Validación de formularios utilizando el objeto ValidityState.
+    -- Uso de módulos.
   
   --CSS3:
   
     -- Media Query para Ordenador, Tablet y Celulares.
     -- Grid.
     -- Flexbox.
-  
+    -- Definiendo componentes de clases para la reutilización y alteración de un mismo elemento HTML, utilizando la nomenclatura --btn-gris. 
+    -- Keyframes para animaciones simples.
+    
   --HTML5.
   
-    -- Metodología BEM en la definición de clases para CSS3.
+    -- Metodología BEM para clases  y componentes CSS3.
+    -- Metodología ATOMIC para clases y componentes CSS3.
    
 **Historia**
 
