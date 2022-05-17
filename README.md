@@ -22,7 +22,7 @@ Desarrollado en el principio Mobile First, AluraGeek fue un proyecto con funcion
 
 **Tecnologías utilizadas :computer:**
   
-  -- JavaScript:
+**JavaScript:**
    
     -- JSON Simulando una API REST con (json-server) para consumo de servicios.
     -- fetch() -> Promesas.
@@ -34,8 +34,10 @@ Desarrollado en el principio Mobile First, AluraGeek fue un proyecto con funcion
     -- Alterando información de sitio web obtenida del servidor por medio de Backticks -> ``.
     -- Validación de formularios utilizando el objeto ValidityState.
     -- Uso de módulos.
+    -- Funciones asíncronas.
+    -- Delegación de eventos.
   
-  --CSS3:
+**CSS3:**
   
     -- Media Query para Ordenador, Tablet y Celulares.
     -- Grid.
@@ -43,7 +45,7 @@ Desarrollado en el principio Mobile First, AluraGeek fue un proyecto con funcion
     -- Definiendo componentes de clases para la reutilización y alteración de un mismo elemento HTML, utilizando la nomenclatura --btn-gris. 
     -- Keyframes para animaciones simples.
     
-  --HTML5.
+**HTML5:**
   
     -- Metodología BEM para clases  y componentes CSS3.
     -- Metodología ATOMIC para clases y componentes CSS3.
