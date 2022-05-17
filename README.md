@@ -10,7 +10,7 @@ https://eduardout.github.io/AluraGeek-ONE-Alura_Challenge/
 
 **Vista previa:**
 
-![Vista previa de AluraGeek E-Commerce]()
+![Vista previa de AluraGeek E-Commerce](https://raw.githubusercontent.com/EduardoUT/AluraGeek-ONE-Alura_Challenge/master/assets/img/readme/AluraGeek.PNG)
 
 Publicado en el topic:
 
@@ -18,7 +18,31 @@ Cuarto proyecto de Alura Latam en el que el desafío será crear mi primer E-Com
 dede la perspectiva real de los requerimientos de un cliente por medio de la
 metodología Historias del Cliente o Usuario.
 
+Desarrollado en el principio Mobile First, AluraGeek fue un proyecto con funciones CRUD.
 
+**Tecnologías utilizadas :computer:**
+  
+  -- JavaScript:
+   
+    -- JSON Simulando una API REST con (json-server) para consumo de servicios.
+    -- fetch() -> Promesas.
+    -- mediaQueries con JavaScript.
+    -- Drag & Drop con Imágenes.
+    -- Métodos JSON con HTTP Request -> GET, POST, PUT, DELETE.
+    -- Tratando imágenes en Base64 para subir al Servidor.
+    -- Creación de componentes HTML5 repetitivos con orientación a objetos (Header y Footer) para reducción de código HTML5.
+    -- Alterando información de sitio web obtenida del servidor por medio de Backticks -> ``.
+  
+  --CSS3:
+  
+    -- Media Query para Ordenador, Tablet y Celulares.
+    -- Grid.
+    -- Flexbox.
+  
+  --HTML5.
+  
+    -- Metodología BEM en la definición de clases para CSS3.
+   
 **Historia**
 
 La empresa AluraGeek necesita llegar a más clientes y aumentar su nivel de ventas, por lo que quieren implementar un e-commerce, llevar a la empresa al siguiente nivel y volverse más digital.
