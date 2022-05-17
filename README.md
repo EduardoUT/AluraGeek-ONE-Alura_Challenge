@@ -4,25 +4,27 @@ Challenge Cuatro de Seis | Formación Front-End | AluraGeek E-Commerce
 ![Challenge Alura Latam + Oracle](https://raw.githubusercontent.com/EduardoUT/AluraGeek-ONE-Alura_Challenge/master/assets/img/readme/challengeImage.jpg)
 
 
-**Pruebe el Sitio Web:**
+**Animate a probar mi Sitio Web :D**
 
-Datos Login
+https://eduardout.github.io/AluraGeek-ONE-Alura_Challenge/
+
+**Datos para Login**
 
 Usuario:
 
-admin@alurageek.com
+    admin@alurageek.com
 
 Contraseña:
 
-adminalura
-
-https://eduardout.github.io/AluraGeek-ONE-Alura_Challenge/
+    adminalura
 
 **Vista previa:**
 
 ![Vista previa de AluraGeek E-Commerce](https://raw.githubusercontent.com/EduardoUT/AluraGeek-ONE-Alura_Challenge/master/assets/img/readme/AluraGeek.PNG)
 
-Publicado en el topic:
+**Publicado en el topic:**
+
+https://github.com/topics/challengeonealurageeklatam
 
 Cuarto proyecto de Alura Latam en el que el desafío será crear mi primer E-Commerce
 dede la perspectiva real de los requerimientos de un cliente por medio de la
