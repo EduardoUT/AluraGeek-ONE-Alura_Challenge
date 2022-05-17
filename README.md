@@ -32,6 +32,7 @@ Desarrollado en el principio Mobile First, AluraGeek fue un proyecto con funcion
     -- Tratando imágenes en Base64 para subir al Servidor.
     -- Creación de componentes HTML5 repetitivos con orientación a objetos (Header y Footer) para reducción de código HTML5.
     -- Alterando información de sitio web obtenida del servidor por medio de Backticks -> ``.
+    -- Validación de formularios utilizando el objeto ValidityState.
   
   --CSS3:
   
