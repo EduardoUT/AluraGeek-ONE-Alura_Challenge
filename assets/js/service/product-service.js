@@ -1,6 +1,8 @@
 const listaProductos = () =>
     //fetch("https://alurageekserver.herokuapp.com/producto").then((respuesta) => respuesta.json());
     fetch("https:/engaged-shiner-37.hasura.app/api/rest/productos").then((respuesta) => respuesta.json());
+
+    console.log(listaProductos);
 const crearProducto = (imagen, nombre, precio, categoria, desc) => {
     return fetch("https://alurageekserver.herokuapp.com/producto", {
         method: "POST",
