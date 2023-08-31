@@ -69,7 +69,6 @@ const crearListaProductos = (productos, categoriaUnica, seccion) => {
             } else {
                 const contenidoProductosServidor = exhibirProductosServidor(id, imagen, nombre, precio);
                 listaProductos.innerHTML += contenidoProductosServidor;
-                console.log(listaProductos);
             }
             contadorProductos++;
             filtrarProductosExcedentes(listaProductos, contadorProductos);
