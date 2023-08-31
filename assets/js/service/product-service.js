@@ -1,5 +1,5 @@
 const listaProductos = () =>
-    fetch("https://engaged-shiner-37.hasura.app/api/rest/productos").then((respuesta) => respuesta.json());
+    fetch("https://engaged-shiner-37.hasura.app/api/rest/productos").then((respuesta) => respuesta.json(), console.log("LOOL:", respuesta));
 
 const crearProducto = (imagen, nombre, precio, categoria, desc) => {
     return fetch("https://engaged-shiner-37.hasura.app/api/rest/productos", {
@@ -45,7 +45,7 @@ const actualizarProducto = async (
     desc
 ) => {
     try {
-        const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/consultardetalle?id=${id}`, {
+        const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/actualizardetalle?id=${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
