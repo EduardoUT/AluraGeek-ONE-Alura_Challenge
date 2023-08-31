@@ -1,6 +1,6 @@
 export const categoriasUnicas = (productos) => {
     const categoriaUnicas = [];
-    console.log(productos);
+    console.log(productos.producto);
     productos.forEach(({ categoria }) => {
         if (!categoriaUnicas.includes(categoria)) {
             categoriaUnicas.push(categoria);
