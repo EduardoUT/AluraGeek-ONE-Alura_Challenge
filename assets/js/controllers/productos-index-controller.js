@@ -82,7 +82,6 @@ productServices.listaProductos()
     .then((productos) => {
         //Filtrando las categorias repetidas en un arreglo.
         const listaCategorias = categoriasUnicas(productos);
-        console.log(listaCategorias);
         listaCategorias.forEach((categoria) => {
             /**
              * Creando secciones por categoria y asignando el nombre
