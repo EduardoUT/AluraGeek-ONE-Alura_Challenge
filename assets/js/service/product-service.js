@@ -1,9 +1,7 @@
 const listaProductos = () =>
-    //fetch("https://alurageekserver.herokuapp.com/producto").then((respuesta) => respuesta.json());
     fetch("https://engaged-shiner-37.hasura.app/api/rest/productos").then((respuesta) => respuesta.json());
 
 const crearProducto = (imagen, nombre, precio, categoria, desc) => {
-    //return fetch("https://alurageekserver.herokuapp.com/producto", {
     return fetch("https://engaged-shiner-37.hasura.app/api/rest/productos", {
         method: "POST",
         headers: {
@@ -21,19 +19,19 @@ const crearProducto = (imagen, nombre, precio, categoria, desc) => {
 };
 
 const eliminarProducto = (id) => {
-    return fetch(`https://alurageekserver.herokuapp.com/producto/${id}`, {
+    return fetch(`https://engaged-shiner-37.hasura.app/api/rest/eliminarproducto?id=${id}`, {
         method: "DELETE",
     });
 };
 
 const detalleProducto = async (id) => {
-    const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto/${id}`);
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/consultardetalle?id=${id}`);
     return await respuesta.json();
 };
 
 const detalleCategoria = async (categoria) => {
     const respuesta = await fetch(
-        `https://alurageekserver.herokuapp.com/producto?categoria=${categoria}`
+        `https://engaged-shiner-37.hasura.app/api/rest/consultarcategoria?categoria=${categoria}`
     );
     return await respuesta.json();
 };
@@ -47,7 +45,7 @@ const actualizarProducto = async (
     desc
 ) => {
     try {
-        const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto/${id}`, {
+        const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/consultardetalle?id=${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
