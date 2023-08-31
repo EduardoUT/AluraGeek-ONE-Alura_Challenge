@@ -56,11 +56,11 @@ const filtrarProductosExcedentes = (listaProductos, contadorProductos) => {
     }
 }
 
-const crearListaProductos = (productos, categoriaUnica, seccion) => {
+const crearListaProductos = ({producto}, categoriaUnica, seccion) => {
     const listaProductos = seccion.querySelector("[data-productos]");
     let contadorProductos = 0;
 
-    productos.forEach(({ id, imagen, nombre, precio, categoria }) => {
+    producto.forEach(({ id, imagen, nombre, precio, categoria }) => {
         if (categoriaUnica.includes(categoria)) {
             const rangoId = (id <= 18);
             if (rangoId) {
