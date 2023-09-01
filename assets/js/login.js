@@ -11,8 +11,8 @@ if (window.location.href.includes("login.html")) {
     const loggearse = (event) => {
         event.preventDefault();
         userServices.listaUsuario()
-            .then((usuarios) => {
-                usuarios.forEach(({ correo, password }) => {
+            .then(({usuario}) => {
+                usuario.forEach(({ correo, password }) => {
                     const correoServidor = correo;
                     const passwordServidor = password;
                     const correoUsuario = document.querySelector("[data-campo=correo]").value;
