@@ -14,6 +14,7 @@ const obtenerInformacion = async () => {
     console.log(id);
     if (id == null) {
         window.location.href = "./mensajes/error.html";
+        console.log("Usted llegó aquí 1.0")
     }
 
     try {
@@ -36,6 +37,7 @@ const obtenerInformacion = async () => {
     } catch (error) {
         console.log(error);
         window.location.href = "./mensajes/error.html";
+        console.log("Usted llego aquí 2.0")
     }
 }
 
@@ -43,7 +45,9 @@ formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const productoServer = await productServices.detalleProducto(id);
+    const productoServer = await productServices.detalleProducto({producto});
+    productoIdentificador = productoServer.id;
+    console.log(productoIdentificador);
     const imagenValor = producto.img;
     const nombreValor = nombreFormulario.value;
     const precioValor = precioFormulario.value;
