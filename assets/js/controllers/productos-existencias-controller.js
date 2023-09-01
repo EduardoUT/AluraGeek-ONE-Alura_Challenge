@@ -96,8 +96,8 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
 }
 
 productServices.listaProductos()
-    .then((data) => {
-        data.forEach(({ id, imagen, nombre, precio }) => {
+    .then(({producto}) => {
+        producto.forEach(({ id, imagen, nombre, precio }) => {
             const nuevoProducto = obtenerProducto(id, imagen, nombre, precio);
             productos.appendChild(nuevoProducto);
         });
