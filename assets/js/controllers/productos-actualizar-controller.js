@@ -11,26 +11,23 @@ const descripcionFormulario = document.querySelector("[data-campo=descripcionUpd
 const obtenerInformacion = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    console.log(id);
     if (id == null) {
         window.location.href = "./mensajes/error.html";
-        console.log("Usted llegó aquí 1.0")
     }
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
         const productoDetallesAcceso = productoDetalles.producto;
-        console.log(productoDetallesAcceso);
-        const existenValores = (productoDetalles.imagen && productoDetalles.nombre &&
-            productoDetalles.precio && productoDetalles.categoria && productoDetalles.desc);
+        const existenValores = (productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
+            productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc);
 
         if (existenValores) {
-            producto.img = productoDetalles.imagen;
+            producto.img = productoDetallesAcceso.imagen;
             obtenerArchivoServer(producto.img);
-            nombreFormulario.value = productoDetalles.nombre;
-            precioFormulario.value = productoDetalles.precio;
-            categoriaFormulario.value = productoDetalles.categoria;
-            descripcionFormulario.value = productoDetalles.desc;
+            nombreFormulario.value = productoDetallesAcceso.nombre;
+            precioFormulario.value = productoDetallesAcceso.precio;
+            categoriaFormulario.value = productoDetallesAcceso.categoria;
+            descripcionFormulario.value = productoDetallesAcceso.desc;
             habilitarBotonProducto();
         } else {
             throw new Error();
@@ -38,7 +35,6 @@ const obtenerInformacion = async () => {
     } catch (error) {
         console.log(error);
         window.location.href = "./mensajes/error.html";
-        console.log("Usted llego aquí 2.0")
     }
 }
 
@@ -48,7 +44,6 @@ formulario.addEventListener("submit", async (event) => {
     const id = url.searchParams.get("id");
     const productoServer = await productServices.detalleProducto({producto});
     productoIdentificador = productoServer.id;
-    console.log(productoIdentificador);
     const imagenValor = producto.img;
     const nombreValor = nombreFormulario.value;
     const precioValor = precioFormulario.value;
