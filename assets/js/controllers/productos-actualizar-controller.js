@@ -20,6 +20,7 @@ const obtenerInformacion = async () => {
     try {
         console.log(id);
         const productoDetalles = await productServices.detalleProducto({producto});
+        console.log(producto);
         const existenValores = (productoDetalles.imagen && productoDetalles.nombre &&
             productoDetalles.precio && productoDetalles.categoria && productoDetalles.desc);
 
