@@ -11,6 +11,7 @@ const descripcionFormulario = document.querySelector("[data-campo=descripcionUpd
 const obtenerInformacion = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
+    console.log(id);
     if (id == null) {
         window.location.href = "./mensajes/error.html";
     }
