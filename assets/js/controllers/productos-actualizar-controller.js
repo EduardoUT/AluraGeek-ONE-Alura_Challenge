@@ -19,13 +19,13 @@ const obtenerInformacion = async () => {
         const productoDetalles = await productServices.detalleProducto(id);
         const productoDetallesAcceso = productoDetalles.producto;
         console.table(productoDetallesAcceso);
-        console.log(productoDetallesAcceso.imagen);
-        console.log(productoDetallesAcceso.nombre);
-        console.log(productoDetallesAcceso.precio);
-        console.log(productoDetallesAcceso.categoria);
-        console.log(productoDetallesAcceso.desc);
+        console.log(productoDetallesAcceso[0].imagen);
+        console.log(productoDetallesAcceso[0].nombre);
+        console.log(productoDetallesAcceso[0].precio);
+        console.log(productoDetallesAcceso[0].categoria);
+        console.log(productoDetallesAcceso[0].desc);
         const existenValores = (productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
-            productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc);
+            productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc) != null;
         console.log(existenValores);
         
         if (existenValores) {
