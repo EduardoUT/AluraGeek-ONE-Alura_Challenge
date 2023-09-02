@@ -38,7 +38,7 @@ const obtenerInformacion = async () => {
     }
 }
 
-const obtenerDatoArrayProducto (productoObjeto) => {
+const obtenerDatoArrayProducto = (productoObjeto) => {
     const datoArrayProducto = Object.values(productoObjeto.producto);
     return datoArrayProducto;
 }
