@@ -37,8 +37,9 @@ const detalleCategoria = async (categoria) => {
 };
 
 //const actualizarProducto = async (id, imagen, nombre, precio, categoria, desc) => {
-const actualizarProducto = async (producto) => {
+const actualizarProducto = async (producto, id) => {
     console.log(JSON.stringify( producto ))
+
     try {
         const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/actualizardetalle?id=${id}`, {
             method: "PUT",
