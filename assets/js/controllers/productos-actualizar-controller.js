@@ -22,8 +22,8 @@ const obtenerInformacion = async () => {
         console.log(data);
         //console.log(data.producto)
         const productoDetallesAcceso = productoDetalles.producto;
-        const imagenTest = data.with(0, imagen);
-        const nombre = data.next().value;
+        const imagenTest = data.at(0).imagen;
+        const nombre = data.at(0).nombre;
         const precio = productoDetallesAcceso[0].precio;
         const categoria = productoDetallesAcceso[0].categoria;
         const descripcion = productoDetallesAcceso[0].desc;
