@@ -17,12 +17,12 @@ const obtenerInformacion = async () => {
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
-        const data = Object.values(productoDetalles.producto).values();
+        const data = Object.values(productoDetalles.producto);
         console.log(data.imagen)
         console.log(data);
         //console.log(data.producto)
         const productoDetallesAcceso = productoDetalles.producto;
-        const imagen = data.next().value;
+        const imagenTest = data.with(0, imagen);
         const nombre = data.next().value;
         const precio = productoDetallesAcceso[0].precio;
         const categoria = productoDetallesAcceso[0].categoria;
@@ -33,7 +33,7 @@ const obtenerInformacion = async () => {
         //    productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc) != null;
         
         if (existenValores) {
-            producto.img = imagen;
+            producto.img = imagenTest;
             obtenerArchivoServer(producto.img);
             nombreFormulario.value = nombre;
             precioFormulario.value = precio;
