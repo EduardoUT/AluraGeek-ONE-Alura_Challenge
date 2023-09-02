@@ -3,10 +3,10 @@ import { habilitarBotonProducto, producto } from "../formularios/imagenDropBoxAr
 import { productServices } from "../service/product-service.js";
 
 const formulario = document.querySelector("[data-form-update-product]");
-const nombreFormulario = document.querySelector("[data-campo=productoUpdate]").value;
-const precioFormulario = document.querySelector("[data-campo=precioUpdate]").value;
-const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]").value;
-const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]").value;
+const nombreFormulario = document.querySelector("[data-campo=productoUpdate]");
+const precioFormulario = document.querySelector("[data-campo=precioUpdate]");
+const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]");
+const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
 
 const obtenerInformacion = async () => {
     const url = new URL(window.location);
@@ -24,10 +24,10 @@ const obtenerInformacion = async () => {
         if (existenValores) {
             producto.img = datoArrayProducto[0].imagen;
             obtenerArchivoServer(producto.img);
-            nombreFormulario = datoArrayProducto[0].nombre;
-            precioFormulario = datoArrayProducto[0].precio;
-            categoriaFormulario = datoArrayProducto[0].categoria;
-            descripcionFormulario = datoArrayProducto[0].desc;
+            nombreFormulario.value = datoArrayProducto[0].nombre;
+            precioFormulario.value = datoArrayProducto[0].precio;
+            categoriaFormulario.value = datoArrayProducto[0].categoria;
+            descripcionFormulario.value = datoArrayProducto[0].desc;
             habilitarBotonProducto();
         } else {
             throw new Error();
