@@ -41,7 +41,7 @@ const actualizarProducto = async (producto, id) => {
     console.log(JSON.stringify(producto))
 
     try {
-        const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/actualizardetalle?id=${id}`, {
+        const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/actualizarproducto?id=${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
