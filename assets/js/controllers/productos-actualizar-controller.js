@@ -17,13 +17,13 @@ const obtenerInformacion = async () => {
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
-        const data = Object.values(productoDetalles.producto).entries;
+        const data = Object.values(productoDetalles.producto).values;
         
         console.log(data);
         //console.log(data.producto)
         const productoDetallesAcceso = productoDetalles.producto;
-        const imagen = productoDetallesAcceso[0].imagen;
-        const nombre = productoDetallesAcceso[0].nombre;
+        const imagen = data.next().value;
+        const nombre = data.next().value;
         const precio = productoDetallesAcceso[0].precio;
         const categoria = productoDetallesAcceso[0].categoria;
         const descripcion = productoDetallesAcceso[0].desc;
