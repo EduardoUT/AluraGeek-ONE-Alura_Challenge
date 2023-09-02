@@ -17,7 +17,7 @@ const obtenerInformacion = async () => {
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
-        const data = Object.values(productoDetalles.producto).values;
+        const data = Object.values(productoDetalles.producto).values();
         console.log(data.imagen)
         console.log(data);
         //console.log(data.producto)
