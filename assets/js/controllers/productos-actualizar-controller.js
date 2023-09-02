@@ -48,15 +48,14 @@ formulario.addEventListener("submit", (event) => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     const dato = obtenerDatoServidor(id);
-    id = productoServer.id;
     const imagenValor = producto.img;
     const nombreValor = nombreFormulario.value;
     const precioValor = precioFormulario.value;
     const categoriaValor = categoriaFormulario.value;
     const descripcionValor = descripcionFormulario.value;
-    const existeValorEnServidor = ((productoServer.imagen == imagenValor) && (productoServer.nombre == nombreValor) &&
-        (productoServer.precio == precioValor) && (productoServer.categoria == categoriaValor) &&
-        (productoServer.desc == descripcionValor));
+    const existeValorEnServidor = ((dato[0].imagen == imagenValor) && (dato[0].nombre == nombreValor) &&
+        (dato[0].precio == precioValor) && (dato[0].categoria == categoriaValor) &&
+        (dato[0].desc == descripcionValor));
 
     if (!existeValorEnServidor) {
         Swal.fire({
