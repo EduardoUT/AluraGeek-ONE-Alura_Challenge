@@ -17,28 +17,31 @@ const obtenerInformacion = async () => {
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
+        const data = Object.values(productoDetalles);
+        console.log(data);
         const productoDetallesAcceso = productoDetalles.producto;
-        console.table(productoDetallesAcceso);
-        console.log(productoDetallesAcceso[0].imagen);
-        console.log(productoDetallesAcceso[0].nombre);
-        console.log(productoDetallesAcceso[0].precio);
-        console.log(productoDetallesAcceso[0].categoria);
-        console.log(productoDetallesAcceso[0].desc);
-        const existenValores = (productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
-            productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc) != null;
-        console.log(existenValores);
+        const imagen = productoDetallesAcceso[0].imagen;
+        const nombre = productoDetallesAcceso[0].nombre;
+        const precio = productoDetallesAcceso[0].precio;
+        const categoria = productoDetallesAcceso[0].categoria;
+        const descripcion = productoDetallesAcceso[0].desc;
+        
+        const existenValores = productoDetallesAcceso != null;
+        //(productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
+        //    productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc) != null;
         
         if (existenValores) {
-            producto.img = productoDetallesAcceso.imagen;
+            producto.img = imagen;
             obtenerArchivoServer(producto.img);
-            nombreFormulario.value = productoDetallesAcceso.nombre;
-            precioFormulario.value = productoDetallesAcceso.precio;
-            categoriaFormulario.value = productoDetallesAcceso.categoria;
-            descripcionFormulario.value = productoDetallesAcceso.desc;
+            nombreFormulario.value = nombre;
+            precioFormulario.value = precio;
+            categoriaFormulario.value = categoria;
+            descripcionFormulario.value = descripcion;
             habilitarBotonProducto();
         } else {
             throw new Error();
         }
+        console.log(existenValores);
     } catch (error) {
         console.log(error);
         window.location.href = "./mensajes/error.html";
