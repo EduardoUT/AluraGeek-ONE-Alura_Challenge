@@ -3,10 +3,10 @@ import { habilitarBotonProducto, producto } from "../formularios/imagenDropBoxAr
 import { productServices } from "../service/product-service.js";
 
 const formulario = document.querySelector("[data-form-update-product]");
-const nombreFormulario = document.querySelector("[data-campo=productoUpdate]");
-const precioFormulario = document.querySelector("[data-campo=precioUpdate]");
-const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]");
-const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
+const nombreFormulario = document.querySelector("[data-campo=productoUpdate]").value;
+const precioFormulario = document.querySelector("[data-campo=precioUpdate]").value;
+const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]").value;
+const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]").value;
 
 const obtenerInformacion = async () => {
     const url = new URL(window.location);
@@ -16,18 +16,18 @@ const obtenerInformacion = async () => {
     }
 
     try {
-        const productoDetalles = await productServices.detalleProducto(id);
-        const datoArrayProducto = obtenerDatoArrayProducto(productoDetalles);
+        const productoDetalleServidor = await productServices.detalleProducto(id);
+        const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
         const estaVacio = (valorActual) => valorActual != null;
         const existenValores = datoArrayProducto.every(estaVacio);
 
         if (existenValores) {
             producto.img = datoArrayProducto[0].imagen;
             obtenerArchivoServer(producto.img);
-            nombreFormulario.value = datoArrayProducto[0].nombre;
-            precioFormulario.value = datoArrayProducto[0].precio;
-            categoriaFormulario.value = datoArrayProducto[0].categoria;
-            descripcionFormulario.value = datoArrayProducto[0].desc;
+            nombreFormulario = datoArrayProducto[0].nombre;
+            precioFormulario = datoArrayProducto[0].precio;
+            categoriaFormulario = datoArrayProducto[0].categoria;
+            descripcionFormulario = datoArrayProducto[0].desc;
             habilitarBotonProducto();
         } else {
             throw new Error();
@@ -47,16 +47,12 @@ formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const productoDetalles = await productServices.detalleProducto(id);
-    const datoArrayProducto = obtenerDatoArrayProducto(productoDetalles);
+    const productoDetalleServidor = await productServices.detalleProducto(id);
+    const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
-    const nombreValor = nombreFormulario.value;
-    const precioValor = precioFormulario.value;
-    const categoriaValor = categoriaFormulario.value;
-    const descripcionValor = descripcionFormulario.value;
-    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreValor) &&
-        (datoArrayProducto[0].precio == precioValor) && (datoArrayProducto[0].categoria == categoriaValor) &&
-        (datoArrayProducto[0].desc == descripcionValor));
+    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreFormulario) &&
+        (datoArrayProducto[0].precio == precioFormulario) && (datoArrayProducto[0].categoria == categoriaValor) &&
+        (datoArrayProducto[0].desc == descripcionFormulario));
 
     if (!existeValorEnServidor) {
         Swal.fire({
