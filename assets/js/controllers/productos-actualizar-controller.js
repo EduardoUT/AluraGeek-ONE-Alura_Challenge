@@ -9,7 +9,8 @@ const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]
 const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]").value;
 
 const obtenerInformacion = async () => {
-    const id = obtenerIdentificadorProductoUrl();
+    const url = new URL(window.location);
+    const id = url.searchParams.get("id");
     if (id == null) {
         window.location.href = "./mensajes/error.html";
     }
