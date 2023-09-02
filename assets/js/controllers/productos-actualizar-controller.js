@@ -9,8 +9,7 @@ const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]
 const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
 
 const obtenerInformacion = async () => {
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
+    const id = obtenerIdentificadorProductoUrl();
     if (id == null) {
         window.location.href = "./mensajes/error.html";
     }
@@ -55,9 +54,11 @@ formulario.addEventListener("submit", async (event) => {
     const productoDetalleServidor = await productServices.detalleProducto(id);
     const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
-    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreFormulario.value) &&
-        (datoArrayProducto[0].precio == precioFormulario.value) && (datoArrayProducto[0].categoria == categoriaFormulario.value) &&
-        (datoArrayProducto[0].desc == descripcionFormulario.value));
+    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor)
+        && (datoArrayProducto[0].nombre == nombreFormulario.value)
+        && (datoArrayProducto[0].precio == precioFormulario.value)
+        && (datoArrayProducto[0].categoria == categoriaFormulario.value)
+        && (datoArrayProducto[0].desc == descripcionFormulario.value));
 
     if (!existeValorEnServidor) {
         Swal.fire({
