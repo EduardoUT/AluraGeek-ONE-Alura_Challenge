@@ -55,9 +55,9 @@ formulario.addEventListener("submit", async (event) => {
     const productoDetalleServidor = await productServices.detalleProducto(id);
     const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
-    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreFormulario) &&
-        (datoArrayProducto[0].precio == precioFormulario) && (datoArrayProducto[0].categoria == categoriaValor) &&
-        (datoArrayProducto[0].desc == descripcionFormulario));
+    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreFormulario.value) &&
+        (datoArrayProducto[0].precio == precioFormulario.value) && (datoArrayProducto[0].categoria == categoriaFormulario.value) &&
+        (datoArrayProducto[0].desc == descripcionFormulario.value));
 
     if (!existeValorEnServidor) {
         Swal.fire({
