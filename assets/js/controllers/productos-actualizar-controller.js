@@ -50,7 +50,8 @@ const obtenerIdentificadorProductoUrl = () => {
 
 formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const productoDetalleServidor = await productServices.detalleProducto(obtenerIdentificadorProductoUrl());
+    const id = obtenerIdentificadorProductoUrl();
+    const productoDetalleServidor = await productServices.detalleProducto(id);
     const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
     const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreFormulario) &&
