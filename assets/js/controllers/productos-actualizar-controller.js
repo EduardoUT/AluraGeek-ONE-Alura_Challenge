@@ -18,20 +18,8 @@ const obtenerInformacion = async () => {
     try {
         const productoDetalles = await productServices.detalleProducto(id);
         const datoArrayProducto = Object.values(productoDetalles.producto);
-        console.log(data.imagen)
-        console.log(data);
-        //console.log(data.producto)
-        const productoDetallesAcceso = productoDetalles.producto;
-        const imagen = datoArrayProducto[0].imagen;
-        const nombre = datoArrayProducto[0].nombre;
-        const precio = datoArrayProducto[0].precio;
-        const categoria = datoArrayProducto[0].categoria;
-        const descripcion = datoArrayProducto[0].desc;
-        
         const estaVacio = (valorActual) => valorActual != null;
         const existenValores = datoArrayProducto.every(estaVacio);
-        //(productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
-        //    productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc) != null;
         
         if (existenValores) {
             producto.img = obtenerPrimerElemento(datoArrayProducto).imagen;
