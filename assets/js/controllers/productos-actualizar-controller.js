@@ -71,7 +71,7 @@ formulario.addEventListener("submit", async (event) => {
         }).then((respuesta) => {
             if (respuesta.isConfirmed) {
                 productServices.actualizarProducto(id, imagenValor, nombreFormulario.value,
-                    precioFormulario.value, categoriaFormulario.value, descripcionValor.value)
+                    precioFormulario.value, categoriaFormulario.value, descripcionFormulario.value)
                     .then(() => {
                         window.location.href = "./mensajes/actualizado_exitosamente.html";
                     });
