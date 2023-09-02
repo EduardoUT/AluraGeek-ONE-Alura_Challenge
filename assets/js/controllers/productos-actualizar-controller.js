@@ -69,9 +69,9 @@ formulario.addEventListener("submit", async (event) => {
             confirmTextButton: "Confirmar",
             showCancelButton: true,
             cancelButtonText: "Cancelar"
-        }).then((respuesta) => {
-            if (respuesta.isConfirmed) {
-                const respuesta = {
+        }).then((envio) => {
+            if (envio.isConfirmed) {
+                const formatoEnvio = {
                     "producto": [
                         {
                             "id": id,
@@ -83,18 +83,17 @@ formulario.addEventListener("submit", async (event) => {
                         }
                     ]
                 }
-                console.log(respuesta);
-                productServices.actualizarProducto(id, imagenValor, nombreFormulario.value,
-                    precioFormulario.value, categoriaFormulario.value, descripcionFormulario.value)
+                console.table(formatoEnvio);
+                productServices.actualizarProducto(formatoEnvio)
                     .then(() => {
                         window.location.href = "./mensajes/actualizado_exitosamente.html";
                     });
-            } else if (respuesta.isDismissed) {
+            } else if (envio.isDismissed) {
                 Swal.fire({
                     icon: "info",
                     title: "Actualización cancelada."
-                }).then((respuesta) => {
-                    if (respuesta.isConfirmed) {
+                }).then((envio) => {
+                    if (envio.isConfirmed) {
                         window.location.reload();
                     }
                 });
