@@ -54,6 +54,7 @@ formulario.addEventListener("submit", async (event) => {
     const productoDetalleServidor = await productServices.detalleProducto(id);
     const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
+    const nombreValor = nombreFormulario.value;
     const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor)
         && (datoArrayProducto[0].nombre == nombreFormulario.value)
         && (datoArrayProducto[0].precio == precioFormulario.value)
@@ -70,9 +71,19 @@ formulario.addEventListener("submit", async (event) => {
             cancelButtonText: "Cancelar"
         }).then((respuesta) => {
             if (respuesta.isConfirmed) {
-                //const productoEnviar = {
-                //    0: 
-                //}
+                const respuesta = {
+                    "producto": [
+                        {
+                            "id": id,
+                            "imagen": imagenValor,
+                            "nombre": nombreFormulario.value,
+                            "precio": precioFormulario.value,
+                            "categoria": categoriaFormulario.value,
+                            "desc": descripcionFormulario.value
+                        }
+                    ]
+                }
+                console.log(respuesta);
                 productServices.actualizarProducto(id, imagenValor, nombreFormulario.value,
                     precioFormulario.value, categoriaFormulario.value, descripcionFormulario.value)
                     .then(() => {
