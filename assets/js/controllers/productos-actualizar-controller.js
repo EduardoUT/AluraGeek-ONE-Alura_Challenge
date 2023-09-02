@@ -8,7 +8,7 @@ const precioFormulario = document.querySelector("[data-campo=precioUpdate]");
 const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]");
 const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
 
-const obtenerInformacion = async () => {
+const obtenerInformacion = () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     if (id == null) {
@@ -16,39 +16,39 @@ const obtenerInformacion = async () => {
     }
 
     try {
-        const productoDetalles = await productServices.detalleProducto(id);
-        const datoArrayProducto = Object.values(productoDetalles.producto);
+        obtenerDatoServidor(id);
         const estaVacio = (valorActual) => valorActual != null;
         const existenValores = datoArrayProducto.every(estaVacio);
-        
+
         if (existenValores) {
-            producto.img = obtenerPrimerElemento(datoArrayProducto).imagen;
+            producto.img = datoArrayProducto[0].imagen;
             obtenerArchivoServer(producto.img);
-            nombreFormulario.value = obtenerPrimerElemento(datoArrayProducto).nombre;
-            precioFormulario.value = obtenerPrimerElemento(datoArrayProducto).precio;
-            categoriaFormulario.value = obtenerPrimerElemento(datoArrayProducto).categoria;
-            descripcionFormulario.value = obtenerPrimerElemento(datoArrayProducto).desc;
+            nombreFormulario.value = datoArrayProducto[0].nombre;
+            precioFormulario.value = datoArrayProducto[0].precio;
+            categoriaFormulario.value = datoArrayProducto[0].categoria;
+            descripcionFormulario.value = datoArrayProducto[0].desc;
             habilitarBotonProducto();
         } else {
             throw new Error();
         }
-        console.log(existenValores);
+
     } catch (error) {
-        console.log(error);
         window.location.href = "./mensajes/error.html";
     }
 }
 
-const obtenerPrimerElemento = (arreglo) => {
-    return arreglo.at(0);
+const obtenerDatoServidor = async (id) => {
+    const productoDetalles = await productServices.detalleProducto(id);
+    const datoArrayProducto = Object.values(productoDetalles.producto);
+    return datoArrayProducto;
 }
 
-formulario.addEventListener("submit", async (event) => {
+formulario.addEventListener("submit", (event) => {
     event.preventDefault();
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const productoServer = await productServices.detalleProducto({producto});
-    productoIdentificador = productoServer.id;
+    const dato = obtenerDatoServidor(id);
+    id = productoServer.id;
     const imagenValor = producto.img;
     const nombreValor = nombreFormulario.value;
     const precioValor = precioFormulario.value;
