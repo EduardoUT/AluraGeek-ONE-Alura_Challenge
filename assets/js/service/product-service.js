@@ -49,6 +49,7 @@ const actualizarProducto = async (
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
+                "X-Hasura-Role": "Invitado"
             },
             body: JSON.stringify({ imagen, nombre, precio, categoria, desc }),
         });
