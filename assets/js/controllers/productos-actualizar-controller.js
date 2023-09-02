@@ -70,7 +70,8 @@ formulario.addEventListener("submit", async (event) => {
             cancelButtonText: "Cancelar"
         }).then((respuesta) => {
             if (respuesta.isConfirmed) {
-                productServices.actualizarProducto(id, imagenValor, nombreValor, precioValor, categoriaValor, descripcionValor)
+                productServices.actualizarProducto(id, imagenValor, nombreFormulario.value,
+                    precioFormulario.value, categoriaFormulario.value, descripcionValor.value)
                     .then(() => {
                         window.location.href = "./mensajes/actualizado_exitosamente.html";
                     });
