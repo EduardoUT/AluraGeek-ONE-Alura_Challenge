@@ -9,8 +9,7 @@ const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]
 const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]").value;
 
 const obtenerInformacion = async () => {
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
+    const id = obtenerIdentificadorProductoUrl();
     if (id == null) {
         window.location.href = "./mensajes/error.html";
     }
@@ -43,11 +42,15 @@ const obtenerDatoArrayProducto = (productoObjeto) => {
     return datoArrayProducto;
 }
 
-formulario.addEventListener("submit", async (event) => {
-    event.preventDefault();
+const obtenerIdentificadorProductoUrl = () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const productoDetalleServidor = await productServices.detalleProducto(id);
+    return id;
+}
+
+formulario.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const productoDetalleServidor = await productServices.detalleProducto(obtenerIdentificadorProductoUrl());
     const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
     const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreFormulario) &&
