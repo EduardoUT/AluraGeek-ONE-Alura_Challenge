@@ -18,14 +18,15 @@ const obtenerInformacion = async () => {
     try {
         const productoDetalles = await productServices.detalleProducto(id);
         const productoDetallesAcceso = productoDetalles.producto;
-        const existenValores = (productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
-            productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc);
-        console.log(existenValores);
         console.log(productoDetallesAcceso.imagen);
         console.log(productoDetallesAcceso.nombre);
         console.log(productoDetallesAcceso.precio);
         console.log(productoDetallesAcceso.categoria);
         console.log(productoDetallesAcceso.desc);
+        const existenValores = (productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
+            productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc);
+        console.log(existenValores);
+        
         if (existenValores) {
             producto.img = productoDetallesAcceso.imagen;
             obtenerArchivoServer(producto.img);
