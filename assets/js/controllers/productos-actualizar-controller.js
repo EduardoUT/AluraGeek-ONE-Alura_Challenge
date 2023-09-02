@@ -17,28 +17,29 @@ const obtenerInformacion = async () => {
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
-        const data = Object.values(productoDetalles.producto);
+        const datoArrayProducto = Object.values(productoDetalles.producto);
         console.log(data.imagen)
         console.log(data);
         //console.log(data.producto)
         const productoDetallesAcceso = productoDetalles.producto;
-        const imagenTest = data.at(0).imagen;
-        const nombre = data.at(0).nombre;
-        const precio = productoDetallesAcceso[0].precio;
-        const categoria = productoDetallesAcceso[0].categoria;
-        const descripcion = productoDetallesAcceso[0].desc;
+        const imagen = datoArrayProducto[0].imagen;
+        const nombre = datoArrayProducto[0].nombre;
+        const precio = datoArrayProducto[0].precio;
+        const categoria = datoArrayProducto[0].categoria;
+        const descripcion = datoArrayProducto[0].desc;
         
-        const existenValores = productoDetallesAcceso != null;
+        const estaVacio = (valorActual) => valorActual != null;
+        const existenValores = datoArrayProducto.every(estaVacio);
         //(productoDetallesAcceso.imagen && productoDetallesAcceso.nombre &&
         //    productoDetallesAcceso.precio && productoDetallesAcceso.categoria && productoDetallesAcceso.desc) != null;
         
         if (existenValores) {
-            producto.img = imagenTest;
+            producto.img = obtenerPrimerElemento(datoArrayProducto).imagen;
             obtenerArchivoServer(producto.img);
-            nombreFormulario.value = nombre;
-            precioFormulario.value = precio;
-            categoriaFormulario.value = categoria;
-            descripcionFormulario.value = descripcion;
+            nombreFormulario.value = obtenerPrimerElemento(datoArrayProducto).nombre;
+            precioFormulario.value = obtenerPrimerElemento(datoArrayProducto).precio;
+            categoriaFormulario.value = obtenerPrimerElemento(datoArrayProducto).categoria;
+            descripcionFormulario.value = obtenerPrimerElemento(datoArrayProducto).desc;
             habilitarBotonProducto();
         } else {
             throw new Error();
@@ -48,6 +49,10 @@ const obtenerInformacion = async () => {
         console.log(error);
         window.location.href = "./mensajes/error.html";
     }
+}
+
+const obtenerPrimerElemento = (arreglo) => {
+    return arreglo.at(0);
 }
 
 formulario.addEventListener("submit", async (event) => {
