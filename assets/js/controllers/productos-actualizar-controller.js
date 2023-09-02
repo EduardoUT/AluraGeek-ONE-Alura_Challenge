@@ -8,7 +8,7 @@ const precioFormulario = document.querySelector("[data-campo=precioUpdate]");
 const categoriaFormulario = document.querySelector("[data-campo=categoriaUpdate]");
 const descripcionFormulario = document.querySelector("[data-campo=descripcionUpdate]");
 
-const obtenerInformacion = () => {
+const obtenerInformacion = async () => {
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
     if (id == null) {
@@ -16,7 +16,8 @@ const obtenerInformacion = () => {
     }
 
     try {
-        obtenerDatoServidor(id);
+        const productoDetalles = await productServices.detalleProducto(id);
+        const datoArrayProducto = obtenerDatoArrayProducto(productoDetalles);
         const estaVacio = (valorActual) => valorActual != null;
         const existenValores = datoArrayProducto.every(estaVacio);
 
@@ -37,25 +38,25 @@ const obtenerInformacion = () => {
     }
 }
 
-const obtenerDatoServidor = async (id) => {
-    const productoDetalles = await productServices.detalleProducto(id);
-    const datoArrayProducto = Object.values(productoDetalles.producto);
+const obtenerDatoArrayProducto (productoObjeto) => {
+    const datoArrayProducto = Object.values(productoObjeto.producto);
     return datoArrayProducto;
 }
 
-formulario.addEventListener("submit", (event) => {
+formulario.addEventListener("submit", async (event) => {
     event.preventDefault();
     const url = new URL(window.location);
     const id = url.searchParams.get("id");
-    const dato = obtenerDatoServidor(id);
+    const productoDetalles = await productServices.detalleProducto(id);
+    const datoArrayProducto = obtenerDatoArrayProducto(productoDetalles);
     const imagenValor = producto.img;
     const nombreValor = nombreFormulario.value;
     const precioValor = precioFormulario.value;
     const categoriaValor = categoriaFormulario.value;
     const descripcionValor = descripcionFormulario.value;
-    const existeValorEnServidor = ((dato[0].imagen == imagenValor) && (dato[0].nombre == nombreValor) &&
-        (dato[0].precio == precioValor) && (dato[0].categoria == categoriaValor) &&
-        (dato[0].desc == descripcionValor));
+    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor) && (datoArrayProducto[0].nombre == nombreValor) &&
+        (datoArrayProducto[0].precio == precioValor) && (datoArrayProducto[0].categoria == categoriaValor) &&
+        (datoArrayProducto[0].desc == descripcionValor));
 
     if (!existeValorEnServidor) {
         Swal.fire({
