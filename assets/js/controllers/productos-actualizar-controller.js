@@ -70,6 +70,9 @@ formulario.addEventListener("submit", async (event) => {
             cancelButtonText: "Cancelar"
         }).then((respuesta) => {
             if (respuesta.isConfirmed) {
+                //const productoEnviar = {
+                //    0: 
+                //}
                 productServices.actualizarProducto(id, imagenValor, nombreFormulario.value,
                     precioFormulario.value, categoriaFormulario.value, descripcionFormulario.value)
                     .then(() => {
