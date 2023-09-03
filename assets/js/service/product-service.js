@@ -36,10 +36,8 @@ const detalleCategoria = async (categoria) => {
     return await respuesta.json();
 };
 
-//const actualizarProducto = async (id, imagen, nombre, precio, categoria, desc) => {
 const actualizarProducto = async (id_producto, nombre_producto, descripcion_producto,
     categoria_producto, precio_producto, imagen_producto) => {
-    //console.log(JSON.stringify(producto))
 
     try {
         const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/actualizarproducto?id_producto=${id_producto}`, {
@@ -49,22 +47,20 @@ const actualizarProducto = async (id_producto, nombre_producto, descripcion_prod
                 //"X-Hasura-Role": "Invitado"
             },
             body: JSON.stringify({ nombre_producto, descripcion_producto, categoria_producto, precio_producto, imagen_producto }),
-            //body: JSON.stringify(producto),
         });
-        console.log(respuesta);
         return respuesta;
     } catch (error) {
         return console.log(error);
     }
 };
 
-const buscarNombreProducto = async (busquedaUsuario) => {
-    const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto?nombre_like=${busquedaUsuario}`);
+const buscarNombreProducto = async (buscarProducto) => {
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarproducto?categoriaproducto${buscarProducto}`);
     return await respuesta.json();
 };
 
-const buscarCategoriaProducto = async (busquedaUsuario) => {
-    const respuesta = await fetch(`https://alurageekserver.herokuapp.com/producto?categoria_like=${busquedaUsuario}`);
+const buscarCategoriaProducto = async (buscarCategoria) => {
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarcategoria?categoriaproducto${buscarCategoria}`);
     return await respuesta.json();
 }
 
