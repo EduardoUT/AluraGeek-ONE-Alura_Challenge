@@ -8,12 +8,12 @@ const crearProducto = (nombre_producto, descripcion_producto, categoria_producto
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            id: uuid.v4(),
-            imagen_producto,
+            id_producto: uuid.v4(),
             nombre_producto,
-            precio_producto,
-            categoria_producto,
             descripcion_producto,
+            categoria_producto,
+            precio_producto,
+            imagen_producto,
         }),
     });
 };
