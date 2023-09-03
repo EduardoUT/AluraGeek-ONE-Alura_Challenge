@@ -112,7 +112,7 @@ const crearListaProductosSimilares = (producto, contadorProductos) => {
 
 productServices.listaProductos()
     .then(({alura_geek_productos}) => {
-        const datoArrayProducto = obtenerDatoArrayProducto(alura_geek_productos);
+        //const datoArrayProducto = obtenerDatoArrayProducto(alura_geek_productos);
         console.table(alura_geek_productos);
         console.log(alura_geek_productos);
         console.log(datoArrayProducto);
