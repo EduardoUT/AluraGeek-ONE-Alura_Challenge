@@ -56,11 +56,11 @@ const filtrarProductosExcedentes = (listaProductos, contadorProductos) => {
     }
 }
 
-const crearListaProductos = ({producto}, categoriaUnica, seccion) => {
+const crearListaProductos = ({alura_geek_productos}, categoriaUnica, seccion) => {
     const listaProductos = seccion.querySelector("[data-productos]");
     let contadorProductos = 0;
 
-    producto.forEach(({ id, imagen, nombre, precio, categoria }) => {
+    alura_geek_productos.forEach(({ id, imagen, nombre, precio, categoria }) => {
         if (categoriaUnica.includes(categoria)) {
             const rangoId = (id <= 18);
             if (rangoId) {
