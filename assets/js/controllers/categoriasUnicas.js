@@ -1,6 +1,6 @@
-export const categoriasUnicas = ({ producto }) => {
+export const categoriasUnicas = ({ alura_geek_productos }) => {
     const categoriaUnicas = [];
-    producto.forEach(({ categoria }) => {
+    alura_geek_productos.forEach(({ categoria }) => {
         if (!categoriaUnicas.includes(categoria)) {
             categoriaUnicas.push(categoria);
         }
