@@ -1,8 +1,8 @@
 export const categoriasUnicas = ({ alura_geek_productos }) => {
     const categoriaUnicas = [];
-    alura_geek_productos.forEach(({ categoria }) => {
-        if (!categoriaUnicas.includes(categoria)) {
-            categoriaUnicas.push(categoria);
+    alura_geek_productos.forEach(({ categoria_producto }) => {
+        if (!categoriaUnicas.includes(categoria_producto)) {
+            categoriaUnicas.push(categoria_producto);
         }
     });
     return categoriaUnicas;
