@@ -41,7 +41,7 @@ const exhibirProductosServidor = (id_producto, nombre_producto, precio_producto,
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
-  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
+            <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
             <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id_producto}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
