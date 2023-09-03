@@ -23,26 +23,26 @@ const crearSeccionCategoria = (categoriaUnica) => {
     return seccion;
 }
 
-const exhibirProductosLocales = (id, imagen_producto, nombre_producto, precio_producto) => {
+const exhibirProductosLocales = (id_producto, nombre_producto, precio_producto, imagen_producto) => {
     const contenido = `
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
-  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
+  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
+            <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id_producto}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
     `;
     return contenido;
 }
 
-const exhibirProductosServidor = (id, imagen_producto, nombre_producto, precio_producto) => {
+const exhibirProductosServidor = (id_producto, nombre_producto, precio_producto, imagen_producto) => {
     const contenido = `
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
-  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
+  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
+            <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id_producto}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
     `;
@@ -60,14 +60,14 @@ const crearListaProductos = ({alura_geek_productos}, categoriaUnica, seccion) =>
     const listaProductos = seccion.querySelector("[data-productos]");
     let contadorProductos = 0;
 
-    alura_geek_productos.forEach(({ id_producto, imagen_producto, nombre_producto, precio_producto, categoria_producto }) => {
+    alura_geek_productos.forEach(({ id_producto, nombre_producto, categoria_producto, precio_producto, imagen_producto }) => {
         if (categoriaUnica.includes(categoria_producto)) {
             const rangoId = (id_producto <= 18);
             if (rangoId) {
-                const contenidoProductosLocales = exhibirProductosLocales(id, imagen_producto, nombre_producto, precio_producto);
+                const contenidoProductosLocales = exhibirProductosLocales(id_producto, nombre_producto, precio_producto, imagen_producto);
                 listaProductos.innerHTML += contenidoProductosLocales;
             } else {
-                const contenidoProductosServidor = exhibirProductosServidor(id, imagen_producto, nombre_producto, precio_producto);
+                const contenidoProductosServidor = exhibirProductosServidor(id_producto, nombre_producto, precio_producto, imagen_producto);
                 listaProductos.innerHTML += contenidoProductosServidor;
             }
             contadorProductos++;
