@@ -24,8 +24,8 @@ const eliminarProducto = (id) => {
     });
 };
 
-const detalleProducto = async (id) => {
-    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/consultardetalle?id=${id}`);
+const detalleProducto = async (id_producto) => {
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/consultardetalle?id_producto=${id_producto}`);
     return await respuesta.json();
 };
 
