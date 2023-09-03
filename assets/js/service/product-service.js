@@ -37,8 +37,8 @@ const detalleCategoria = async (categoria) => {
 };
 
 //const actualizarProducto = async (id, imagen, nombre, precio, categoria, desc) => {
-const actualizarProducto = async (producto, id) => {
-    console.log(JSON.stringify(producto))
+const actualizarProducto = async (id, nombre, descripcion, categoria, precio, imagen) => {
+    //console.log(JSON.stringify(producto))
 
     try {
         const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/actualizarproducto?id=${id}`, {
@@ -47,8 +47,8 @@ const actualizarProducto = async (producto, id) => {
                 "Content-Type": "application/json",
                 //"X-Hasura-Role": "Invitado"
             },
-            //body: JSON.stringify({ imagen, nombre, precio, categoria, desc }),
-            body: JSON.stringify(producto),
+            body: JSON.stringify({ nombre, descripcion, categoria, precio, imagen }),
+            //body: JSON.stringify(producto),
         });
         console.log(respuesta);
         return respuesta;

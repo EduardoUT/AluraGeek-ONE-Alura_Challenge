@@ -84,7 +84,7 @@ formulario.addEventListener("submit", async (event) => {
                     ]
                 }
                 console.table(formatoEnvio);
-                productServices.actualizarProducto(formatoEnvio, id)
+                productServices.actualizarProducto(id, nombreFormulario.value, descripcionFormulario.value, categoriaFormulario.value, precioFormulario.value, imagenValor)
                     .then(() => {
                         window.location.href = "./mensajes/actualizado_exitosamente.html";
                     });
