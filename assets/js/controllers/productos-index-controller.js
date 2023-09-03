@@ -23,12 +23,12 @@ const crearSeccionCategoria = (categoriaUnica) => {
     return seccion;
 }
 
-const exhibirProductosLocales = (id, imagen, nombre, precio) => {
+const exhibirProductosLocales = (id, imagen_producto, nombre_producto, precio_producto) => {
     const contenido = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
-            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
+            <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
+  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
             <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
@@ -36,12 +36,12 @@ const exhibirProductosLocales = (id, imagen, nombre, precio) => {
     return contenido;
 }
 
-const exhibirProductosServidor = (id, imagen, nombre, precio) => {
+const exhibirProductosServidor = (id, imagen_producto, nombre_producto, precio_producto) => {
     const contenido = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
-            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
+            <div class="productos__imagen" style="background: url('${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
+  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
             <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
@@ -60,14 +60,14 @@ const crearListaProductos = ({alura_geek_productos}, categoriaUnica, seccion) =>
     const listaProductos = seccion.querySelector("[data-productos]");
     let contadorProductos = 0;
 
-    alura_geek_productos.forEach(({ id, imagen, nombre, precio, categoria }) => {
-        if (categoriaUnica.includes(categoria)) {
-            const rangoId = (id <= 18);
+    alura_geek_productos.forEach(({ id_producto, imagen_producto, nombre_producto, precio_producto, categoria_producto }) => {
+        if (categoriaUnica.includes(categoria_producto)) {
+            const rangoId = (id_producto <= 18);
             if (rangoId) {
-                const contenidoProductosLocales = exhibirProductosLocales(id, imagen, nombre, precio);
+                const contenidoProductosLocales = exhibirProductosLocales(id, imagen_producto, nombre_producto, precio_producto);
                 listaProductos.innerHTML += contenidoProductosLocales;
             } else {
-                const contenidoProductosServidor = exhibirProductosServidor(id, imagen, nombre, precio);
+                const contenidoProductosServidor = exhibirProductosServidor(id, imagen_producto, nombre_producto, precio_producto);
                 listaProductos.innerHTML += contenidoProductosServidor;
             }
             contadorProductos++;
@@ -84,8 +84,8 @@ productServices.listaProductos()
         const listaCategorias = categoriasUnicas(productos);
         listaCategorias.forEach((categoria) => {
             /**
-             * Creando secciones por categoria y asignando el nombre
-             * de la categoría al encabezado y links de referencia a la página de categoría
+             * Creando secciones por categoria y asignando el nombre_producto
+       _producto      * de la categoría al encabezado y links de referencia a la página de categoría
              * correspondiente.
              */
             const nuevaSeccion = crearSeccionCategoria(categoria);
