@@ -28,7 +28,7 @@ const exhibirProductosLocales = (id_producto, nombre_producto, precio_producto, 
         <div class="productos__producto">
             <div class="productos__imagen" style="background: url('./assets/img/productos/${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
             <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
-  _producto          <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
+            <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
             <a class="productos__link link" href="./ventanas/productos_detalles.html?id=${id_producto}" title="Ver más detalles" tabindex="0" data-link-detalles>Ver
                 Producto</a>
         </div>
@@ -56,7 +56,7 @@ const filtrarProductosExcedentes = (listaProductos, contadorProductos) => {
     }
 }
 
-const crearListaProductos = ({alura_geek_productos}, categoriaUnica, seccion) => {
+const crearListaProductos = ({ alura_geek_productos }, categoriaUnica, seccion) => {
     const listaProductos = seccion.querySelector("[data-productos]");
     let contadorProductos = 0;
     console.table(alura_geek_productos);
@@ -90,10 +90,10 @@ productServices.listaProductos()
              * correspondiente.
              */
             const nuevaSeccion = crearSeccionCategoria(categoria);
-                  elementoMain.appendChild(nuevaSeccion);
+            elementoMain.appendChild(nuevaSeccion);
             //Asignando la lista de productos a su sección correspondiente.
             const nuevaListaProductos = crearListaProductos(productos, categoria, nuevaSeccion);
-                  nuevaSeccion.appendChild(nuevaListaProductos);
+            nuevaSeccion.appendChild(nuevaListaProductos);
         });
     })
     .catch((error) => console.log(error));
