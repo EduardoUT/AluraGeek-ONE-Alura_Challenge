@@ -1,19 +1,19 @@
 const listaProductos = () =>
     fetch("https://engaged-shiner-37.hasura.app/api/rest/consultarproductos").then((respuesta) => respuesta.json());
 
-const crearProducto = (imagen, nombre, precio, categoria, desc) => {
-    return fetch("https://engaged-shiner-37.hasura.app/api/rest/productos", {
+const crearProducto = (nombre_producto, descripcion_producto, categoria_producto, precio_producto, imagen_producto) => {
+    return fetch("https://engaged-shiner-37.hasura.app/api/rest/guardarproducto", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
             id: uuid.v4(),
-            imagen,
-            nombre,
-            precio,
-            categoria,
-            desc,
+            imagen_producto,
+            nombre_producto,
+            precio_producto,
+            categoria_producto,
+            descripcion_producto,
         }),
     });
 };

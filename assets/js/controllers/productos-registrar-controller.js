@@ -22,8 +22,8 @@ formAgregarProducto.addEventListener("submit", (event) => {
     const valorCategoria = categoria.value;
     const valorDescripcion = descripcion.value;
     productServices
-        .crearProducto(valorImagen, valorNombreProducto,
-            valorPrecio, valorCategoria, valorDescripcion)
+        .crearProducto(valorNombreProducto,
+            valorDescripcion, valorCategoria, valorPrecio, valorImagen)
         .then((respuesta) => {
             if (respuesta != null) { 
                 window.location.href = "./mensajes/guardado_exitosamente.html";
