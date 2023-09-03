@@ -11,10 +11,10 @@ if (window.location.href.includes("login.html")) {
     const loggearse = (event) => {
         event.preventDefault();
         userServices.listaUsuario()
-            .then(({usuario}) => {
-                usuario.forEach(({ correo, password }) => {
-                    const correoServidor = correo;
-                    const passwordServidor = password;
+            .then(({alura_geek_usuarios}) => {
+                alura_geek_usuarios.forEach(({ correo_usuario, password_usuario }) => {
+                    const correoServidor = correo_usuario;
+                    const passwordServidor = password_usuario;
                     const correoUsuario = document.querySelector("[data-campo=correo]").value;
                     const passwordUsuario = document.querySelector("[data-campo=password]").value;
                     if (correoUsuario == correoServidor && passwordUsuario == passwordServidor) {
