@@ -21,12 +21,12 @@ const obtenerInformacion = async () => {
         const existenValores = datoArrayProducto.every(estaVacio);
 
         if (existenValores) {
-            producto.img = datoArrayProducto[0].imagen;
+            producto.img = datoArrayProducto[0].imagen_producto;
             obtenerArchivoServer(producto.img);
-            nombreFormulario.value = datoArrayProducto[0].nombre;
-            precioFormulario.value = datoArrayProducto[0].precio;
-            categoriaFormulario.value = datoArrayProducto[0].categoria;
-            descripcionFormulario.value = datoArrayProducto[0].desc;
+            nombreFormulario.value = datoArrayProducto[0].nombre_producto;
+            precioFormulario.value = datoArrayProducto[0].precio_producto;
+            categoriaFormulario.value = datoArrayProducto[0].categoria_producto;
+            descripcionFormulario.value = datoArrayProducto[0].descripcion_producto;
             habilitarBotonProducto();
         } else {
             throw new Error();
@@ -38,7 +38,7 @@ const obtenerInformacion = async () => {
 }
 
 const obtenerDatoArrayProducto = (productoObjeto) => {
-    const datoArrayProducto = Object.values(productoObjeto.producto);
+    const datoArrayProducto = Object.values(productoObjeto.alura_geek_productos);
     return datoArrayProducto;
 }
 
@@ -54,12 +54,11 @@ formulario.addEventListener("submit", async (event) => {
     const productoDetalleServidor = await productServices.detalleProducto(id);
     const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
     const imagenValor = producto.img;
-    const nombreValor = nombreFormulario.value;
-    const existeValorEnServidor = ((datoArrayProducto[0].imagen == imagenValor)
-        && (datoArrayProducto[0].nombre == nombreFormulario.value)
-        && (datoArrayProducto[0].precio == precioFormulario.value)
-        && (datoArrayProducto[0].categoria == categoriaFormulario.value)
-        && (datoArrayProducto[0].desc == descripcionFormulario.value));
+    const existeValorEnServidor = ((datoArrayProducto[0].imagen_producto == imagenValor)
+        && (datoArrayProducto[0].nombre_producto == nombreFormulario.value)
+        && (datoArrayProducto[0].precio_producto == precioFormulario.value)
+        && (datoArrayProducto[0].categoria_producto == categoriaFormulario.value)
+        && (datoArrayProducto[0].descripcion_producto == descripcionFormulario.value));
 
     if (!existeValorEnServidor) {
         Swal.fire({
