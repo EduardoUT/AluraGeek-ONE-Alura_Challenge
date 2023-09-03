@@ -31,7 +31,7 @@ const detalleProducto = async (id_producto) => {
 
 const detalleCategoria = async (categoria) => {
     const respuesta = await fetch(
-        `https://engaged-shiner-37.hasura.app/api/rest/consultarcategoria?categoria=${categoria}`
+        `https://engaged-shiner-37.hasura.app/api/rest/consultarcategoria?categoria_producto=${categoria}`
     );
     return await respuesta.json();
 };
