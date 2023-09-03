@@ -21,7 +21,7 @@ const mostrarImagen = (imagen) => {
 }
 
 const obtenerDetallesProducto = async () => {
-    const id = obtenerDatoArrayProducto();
+    const id = obtenerIdentificadorProductoUrl();
     if (id == null) {
         window.location.href = "./mensajes/error.html";
     }
