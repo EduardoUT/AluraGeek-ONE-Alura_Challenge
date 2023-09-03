@@ -4,43 +4,43 @@ import { productServices } from "../service/product-service.js";
 
 const productos = document.querySelector("[data-lista-productos]");
 
-const contenidoProductoLocal = (id, imagen, nombre, precio) => {
+const contenidoProductoLocal = (id_producto, nombre_producto, precio_producto, imagen_producto) => {
     const contenido = `
             <div class="productos-existentes__container productos__imagen"
-                style="background: url('../assets/img/productos/${imagen}') center / 100% 100% no-repeat;" tabindex="0">
+                style="background: url('../assets/img/productos/${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0">
                 <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
                 <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
             </div>
-            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <p class="productos__id parrafo" tabindex="0">${id}</p>
-        `;
-    return contenido;
-} 
-
-const contenidoProductoServidor = (id, imagen, nombre, precio) => {
-    const contenido = `
-            <div class="productos-existentes__container productos__imagen"
-                style="background: url('${imagen}') center / 100% 100% no-repeat;" tabindex="0">
-                <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
-                <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
-            </div>
-            <p class="productos__nombre parrafo" tabindex="0">${nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">$ ${precio}</p>
-            <p class="productos__id parrafo" tabindex="0">${id}</p>
+            <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
+            <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
+            <p class="productos__id parrafo" tabindex="0">${id_producto}</p>
         `;
     return contenido;
 }
 
-const obtenerProducto = (id, imagen, nombre, precio) => {
-    const rangoId = (id <= 18);
+const contenidoProductoServidor = (id_producto, nombre_producto, precio_producto, imagen_producto) => {
+    const contenido = `
+            <div class="productos-existentes__container productos__imagen"
+                style="background: url('${imagen_producto}') center / 100% 100% no-repeat;" tabindex="0">
+                <a class="productos-existentes__botones boton--eliminar" data-borrar-boton></a>
+                <a class="productos-existentes__botones boton--editar" data-editar-boton></a>
+            </div>
+            <p class="productos__nombre parrafo" tabindex="0">${nombre_producto}</p>
+            <p class="productos__precio parrafo" tabindex="0">$ ${precio_producto}</p>
+            <p class="productos__id parrafo" tabindex="0">${id_producto}</p>
+        `;
+    return contenido;
+}
+
+const obtenerProducto = (id_producto, nombre_producto, precio_producto, imagen_producto) => {
+    const rangoId = (id_producto <= 18);
     const producto = document.createElement("div");
     producto.setAttribute("class", "productos-existentes__producto productos__producto");
     if (rangoId) {
-        const contenidoLocal = contenidoProductoLocal(id, imagen, nombre, precio);
+        const contenidoLocal = contenidoProductoLocal(id_producto, nombre_producto, precio_producto, imagen_producto);
         producto.innerHTML = contenidoLocal;
     } else {
-        const contenidoServidor = contenidoProductoServidor(id, imagen, nombre, precio);
+        const contenidoServidor = contenidoProductoServidor(id_producto, nombre_producto, precio_producto, imagen_producto);
         producto.innerHTML = contenidoServidor;
     }
 
@@ -65,8 +65,8 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
                 });
             });
         } else {
-            btnEliminar.setAttribute("id", `${id}`);
-            btnEditar.setAttribute("href", `./productos_actualizar.html?id=${id}`);
+            btnEliminar.setAttribute("id", `${id_producto}`);
+            btnEditar.setAttribute("href", `./productos_actualizar.html?id=${id_producto}`);
             btnEliminar.addEventListener("click", () => {
                 Swal.fire({
                     icon: "question",
@@ -96,9 +96,9 @@ const obtenerProducto = (id, imagen, nombre, precio) => {
 }
 
 productServices.listaProductos()
-    .then(({producto}) => {
-        producto.forEach(({ id, imagen, nombre, precio }) => {
-            const nuevoProducto = obtenerProducto(id, imagen, nombre, precio);
+    .then(({ alura_geek_productos }) => {
+        alura_geek_productos.forEach(({ id_producto, nombre_producto, precio_producto, imagen_producto }) => {
+            const nuevoProducto = obtenerProducto(id_producto, nombre_producto, precio_producto, imagen_producto);
             productos.appendChild(nuevoProducto);
         });
     })
