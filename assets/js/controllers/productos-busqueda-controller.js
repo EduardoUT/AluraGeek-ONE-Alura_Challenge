@@ -1,4 +1,4 @@
-import { productServices } from "../service/product-service.js";
+import { productServices, obtenerDatoArrayProducto } from "../service/product-service.js";
 import { categoriasUnicas, incluyeCategoria } from "./categoriasUnicas.js";
 
 const listaResultados = document.querySelector("[data-productos-resultados]");
@@ -46,10 +46,11 @@ const obtenerResultados = async () => {
                 }
                 try {
                     const filtroCategoria = await productServices.buscarCategoriaProducto(categoriaProducto);
-                    if (filtroCategoria.length != 0) {
+                    const datoArrayCategoria = obtenerDatoArrayProducto(filtroCategoria);
+                    if (datoArrayCategoria.length != 0) {
                         titulo.textContent = "Alura Geek | " + categoriaProducto;
                         encabezadoResultados.textContent = "Resultados Búsqueda: " + categoriaProducto;
-                        infoProductos(filtroCategoria);
+                        infoProductos(datoArrayCategoria);
                     } else {
                         return;
                     }
@@ -59,10 +60,11 @@ const obtenerResultados = async () => {
             } else {
                 try {
                     const filtroNombre = await productServices.buscarNombreProducto(nombreProducto);
-                    if (filtroNombre.length != 0) {
+                    const datoArrayNombre = obtenerDatoArrayProducto(filtroNombre);
+                    if (datoArrayNombre.length != 0) {
                         titulo.textContent = "Alura Geek | " + nombreProducto;
                         encabezadoResultados.textContent = "Resultados Búsqueda: " + nombreProducto;
-                        infoProductos(filtroNombre);
+                        infoProductos(datoArrayNombre);
                     } else {
                         Swal.fire({
                             icon: "info",
