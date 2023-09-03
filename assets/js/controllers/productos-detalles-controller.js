@@ -67,10 +67,10 @@ const generarListaDesordenada = (productos) => {
 const contenidoProductosLocales = (producto) => {
     const contenido = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('../assets/img/productos/${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
-            <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
-            <a class="productos__link link" href="./productos_detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
+            <div class="productos__imagen" style="background: url('../assets/img/productos/${producto.imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <p class="productos__nombre parrafo" tabindex="0">${producto.nombre_producto}</p>
+            <p class="productos__precio parrafo" tabindex="0">${producto.precio_producto}</p>
+            <a class="productos__link link" href="./productos_detalles.html?id=${producto.id_producto}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
@@ -80,10 +80,10 @@ const contenidoProductosLocales = (producto) => {
 const contenidoProductosServidor = (producto) => {
     const contenido = `
         <div class="productos__producto">
-            <div class="productos__imagen" style="background: url('${producto.imagen}') center / 100% 100% no-repeat;" tabindex="0"></div>
-            <p class="productos__nombre parrafo" tabindex="0">${producto.nombre}</p>
-            <p class="productos__precio parrafo" tabindex="0">${producto.precio}</p>
-            <a class="productos__link link" href="./productos_detalles.html?id=${producto.id}" title="Ver más detalles" tabindex="0">Ver
+            <div class="productos__imagen" style="background: url('${producto.imagen_producto}') center / 100% 100% no-repeat;" tabindex="0"></div>
+            <p class="productos__nombre parrafo" tabindex="0">${producto.nombre_producto}</p>
+            <p class="productos__precio parrafo" tabindex="0">${producto.precio_producto}</p>
+            <a class="productos__link link" href="./productos_detalles.html?id=${producto.id_producto}" title="Ver más detalles" tabindex="0">Ver
                 Producto</a>
         </div>
     `;
