@@ -1,5 +1,5 @@
 const listaProductos = () =>
-    fetch("https://engaged-shiner-37.hasura.app/api/rest/productos").then((respuesta) => respuesta.json());
+    fetch("https://engaged-shiner-37.hasura.app/api/rest/consultarproductos").then((respuesta) => respuesta.json());
 
 const crearProducto = (imagen, nombre, precio, categoria, desc) => {
     return fetch("https://engaged-shiner-37.hasura.app/api/rest/productos", {
