@@ -114,7 +114,7 @@ productServices.listaProductos()
     .then(({alura_geek_productos}) => {
         const lista = generarListaDesordenada(alura_geek_productos);
         for (let i = 0; i < lista.length; i++) {
-            for (let j = 0; j < productos.length; j++) {
+            for (let j = 0; j < alura_geek_productos.length; j++) {
                 const producto = lista[i][j];
                 const contadorProductos = j;
                 const listaProductosSimilares = crearListaProductosSimilares(producto, contadorProductos);
