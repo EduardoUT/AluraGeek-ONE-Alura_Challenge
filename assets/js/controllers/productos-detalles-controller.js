@@ -32,11 +32,11 @@ const obtenerDetallesProducto = async () => {
         const existenValores = comprobarValoresVacios(datoArrayProducto);
 
         if (existenValores) {
-            titleWindow.textContent = "AluraGeek | " + datoArrayProducto.nombre_producto;
-            mostrarImagen(datoArrayProducto.imagen_producto);
-            nombre.textContent = datoArrayProducto.nombre_producto;
-            precio.textContent = "$ " + datoArrayProducto.precio_producto;
-            descripcion.textContent = datoArrayProducto.descripcion_producto;
+            titleWindow.textContent = "AluraGeek | " + datoArrayProducto[0].nombre_producto;
+            mostrarImagen(datoArrayProducto[0].imagen_producto);
+            nombre.textContent = datoArrayProducto[0].nombre_producto;
+            precio.textContent = "$ " + datoArrayProducto[0].precio_producto;
+            descripcion.textContent = datoArrayProducto[0].descripcion_producto;
         } else {
             throw new Error();
         }
