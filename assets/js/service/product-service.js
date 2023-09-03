@@ -68,6 +68,23 @@ const buscarCategoriaProducto = async (busquedaUsuario) => {
     return await respuesta.json();
 }
 
+export const obtenerDatoArrayProducto = (productoObjeto) => {
+    const datoArrayProducto = Object.values(productoObjeto.alura_geek_productos);
+    return datoArrayProducto;
+}
+
+export const obtenerIdentificadorProductoUrl = () => {
+    const url = new URL(window.location);
+    const id = url.searchParams.get("id");
+    return id;
+}
+
+export const comprobarValoresVacios = (datoArrayProducto) => {
+    const estaVacio = (valorActual) => valorActual != null;
+    const existenValores = datoArrayProducto.every(estaVacio);
+    return existenValores;
+}
+
 export const productServices = {
     crearProducto,
     listaProductos,

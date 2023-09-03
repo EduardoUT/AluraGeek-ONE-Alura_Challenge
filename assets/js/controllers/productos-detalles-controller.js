@@ -1,4 +1,7 @@
-import { productServices } from "../service/product-service.js";
+import {
+    productServices, obtenerDatoArrayProducto,
+    obtenerIdentificadorProductoUrl, comprobarValoresVacios
+} from "../service/product-service.js";
 
 const imagenDetalles = document.querySelector("[data-detalles-imagen]");
 const nombre = document.querySelector("[data-detalles-nombre]");
@@ -18,25 +21,26 @@ const mostrarImagen = (imagen) => {
 }
 
 const obtenerDetallesProducto = async () => {
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
+    const id = obtenerDatoArrayProducto();
     if (id == null) {
         window.location.href = "./mensajes/error.html";
     }
 
     try {
         const productoDetalles = await productServices.detalleProducto(id);
-        const existenValores = (productoDetalles.imagen && productoDetalles.nombre &&
-            productoDetalles.precio && productoDetalles.categoria && productoDetalles.desc);
+        const datoArrayProducto = obtenerDatoArrayProducto(productoDetalles);
+        const existenValores = comprobarValoresVacios(datoArrayProducto);
+
         if (existenValores) {
-            titleWindow.textContent = "AluraGeek | " + productoDetalles.nombre;
-            mostrarImagen(productoDetalles.imagen);
-            nombre.textContent = productoDetalles.nombre;
-            precio.textContent = "$ " + productoDetalles.precio;
-            descripcion.textContent = productoDetalles.desc;
+            titleWindow.textContent = "AluraGeek | " + datoArrayProducto.nombre_producto;
+            mostrarImagen(datoArrayProducto.imagen_producto);
+            nombre.textContent = datoArrayProducto.nombre_producto;
+            precio.textContent = "$ " + datoArrayProducto.precio_producto;
+            descripcion.textContent = datoArrayProducto.descripcion_producto;
         } else {
             throw new Error();
         }
+
     } catch (error) {
         console.log(error);
     }
@@ -56,7 +60,7 @@ const generarListaDesordenada = (productos) => {
             listaDesordenada.push(productoAleatorio);
         }
     });
-    
+
     return listaDesordenada;
 }
 

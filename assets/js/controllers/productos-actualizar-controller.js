@@ -1,6 +1,9 @@
 import { obtenerArchivoServer } from "../formularios/dropBoxArea.js";
 import { habilitarBotonProducto, producto } from "../formularios/imagenDropBoxArea.js";
-import { productServices } from "../service/product-service.js";
+import {
+    productServices, obtenerDatoArrayProducto,
+    obtenerIdentificadorProductoUrl, comprobarValoresVacios
+} from "../service/product-service.js";
 
 const formulario = document.querySelector("[data-form-update-product]");
 const nombreFormulario = document.querySelector("[data-campo=productoUpdate]");
@@ -17,8 +20,7 @@ const obtenerInformacion = async () => {
     try {
         const productoDetalleServidor = await productServices.detalleProducto(id);
         const datoArrayProducto = obtenerDatoArrayProducto(productoDetalleServidor);
-        const estaVacio = (valorActual) => valorActual != null;
-        const existenValores = datoArrayProducto.every(estaVacio);
+        const existenValores = comprobarValoresVacios(datoArrayProducto);
 
         if (existenValores) {
             producto.img = datoArrayProducto[0].imagen_producto;
@@ -35,17 +37,6 @@ const obtenerInformacion = async () => {
     } catch (error) {
         window.location.href = "./mensajes/error.html";
     }
-}
-
-const obtenerDatoArrayProducto = (productoObjeto) => {
-    const datoArrayProducto = Object.values(productoObjeto.alura_geek_productos);
-    return datoArrayProducto;
-}
-
-const obtenerIdentificadorProductoUrl = () => {
-    const url = new URL(window.location);
-    const id = url.searchParams.get("id");
-    return id;
 }
 
 formulario.addEventListener("submit", async (event) => {
