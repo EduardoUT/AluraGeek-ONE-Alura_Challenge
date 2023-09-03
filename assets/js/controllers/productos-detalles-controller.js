@@ -117,6 +117,7 @@ productServices.listaProductos()
         console.log(alura_geek_productos);
         console.log(datoArrayProducto);
         const lista = generarListaDesordenada(alura_geek_productos);
+        console.log(lista);
         for (let i = 0; i < lista.length; i++) {
             for (let j = 0; j < alura_geek_productos.length; j++) {
                 const producto = lista[i][j];
