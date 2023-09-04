@@ -55,12 +55,12 @@ const actualizarProducto = async (id_producto, nombre_producto, descripcion_prod
 };
 
 const buscarNombreProducto = async (buscarProducto) => {
-    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarproducto?categoriaproducto${buscarProducto}`);
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarproducto?nombre_producto${buscarProducto}`);
     return await respuesta.json();
 };
 
 const buscarCategoriaProducto = async (buscarCategoria) => {
-    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarcategoria?categoriaproducto${buscarCategoria}`);
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarcategoria?categoria_producto=${buscarCategoria}`);
     return await respuesta.json();
 }
 
