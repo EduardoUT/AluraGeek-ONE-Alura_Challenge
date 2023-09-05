@@ -98,7 +98,7 @@ const filtrarProductosExcedentes = (productosContainer, contadorProductos) => {
 
 const crearListaProductosSimilares = (producto, contadorProductos) => {
     const productosContainer = document.querySelector("[data-productos]");
-    const rangoId = (producto.id <= 18);
+    const rangoId = (producto.id_producto <= 18);
     if (rangoId) {
         const productosLocal = contenidoProductosLocales(producto);
         productosContainer.innerHTML += productosLocal;
