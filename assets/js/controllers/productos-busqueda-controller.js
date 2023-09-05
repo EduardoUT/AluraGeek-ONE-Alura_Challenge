@@ -34,7 +34,7 @@ const infoProductos = async (filtro) => {
 
 const obtenerResultados = async () => {
     productServices.listaProductos()
-        .then(async ({ alura_geek_productos }) => {
+        .then(async (alura_geek_productos) => {
             const listaCategorias = categoriasUnicas(alura_geek_productos);
             const url = new URL(window.location);
             const nombreProducto = url.searchParams.get("nombre_like");
