@@ -7,7 +7,7 @@ const titulo = document.querySelector("title");
 
 const infoProductos = async (filtro) => {
     filtro.forEach(({ id_producto, nombre_producto, precio_producto, imagen_producto }) => {
-        const rangoId = (id <= 18);
+        const rangoId = (id_producto <= 18);
         if (rangoId) {
             const contenidoLocal = `
             <div class="productos__producto" style="display: flex; flex-direction: column; width: inherit;">
