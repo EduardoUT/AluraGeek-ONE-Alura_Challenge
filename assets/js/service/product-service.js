@@ -55,7 +55,7 @@ const actualizarProducto = async (id_producto, nombre_producto, descripcion_prod
 };
 
 const buscarNombreProducto = async (buscarProducto) => {
-    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarproducto?nombre_producto${buscarProducto}`);
+    const respuesta = await fetch(`https://engaged-shiner-37.hasura.app/api/rest/buscarproducto?nombre_producto=${buscarProducto}`);
     return await respuesta.json();
 };
 
